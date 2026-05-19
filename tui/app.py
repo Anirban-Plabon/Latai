@@ -155,9 +155,24 @@ class LataiApp(App):
     def on_mount(self) -> None:
         self.query_one(InputBar).focus_input()
         chat_view = self.query_one("#chat-view", ChatView)
+        
+        # Pink: #FFB6C1, Blue: #ADD8E6
+        welcome_markup = (
+            "[#FFB6C1]  ____________  [/][#ADD8E6]____________  [/]\n"
+            "[#FFB6C1]||    //\\\\    ||[/][#ADD8E6]    //\\\\    ||[/]\n"
+            "[#FFB6C1]||   //  \\\\   ||[/][#ADD8E6]   //  \\\\   ||[/]\n"
+            "[#FFB6C1]||  //    \\\\  ||[/][#ADD8E6]  //    \\\\  ||   [/]Welcome to LATAI !!\n"
+            "[#FFB6C1]|| //      \\\\ ||[/][#ADD8E6] //      \\\\ ||[/]\n"
+            "[#FFB6C1]||//        \\\\||[/][#ADD8E6]//        \\\\||[/]"
+        )
+        
         chat_view.add_message(
             "system",
-            f"Welcome to Latai! Active model: {session.provider}/{session.model_name}  "
+            Static(welcome_markup)
+        )
+        chat_view.add_message(
+            "system",
+            f"Active model: {session.provider}/{session.model_name}"
         )
 
     # ── Actions ───────────────────────────────────────────────────────────────
