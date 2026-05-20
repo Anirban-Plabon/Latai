@@ -75,18 +75,8 @@ class LataiApp(App):
         height: auto;
     }
 
-    .message-role {
-        color: white;
-        text-style: bold;
-        width: auto;
-        min-width: 5;
-    }
-
-    .message-content {
-        color: #e0e0e0;
-        width: 1fr;
-        height: auto;
-    }
+    .message-role    { color: white; text-style: bold; width: auto; min-width: 5; }
+    .message-content { color: #e0e0e0; width: 1fr; height: auto; }
 
     Markdown {
         height: auto;
@@ -196,7 +186,17 @@ class LataiApp(App):
         
         # Post initial system message
         chat_view = self.query_one("#chat-view", ChatView)
-        chat_view.add_message("system", f"Welcome to Latai! Active model: {session.provider}/{session.model_name}")
+        # Pink: #FFB6C1, Blue: #ADD8E6
+        welcome_markup = (
+            "[#FFB6C1]  ____________  [/][#ADD8E6]____________  [/]\n"
+            "[#FFB6C1]||    //\\\\    ||[/][#ADD8E6]    //\\\\    ||[/]\n"
+            "[#FFB6C1]||   //  \\\\   ||[/][#ADD8E6]   //  \\\\   ||[/]\n"
+            "[#FFB6C1]||  //    \\\\  ||[/][#ADD8E6]  //    \\\\  ||   [/]Welcome to LATAI !!\n"
+            "[#FFB6C1]|| //      \\\\ ||[/][#ADD8E6] //      \\\\ ||[/]\n"
+            "[#FFB6C1]||//        \\\\||[/][#ADD8E6]//        \\\\||[/]"
+        )
+        chat_view.add_message("system", Static(welcome_markup))
+        chat_view.add_message("system", f"Active model: {session.provider}/{session.model_name}")
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
         if event.button.id == "cmd-menu-btn":

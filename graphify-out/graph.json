@@ -1,0 +1,3249 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "hyper_llm_orchestration",
+        "label": "LLM Orchestration Layer",
+        "nodes": [
+          "services_llm_get_llm",
+          "services_providers_mock_mockchatmodel",
+          "agent_graph_llm_node"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "services/llm.py"
+      },
+      {
+        "id": "hyper_state_management",
+        "label": "Centralized State Management",
+        "nodes": [
+          "services_session_session_instance",
+          "agent_state_agentstate",
+          "agent_graph_llm_node"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.8,
+        "source_file": "services/session.py"
+      },
+      {
+        "id": "tui_lifecycle_pattern",
+        "label": "TUI Orchestration Pattern",
+        "nodes": [
+          "tui_app_lataiapp",
+          "tui_chat_view_chatview",
+          "tui_input_bar_inputbar",
+          "tui_command_menu_commandmenu"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "tui/app.py"
+      },
+      {
+        "id": "swappable_provider_pattern",
+        "label": "Swappable LLM Provider Pattern",
+        "nodes": [
+          "arch_llm_factory",
+          "utils_config_get_api_key",
+          "tui_command_menu_commandmenu"
+        ],
+        "relation": "implement",
+        "confidence": "INFERRED",
+        "confidence_score": 0.9,
+        "source_file": "GEMINI.md"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "debug_graph.py",
+      "file_type": "code",
+      "source_file": "debug_graph.py",
+      "source_location": "L1",
+      "id": "debug_graph_py",
+      "community": 10,
+      "norm_label": "debug_graph.py"
+    },
+    {
+      "label": "debug()",
+      "file_type": "code",
+      "source_file": "debug_graph.py",
+      "source_location": "L12",
+      "id": "latai_debug_graph_debug",
+      "community": 10,
+      "norm_label": "debug()"
+    },
+    {
+      "label": "main.py",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L1",
+      "id": "main_py",
+      "community": 11,
+      "norm_label": "main.py"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L9",
+      "id": "latai_main_main",
+      "community": 11,
+      "norm_label": "main()"
+    },
+    {
+      "label": "settings.json",
+      "file_type": "code",
+      "source_file": ".gemini/settings.json",
+      "source_location": "L1",
+      "id": "gemini_settings_json",
+      "community": 8,
+      "norm_label": "settings.json"
+    },
+    {
+      "label": "hooks",
+      "file_type": "code",
+      "source_file": ".gemini/settings.json",
+      "source_location": "L2",
+      "id": "gemini_settings_hooks",
+      "community": 8,
+      "norm_label": "hooks"
+    },
+    {
+      "label": "BeforeTool",
+      "file_type": "code",
+      "source_file": ".gemini/settings.json",
+      "source_location": "L3",
+      "id": "gemini_settings_hooks_beforetool",
+      "community": 8,
+      "norm_label": "beforetool"
+    },
+    {
+      "label": "graph.py",
+      "file_type": "code",
+      "source_file": "agent/graph.py",
+      "source_location": "L1",
+      "id": "agent_graph_py",
+      "community": 4,
+      "norm_label": "graph.py"
+    },
+    {
+      "label": "llm_node()",
+      "file_type": "code",
+      "source_file": "agent/graph.py",
+      "source_location": "L6",
+      "id": "agent_graph_llm_node",
+      "community": 4,
+      "norm_label": "llm_node()"
+    },
+    {
+      "label": "build_graph()",
+      "file_type": "code",
+      "source_file": "agent/graph.py",
+      "source_location": "L11",
+      "id": "agent_graph_build_graph",
+      "community": 4,
+      "norm_label": "build_graph()"
+    },
+    {
+      "label": "prompts.py",
+      "file_type": "code",
+      "source_file": "agent/prompts.py",
+      "source_location": "L1",
+      "id": "agent_prompts_py",
+      "community": 16,
+      "norm_label": "prompts.py"
+    },
+    {
+      "label": "state.py",
+      "file_type": "code",
+      "source_file": "agent/state.py",
+      "source_location": "L1",
+      "id": "agent_state_py",
+      "community": 4,
+      "norm_label": "state.py"
+    },
+    {
+      "label": "AgentState",
+      "file_type": "code",
+      "source_file": "agent/state.py",
+      "source_location": "L5",
+      "id": "agent_state_agentstate",
+      "community": 4,
+      "norm_label": "agentstate"
+    },
+    {
+      "label": "TypedDict",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "typeddict",
+      "community": 4,
+      "norm_label": "typeddict"
+    },
+    {
+      "label": "tools.py",
+      "file_type": "code",
+      "source_file": "agent/tools.py",
+      "source_location": "L1",
+      "id": "agent_tools_py",
+      "community": 17,
+      "norm_label": "tools.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "agent/__init__.py",
+      "source_location": "L1",
+      "id": "agent_init_py",
+      "community": 18,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "ask.py",
+      "file_type": "code",
+      "source_file": "commands/ask.py",
+      "source_location": "L1",
+      "id": "commands_ask_py",
+      "community": 19,
+      "norm_label": "ask.py"
+    },
+    {
+      "label": "base.py",
+      "file_type": "code",
+      "source_file": "commands/base.py",
+      "source_location": "L1",
+      "id": "commands_base_py",
+      "community": 0,
+      "norm_label": "base.py"
+    },
+    {
+      "label": "is_command()",
+      "file_type": "code",
+      "source_file": "commands/base.py",
+      "source_location": "L1",
+      "id": "commands_base_is_command",
+      "community": 0,
+      "norm_label": "is_command()"
+    },
+    {
+      "label": "parse_command()",
+      "file_type": "code",
+      "source_file": "commands/base.py",
+      "source_location": "L4",
+      "id": "commands_base_parse_command",
+      "community": 0,
+      "norm_label": "parse_command()"
+    },
+    {
+      "label": "model.py",
+      "file_type": "code",
+      "source_file": "commands/model.py",
+      "source_location": "L1",
+      "id": "commands_model_py",
+      "community": 4,
+      "norm_label": "model.py"
+    },
+    {
+      "label": "execute()",
+      "file_type": "code",
+      "source_file": "commands/model.py",
+      "source_location": "L3",
+      "id": "commands_model_execute",
+      "community": 4,
+      "norm_label": "execute()"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "commands/__init__.py",
+      "source_location": "L1",
+      "id": "commands_init_py",
+      "community": 20,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "llm.py",
+      "file_type": "code",
+      "source_file": "services/llm.py",
+      "source_location": "L1",
+      "id": "services_llm_py",
+      "community": 4,
+      "norm_label": "llm.py"
+    },
+    {
+      "label": "get_llm()",
+      "file_type": "code",
+      "source_file": "services/llm.py",
+      "source_location": "L6",
+      "id": "services_llm_get_llm",
+      "community": 4,
+      "norm_label": "get_llm()"
+    },
+    {
+      "label": "Factory to return the appropriate LangChain ChatModel instance.",
+      "file_type": "rationale",
+      "source_file": "services/llm.py",
+      "source_location": "L7",
+      "id": "services_llm_rationale_7",
+      "community": 4,
+      "norm_label": "factory to return the appropriate langchain chatmodel instance."
+    },
+    {
+      "label": "session.py",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": "L1",
+      "id": "services_session_py",
+      "community": 5,
+      "norm_label": "session.py"
+    },
+    {
+      "label": "Session",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": "L7",
+      "id": "services_session_session",
+      "community": 5,
+      "norm_label": "session"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": "L8",
+      "id": "services_session_session_init",
+      "community": 5,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".set_model()",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": "L13",
+      "id": "services_session_session_set_model",
+      "community": 5,
+      "norm_label": ".set_model()"
+    },
+    {
+      "label": ".add_user_message()",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": "L17",
+      "id": "services_session_session_add_user_message",
+      "community": 5,
+      "norm_label": ".add_user_message()"
+    },
+    {
+      "label": ".add_ai_message()",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": "L20",
+      "id": "services_session_session_add_ai_message",
+      "community": 5,
+      "norm_label": ".add_ai_message()"
+    },
+    {
+      "label": ".get_messages()",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": "L23",
+      "id": "services_session_session_get_messages",
+      "community": 5,
+      "norm_label": ".get_messages()"
+    },
+    {
+      "label": ".clear_messages()",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": "L26",
+      "id": "services_session_session_clear_messages",
+      "community": 5,
+      "norm_label": ".clear_messages()"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/__init__.py",
+      "source_location": "L1",
+      "id": "services_init_py",
+      "community": 21,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "anthropic.py",
+      "file_type": "code",
+      "source_file": "services/providers/anthropic.py",
+      "source_location": "L1",
+      "id": "services_providers_anthropic_py",
+      "community": 12,
+      "norm_label": "anthropic.py"
+    },
+    {
+      "label": "get_model()",
+      "file_type": "code",
+      "source_file": "services/providers/anthropic.py",
+      "source_location": "L4",
+      "id": "providers_anthropic_get_model",
+      "community": 12,
+      "norm_label": "get_model()"
+    },
+    {
+      "label": "gemini.py",
+      "file_type": "code",
+      "source_file": "services/providers/gemini.py",
+      "source_location": "L1",
+      "id": "services_providers_gemini_py",
+      "community": 13,
+      "norm_label": "gemini.py"
+    },
+    {
+      "label": "get_model()",
+      "file_type": "code",
+      "source_file": "services/providers/gemini.py",
+      "source_location": "L4",
+      "id": "providers_gemini_get_model",
+      "community": 13,
+      "norm_label": "get_model()"
+    },
+    {
+      "label": "mock.py",
+      "file_type": "code",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L1",
+      "id": "services_providers_mock_py",
+      "community": 7,
+      "norm_label": "mock.py"
+    },
+    {
+      "label": "MockChatModel",
+      "file_type": "code",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L7",
+      "id": "providers_mock_mockchatmodel",
+      "community": 7,
+      "norm_label": "mockchatmodel"
+    },
+    {
+      "label": "BaseChatModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "basechatmodel",
+      "community": 7,
+      "norm_label": "basechatmodel"
+    },
+    {
+      "label": "._generate()",
+      "file_type": "code",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L8",
+      "id": "providers_mock_mockchatmodel_generate",
+      "community": 7,
+      "norm_label": "._generate()"
+    },
+    {
+      "label": "._astream()",
+      "file_type": "code",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L11",
+      "id": "providers_mock_mockchatmodel_astream",
+      "community": 7,
+      "norm_label": "._astream()"
+    },
+    {
+      "label": "_llm_type()",
+      "file_type": "code",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L19",
+      "id": "providers_mock_llm_type",
+      "community": 7,
+      "norm_label": "_llm_type()"
+    },
+    {
+      "label": "get_model()",
+      "file_type": "code",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L22",
+      "id": "providers_mock_get_model",
+      "community": 7,
+      "norm_label": "get_model()"
+    },
+    {
+      "label": "openai.py",
+      "file_type": "code",
+      "source_file": "services/providers/openai.py",
+      "source_location": "L1",
+      "id": "services_providers_openai_py",
+      "community": 15,
+      "norm_label": "openai.py"
+    },
+    {
+      "label": "get_model()",
+      "file_type": "code",
+      "source_file": "services/providers/openai.py",
+      "source_location": "L4",
+      "id": "providers_openai_get_model",
+      "community": 15,
+      "norm_label": "get_model()"
+    },
+    {
+      "label": "openrouter.py",
+      "file_type": "code",
+      "source_file": "services/providers/openrouter.py",
+      "source_location": "L1",
+      "id": "services_providers_openrouter_py",
+      "community": 14,
+      "norm_label": "openrouter.py"
+    },
+    {
+      "label": "get_model()",
+      "file_type": "code",
+      "source_file": "services/providers/openrouter.py",
+      "source_location": "L4",
+      "id": "providers_openrouter_get_model",
+      "community": 14,
+      "norm_label": "get_model()"
+    },
+    {
+      "label": "app.py",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L1",
+      "id": "tui_app_py",
+      "community": 0,
+      "norm_label": "app.py"
+    },
+    {
+      "label": "CustomHeader",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L17",
+      "id": "tui_app_customheader",
+      "community": 3,
+      "norm_label": "customheader"
+    },
+    {
+      "label": "Static",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "static",
+      "community": 3,
+      "norm_label": "static"
+    },
+    {
+      "label": ".compose()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L18",
+      "id": "tui_app_customheader_compose",
+      "community": 3,
+      "norm_label": ".compose()"
+    },
+    {
+      "label": "LataiApp",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L22",
+      "id": "tui_app_lataiapp",
+      "community": 0,
+      "norm_label": "lataiapp"
+    },
+    {
+      "label": "App",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "app",
+      "community": 0,
+      "norm_label": "app"
+    },
+    {
+      "label": ".compose()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L142",
+      "id": "tui_app_lataiapp_compose",
+      "community": 3,
+      "norm_label": ".compose()"
+    },
+    {
+      "label": ".on_mount()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L155",
+      "id": "tui_app_lataiapp_on_mount",
+      "community": 3,
+      "norm_label": ".on_mount()"
+    },
+    {
+      "label": ".action_open_menu()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L180",
+      "id": "tui_app_lataiapp_action_open_menu",
+      "community": 0,
+      "norm_label": ".action_open_menu()"
+    },
+    {
+      "label": ".on_button_pressed()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L185",
+      "id": "tui_app_lataiapp_on_button_pressed",
+      "community": 0,
+      "norm_label": ".on_button_pressed()"
+    },
+    {
+      "label": ".on_command_menu_model_selected()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L191",
+      "id": "tui_app_lataiapp_on_command_menu_model_selected",
+      "community": 0,
+      "norm_label": ".on_command_menu_model_selected()"
+    },
+    {
+      "label": ".on_command_menu_theme_selected()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L206",
+      "id": "tui_app_lataiapp_on_command_menu_theme_selected",
+      "community": 0,
+      "norm_label": ".on_command_menu_theme_selected()"
+    },
+    {
+      "label": ".on_input_submitted()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L216",
+      "id": "tui_app_lataiapp_on_input_submitted",
+      "community": 0,
+      "norm_label": ".on_input_submitted()"
+    },
+    {
+      "label": "stream_response()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L254",
+      "id": "tui_app_stream_response",
+      "community": 0,
+      "norm_label": "stream_response()"
+    },
+    {
+      "label": "app2.py",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L1",
+      "id": "tui_app2_py",
+      "community": 0,
+      "norm_label": "app2.py"
+    },
+    {
+      "label": "CustomHeader",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L16",
+      "id": "tui_app2_customheader",
+      "community": 3,
+      "norm_label": "customheader"
+    },
+    {
+      "label": ".compose()",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L17",
+      "id": "tui_app2_customheader_compose",
+      "community": 3,
+      "norm_label": ".compose()"
+    },
+    {
+      "label": "LataiApp",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L20",
+      "id": "tui_app2_lataiapp",
+      "community": 0,
+      "norm_label": "lataiapp"
+    },
+    {
+      "label": ".compose()",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L174",
+      "id": "tui_app2_lataiapp_compose",
+      "community": 3,
+      "norm_label": ".compose()"
+    },
+    {
+      "label": ".on_mount()",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L184",
+      "id": "tui_app2_lataiapp_on_mount",
+      "community": 0,
+      "norm_label": ".on_mount()"
+    },
+    {
+      "label": ".on_button_pressed()",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L201",
+      "id": "tui_app2_lataiapp_on_button_pressed",
+      "community": 0,
+      "norm_label": ".on_button_pressed()"
+    },
+    {
+      "label": ".on_option_list_option_selected()",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L210",
+      "id": "tui_app2_lataiapp_on_option_list_option_selected",
+      "community": 0,
+      "norm_label": ".on_option_list_option_selected()"
+    },
+    {
+      "label": ".on_input_submitted()",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L231",
+      "id": "tui_app2_lataiapp_on_input_submitted",
+      "community": 0,
+      "norm_label": ".on_input_submitted()"
+    },
+    {
+      "label": "stream_response()",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L254",
+      "id": "tui_app2_stream_response",
+      "community": 0,
+      "norm_label": "stream_response()"
+    },
+    {
+      "label": "'ascii', 'blank', 'block', 'dashed', 'double', 'heavy', 'hidden', 'hkey', 'inner",
+      "file_type": "rationale",
+      "source_file": "tui/app2.py",
+      "source_location": "L21",
+      "id": "tui_app2_rationale_21",
+      "community": 0,
+      "norm_label": "'ascii', 'blank', 'block', 'dashed', 'double', 'heavy', 'hidden', 'hkey', 'inner"
+    },
+    {
+      "label": "chat_view.py",
+      "file_type": "code",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L1",
+      "id": "tui_chat_view_py",
+      "community": 2,
+      "norm_label": "chat_view.py"
+    },
+    {
+      "label": "ThinkingIndicator",
+      "file_type": "code",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L31",
+      "id": "tui_chat_view_thinkingindicator",
+      "community": 2,
+      "norm_label": "thinkingindicator"
+    },
+    {
+      "label": ".on_mount()",
+      "file_type": "code",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L32",
+      "id": "tui_chat_view_thinkingindicator_on_mount",
+      "community": 2,
+      "norm_label": ".on_mount()"
+    },
+    {
+      "label": ".update_frame()",
+      "file_type": "code",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L44",
+      "id": "tui_chat_view_thinkingindicator_update_frame",
+      "community": 2,
+      "norm_label": ".update_frame()"
+    },
+    {
+      "label": "ChatView",
+      "file_type": "code",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L49",
+      "id": "tui_chat_view_chatview",
+      "community": 2,
+      "norm_label": "chatview"
+    },
+    {
+      "label": "ScrollableContainer",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "scrollablecontainer",
+      "community": 2,
+      "norm_label": "scrollablecontainer"
+    },
+    {
+      "label": ".add_message()",
+      "file_type": "code",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L50",
+      "id": "tui_chat_view_chatview_add_message",
+      "community": 2,
+      "norm_label": ".add_message()"
+    },
+    {
+      "label": ".update_message()",
+      "file_type": "code",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L63",
+      "id": "tui_chat_view_chatview_update_message",
+      "community": 2,
+      "norm_label": ".update_message()"
+    },
+    {
+      "label": ".show_loading()",
+      "file_type": "code",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L71",
+      "id": "tui_chat_view_chatview_show_loading",
+      "community": 2,
+      "norm_label": ".show_loading()"
+    },
+    {
+      "label": ".hide_loading()",
+      "file_type": "code",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L76",
+      "id": "tui_chat_view_chatview_hide_loading",
+      "community": 2,
+      "norm_label": ".hide_loading()"
+    },
+    {
+      "label": "command_menu.py",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L1",
+      "id": "tui_command_menu_py",
+      "community": 1,
+      "norm_label": "command_menu.py"
+    },
+    {
+      "label": "CommandMenu",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L48",
+      "id": "tui_command_menu_commandmenu",
+      "community": 1,
+      "norm_label": "commandmenu"
+    },
+    {
+      "label": "Container",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "container",
+      "community": 2,
+      "norm_label": "container"
+    },
+    {
+      "label": "ModelSelected",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L64",
+      "id": "tui_command_menu_modelselected",
+      "community": 1,
+      "norm_label": "modelselected"
+    },
+    {
+      "label": "Message",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "message",
+      "community": 1,
+      "norm_label": "message"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L65",
+      "id": "tui_command_menu_modelselected_init",
+      "community": 1,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": "ThemeSelected",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L69",
+      "id": "tui_command_menu_themeselected",
+      "community": 1,
+      "norm_label": "themeselected"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L70",
+      "id": "tui_command_menu_themeselected_init",
+      "community": 1,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".compose()",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L140",
+      "id": "tui_command_menu_commandmenu_compose",
+      "community": 1,
+      "norm_label": ".compose()"
+    },
+    {
+      "label": ".on_mount()",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L146",
+      "id": "tui_command_menu_commandmenu_on_mount",
+      "community": 1,
+      "norm_label": ".on_mount()"
+    },
+    {
+      "label": ".open()",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L151",
+      "id": "tui_command_menu_commandmenu_open",
+      "community": 1,
+      "norm_label": ".open()"
+    },
+    {
+      "label": ".close()",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L156",
+      "id": "tui_command_menu_commandmenu_close",
+      "community": 1,
+      "norm_label": ".close()"
+    },
+    {
+      "label": "._build_menu()",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L163",
+      "id": "tui_command_menu_commandmenu_build_menu",
+      "community": 1,
+      "norm_label": "._build_menu()"
+    },
+    {
+      "label": ".on_key()",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L206",
+      "id": "tui_command_menu_commandmenu_on_key",
+      "community": 1,
+      "norm_label": ".on_key()"
+    },
+    {
+      "label": ".on_option_list_option_selected()",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L214",
+      "id": "tui_command_menu_commandmenu_on_option_list_option_selected",
+      "community": 1,
+      "norm_label": ".on_option_list_option_selected()"
+    },
+    {
+      "label": "Centered overlay command palette.      Navigation:       \u2022 Main menu  \u2192  Models",
+      "file_type": "rationale",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L49",
+      "id": "tui_command_menu_rationale_49",
+      "community": 1,
+      "norm_label": "centered overlay command palette.      navigation:       \u2022 main menu  \u2192  models"
+    },
+    {
+      "label": "Show the menu, optionally jumping straight to a sub-menu.",
+      "file_type": "rationale",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L152",
+      "id": "tui_command_menu_rationale_152",
+      "community": 1,
+      "norm_label": "show the menu, optionally jumping straight to a sub-menu."
+    },
+    {
+      "label": "Hide and reset to main menu.",
+      "file_type": "rationale",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L157",
+      "id": "tui_command_menu_rationale_157",
+      "community": 1,
+      "norm_label": "hide and reset to main menu."
+    },
+    {
+      "label": "input_bar.py",
+      "file_type": "code",
+      "source_file": "tui/input_bar.py",
+      "source_location": "L1",
+      "id": "tui_input_bar_py",
+      "community": 3,
+      "norm_label": "input_bar.py"
+    },
+    {
+      "label": "InputBar",
+      "file_type": "code",
+      "source_file": "tui/input_bar.py",
+      "source_location": "L5",
+      "id": "tui_input_bar_inputbar",
+      "community": 3,
+      "norm_label": "inputbar"
+    },
+    {
+      "label": ".compose()",
+      "file_type": "code",
+      "source_file": "tui/input_bar.py",
+      "source_location": "L6",
+      "id": "tui_input_bar_inputbar_compose",
+      "community": 3,
+      "norm_label": ".compose()"
+    },
+    {
+      "label": ".focus_input()",
+      "file_type": "code",
+      "source_file": "tui/input_bar.py",
+      "source_location": "L15",
+      "id": "tui_input_bar_inputbar_focus_input",
+      "community": 3,
+      "norm_label": ".focus_input()"
+    },
+    {
+      "label": "message.py",
+      "file_type": "code",
+      "source_file": "tui/message.py",
+      "source_location": "L1",
+      "id": "tui_message_py",
+      "community": 2,
+      "norm_label": "message.py"
+    },
+    {
+      "label": "ChatMessage",
+      "file_type": "code",
+      "source_file": "tui/message.py",
+      "source_location": "L7",
+      "id": "tui_message_chatmessage",
+      "community": 2,
+      "norm_label": "chatmessage"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "tui/message.py",
+      "source_location": "L10",
+      "id": "tui_message_chatmessage_init",
+      "community": 2,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".compose()",
+      "file_type": "code",
+      "source_file": "tui/message.py",
+      "source_location": "L16",
+      "id": "tui_message_chatmessage_compose",
+      "community": 2,
+      "norm_label": ".compose()"
+    },
+    {
+      "label": ".watch_content()",
+      "file_type": "code",
+      "source_file": "tui/message.py",
+      "source_location": "L26",
+      "id": "tui_message_chatmessage_watch_content",
+      "community": 2,
+      "norm_label": ".watch_content()"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "tui/__init__.py",
+      "source_location": "L1",
+      "id": "tui_init_py",
+      "community": 22,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "config.py",
+      "file_type": "code",
+      "source_file": "utils/config.py",
+      "source_location": "L1",
+      "id": "utils_config_py",
+      "community": 4,
+      "norm_label": "config.py"
+    },
+    {
+      "label": "get_api_key()",
+      "file_type": "code",
+      "source_file": "utils/config.py",
+      "source_location": "L7",
+      "id": "utils_config_get_api_key",
+      "community": 4,
+      "norm_label": "get_api_key()"
+    },
+    {
+      "label": "Retrieve the API key for a given provider from environment variables.",
+      "file_type": "rationale",
+      "source_file": "utils/config.py",
+      "source_location": "L8",
+      "id": "utils_config_rationale_8",
+      "community": 4,
+      "norm_label": "retrieve the api key for a given provider from environment variables."
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "utils/__init__.py",
+      "source_location": "L1",
+      "id": "utils_init_py",
+      "community": 23,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "AGENTS.md",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "id": "agents_md",
+      "community": 28,
+      "norm_label": "agents.md"
+    },
+    {
+      "label": "CLAUDE.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L1",
+      "id": "claude_md",
+      "community": 29,
+      "norm_label": "claude.md"
+    },
+    {
+      "label": "GEMINI.md",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L1",
+      "id": "gemini_md",
+      "community": 6,
+      "norm_label": "gemini.md"
+    },
+    {
+      "label": "Project: LangGraph Chat TUI",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L1",
+      "id": "latai_gemini_project_langgraph_chat_tui",
+      "community": 6,
+      "norm_label": "project: langgraph chat tui"
+    },
+    {
+      "label": "Identity",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L3",
+      "id": "latai_gemini_identity",
+      "community": 6,
+      "norm_label": "identity"
+    },
+    {
+      "label": "Code Style",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L7",
+      "id": "latai_gemini_code_style",
+      "community": 6,
+      "norm_label": "code style"
+    },
+    {
+      "label": "Instructions",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L17",
+      "id": "latai_gemini_instructions",
+      "community": 6,
+      "norm_label": "instructions"
+    },
+    {
+      "label": "Architecture Rules",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L20",
+      "id": "latai_gemini_architecture_rules",
+      "community": 6,
+      "norm_label": "architecture rules"
+    },
+    {
+      "label": "Supported Providers",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L29",
+      "id": "latai_gemini_supported_providers",
+      "community": 6,
+      "norm_label": "supported providers"
+    },
+    {
+      "label": "Naming",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L37",
+      "id": "latai_gemini_naming",
+      "community": 6,
+      "norm_label": "naming"
+    },
+    {
+      "label": "Commands",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L44",
+      "id": "latai_gemini_commands",
+      "community": 6,
+      "norm_label": "commands"
+    },
+    {
+      "label": "What to Avoid",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L49",
+      "id": "latai_gemini_what_to_avoid",
+      "community": 6,
+      "norm_label": "what to avoid"
+    },
+    {
+      "label": "Streaming",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L57",
+      "id": "latai_gemini_streaming",
+      "community": 6,
+      "norm_label": "streaming"
+    },
+    {
+      "label": "graphify",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L62",
+      "id": "latai_gemini_graphify",
+      "community": 6,
+      "norm_label": "graphify"
+    },
+    {
+      "label": "chat-agent.md",
+      "file_type": "document",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L1",
+      "id": "docs_chat_agent_md",
+      "community": 27,
+      "norm_label": "chat-agent.md"
+    },
+    {
+      "label": "LangGraph Simple Agent Specification (Gemini LLM Node)",
+      "file_type": "document",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L1",
+      "id": "docs_chat_agent_langgraph_simple_agent_specification_gemini_llm_node",
+      "community": 27,
+      "norm_label": "langgraph simple agent specification (gemini llm node)"
+    },
+    {
+      "label": "Overview",
+      "file_type": "document",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L3",
+      "id": "docs_chat_agent_overview",
+      "community": 27,
+      "norm_label": "overview"
+    },
+    {
+      "label": "Graph Structure",
+      "file_type": "document",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L14",
+      "id": "docs_chat_agent_graph_structure",
+      "community": 27,
+      "norm_label": "graph structure"
+    },
+    {
+      "label": "Nodes",
+      "file_type": "document",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L16",
+      "id": "docs_chat_agent_nodes",
+      "community": 27,
+      "norm_label": "nodes"
+    },
+    {
+      "label": "1. `gemini_llm_node`",
+      "file_type": "document",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L18",
+      "id": "docs_chat_agent_1_gemini_llm_node",
+      "community": 27,
+      "norm_label": "1. `gemini_llm_node`"
+    },
+    {
+      "label": "State Schema",
+      "file_type": "document",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L28",
+      "id": "docs_chat_agent_state_schema",
+      "community": 27,
+      "norm_label": "state schema"
+    },
+    {
+      "label": "Compiled LangGraph Instance",
+      "file_type": "code",
+      "source_file": "agent/graph.py",
+      "source_location": 19,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 9,
+      "norm_label": "compiled langgraph instance",
+      "id": "agent_graph_graph"
+    },
+    {
+      "label": "Session Manager Class",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": 6,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 24,
+      "norm_label": "session manager class",
+      "id": "services_session_session_class"
+    },
+    {
+      "label": "Global Session Singleton",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": 30,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 4,
+      "norm_label": "global session singleton",
+      "id": "services_session_session_instance"
+    },
+    {
+      "label": "Mock LLM Implementation",
+      "file_type": "code",
+      "source_file": "services/providers/mock.py",
+      "source_location": 7,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 4,
+      "norm_label": "mock llm implementation",
+      "id": "services_providers_mock_mockchatmodel"
+    },
+    {
+      "label": "Application Entry Point",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": 9,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 25,
+      "norm_label": "application entry point",
+      "id": "main_main"
+    },
+    {
+      "label": "Graph Debugging Script",
+      "file_type": "code",
+      "source_file": "debug_graph.py",
+      "source_location": 12,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 9,
+      "norm_label": "graph debugging script",
+      "id": "debug_graph_debug"
+    },
+    {
+      "label": "LLM Provider Abstraction",
+      "file_type": "rationale",
+      "source_file": "services/llm.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 4,
+      "norm_label": "llm provider abstraction",
+      "id": "rationale_llm_provider_factory"
+    },
+    {
+      "label": "Runtime Model Swapping",
+      "file_type": "concept",
+      "source_file": "commands/model.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 4,
+      "norm_label": "runtime model swapping",
+      "id": "concept_runtime_model_swapping"
+    },
+    {
+      "label": "UI Layer Isolation",
+      "file_type": "rationale",
+      "source_file": "GEMINI.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 0,
+      "norm_label": "ui layer isolation",
+      "id": "arch_ui_isolation"
+    },
+    {
+      "label": "Token-by-Token Streaming",
+      "file_type": "rationale",
+      "source_file": "GEMINI.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 0,
+      "norm_label": "token-by-token streaming",
+      "id": "arch_streaming"
+    },
+    {
+      "label": "LLM Provider Factory",
+      "file_type": "rationale",
+      "source_file": "GEMINI.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 26,
+      "norm_label": "llm provider factory",
+      "id": "arch_llm_factory"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "debug_graph.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "debug_graph_py",
+      "target": "latai_debug_graph_debug"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "main_py",
+      "target": "latai_main_main"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".gemini/settings.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gemini_settings_json",
+      "target": "gemini_settings_hooks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".gemini/settings.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gemini_settings_hooks",
+      "target": "gemini_settings_hooks_beforetool"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent/graph.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agent_graph_py",
+      "target": "agent_graph_llm_node"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent/graph.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agent_graph_py",
+      "target": "agent_graph_build_graph"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agent/graph.py",
+      "source_location": 8,
+      "weight": 1.0,
+      "source": "agent_graph_llm_node",
+      "target": "services_llm_get_llm"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agent/graph.py",
+      "source_location": 14,
+      "weight": 1.0,
+      "source": "agent_graph_build_graph",
+      "target": "agent_graph_llm_node"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agent/graph.py",
+      "source_location": 8,
+      "weight": 1.0,
+      "source": "agent_graph_llm_node",
+      "target": "services_session_session_instance"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agent/graph.py",
+      "source_location": 7,
+      "weight": 1.0,
+      "source": "agent_graph_llm_node",
+      "target": "agent_state_agentstate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent/state.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agent_state_py",
+      "target": "agent_state_agentstate"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "agent/state.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agent_state_agentstate",
+      "target": "typeddict"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "commands/base.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_base_py",
+      "target": "commands_base_is_command"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "commands/base.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_base_py",
+      "target": "commands_base_parse_command"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app.py",
+      "source_location": "L223",
+      "weight": 1.0,
+      "source": "tui_app_lataiapp_on_input_submitted",
+      "target": "commands_base_is_command"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app2.py",
+      "source_location": "L240",
+      "weight": 1.0,
+      "source": "tui_app2_lataiapp_on_input_submitted",
+      "target": "commands_base_is_command"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app.py",
+      "source_location": "L224",
+      "weight": 1.0,
+      "source": "tui_app_lataiapp_on_input_submitted",
+      "target": "commands_base_parse_command"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app2.py",
+      "source_location": "L241",
+      "weight": 1.0,
+      "source": "tui_app2_lataiapp_on_input_submitted",
+      "target": "commands_base_parse_command"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "commands/model.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_model_py",
+      "target": "commands_model_execute"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "commands/model.py",
+      "source_location": 17,
+      "weight": 1.0,
+      "source": "commands_model_execute",
+      "target": "services_session_session_instance"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "commands/model.py",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "commands_model_execute",
+      "target": "concept_runtime_model_swapping"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_llm_py",
+      "target": "services_llm_get_llm"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_llm_rationale_7",
+      "target": "services_llm_get_llm"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "services/llm.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "services_llm_get_llm",
+      "target": "utils_config_get_api_key"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "services/llm.py",
+      "source_location": 10,
+      "weight": 1.0,
+      "source": "services_llm_get_llm",
+      "target": "services_providers_mock_mockchatmodel"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "services/llm.py",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "services_llm_get_llm",
+      "target": "rationale_llm_provider_factory"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/session.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_session_py",
+      "target": "services_session_session"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/session.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_session_session",
+      "target": "services_session_session_init"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/session.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_session_session",
+      "target": "services_session_session_set_model"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/session.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_session_session",
+      "target": "services_session_session_add_user_message"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/session.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_session_session",
+      "target": "services_session_session_add_ai_message"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/session.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_session_session",
+      "target": "services_session_session_get_messages"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/session.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_session_session",
+      "target": "services_session_session_clear_messages"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/anthropic.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_providers_anthropic_py",
+      "target": "providers_anthropic_get_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/gemini.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_providers_gemini_py",
+      "target": "providers_gemini_get_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_providers_mock_py",
+      "target": "providers_mock_mockchatmodel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_providers_mock_py",
+      "target": "providers_mock_llm_type"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_providers_mock_py",
+      "target": "providers_mock_get_model"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "providers_mock_mockchatmodel",
+      "target": "basechatmodel"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "providers_mock_mockchatmodel",
+      "target": "providers_mock_mockchatmodel_generate"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "providers_mock_mockchatmodel",
+      "target": "providers_mock_mockchatmodel_astream"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "providers_mock_get_model",
+      "target": "providers_mock_mockchatmodel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/openai.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_providers_openai_py",
+      "target": "providers_openai_get_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/openrouter.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_providers_openrouter_py",
+      "target": "providers_openrouter_get_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_py",
+      "target": "tui_app_customheader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_py",
+      "target": "tui_app_lataiapp"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L239",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_py",
+      "target": "tui_app_stream_response"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_customheader",
+      "target": "static"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_customheader",
+      "target": "tui_app_customheader_compose"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L143",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp_compose",
+      "target": "tui_app_customheader"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app_customheader",
+      "target": "tui_chat_view_chatview"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app.py",
+      "source_location": "L8",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app_customheader",
+      "target": "tui_input_bar_inputbar"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app.py",
+      "source_location": "L9",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app_customheader",
+      "target": "tui_command_menu_commandmenu"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_customheader_compose",
+      "target": "static"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L171",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp_on_mount",
+      "target": "static"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_customheader",
+      "target": "static"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_customheader_compose",
+      "target": "static"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L208",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp_on_mount",
+      "target": "static"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_thinkingindicator",
+      "target": "static"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "app"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L142",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_compose"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L155",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_on_mount"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L165",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_action_open_menu"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L170",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_on_button_pressed"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L176",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_on_command_menu_model_selected"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L191",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_on_command_menu_theme_selected"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L201",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_on_input_submitted"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": null,
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_chat_view_chatview"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": null,
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_input_bar_inputbar"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": null,
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_command_menu_commandmenu"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "tui/app.py",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "arch_streaming"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app.py",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "arch_ui_isolation"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "tui/app.py",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app2_lataiapp"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "tui/app.py",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "docs_chat_agent_md"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp",
+      "target": "app"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app.py",
+      "source_location": "L144",
+      "weight": 1.0,
+      "source": "tui_app_lataiapp_compose",
+      "target": "tui_chat_view_chatview"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app.py",
+      "source_location": "L149",
+      "weight": 1.0,
+      "source": "tui_app_lataiapp_compose",
+      "target": "tui_input_bar_inputbar"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app.py",
+      "source_location": "L151",
+      "weight": 1.0,
+      "source": "tui_app_lataiapp_compose",
+      "target": "tui_command_menu_commandmenu"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L229",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp_on_input_submitted",
+      "target": "tui_app_stream_response"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_py",
+      "target": "tui_app2_customheader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_py",
+      "target": "tui_app2_lataiapp"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L254",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_py",
+      "target": "tui_app2_stream_response"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_customheader",
+      "target": "tui_app2_customheader_compose"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L185",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp_compose",
+      "target": "tui_app2_customheader"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app2.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app2_customheader",
+      "target": "tui_chat_view_chatview"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app2.py",
+      "source_location": "L8",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app2_customheader",
+      "target": "tui_input_bar_inputbar"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app2.py",
+      "source_location": "L9",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app2_customheader",
+      "target": "tui_command_menu_commandmenu"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L184",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp",
+      "target": "tui_app2_lataiapp_compose"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L194",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp",
+      "target": "tui_app2_lataiapp_on_mount"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L201",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp",
+      "target": "tui_app2_lataiapp_on_button_pressed"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L210",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp",
+      "target": "tui_app2_lataiapp_on_option_list_option_selected"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L231",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp",
+      "target": "tui_app2_lataiapp_on_input_submitted"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_rationale_21",
+      "target": "tui_app2_lataiapp"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app2.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app2_lataiapp",
+      "target": "tui_chat_view_chatview"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app2.py",
+      "source_location": "L8",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app2_lataiapp",
+      "target": "tui_input_bar_inputbar"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app2.py",
+      "source_location": "L9",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app2_lataiapp",
+      "target": "tui_command_menu_commandmenu"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app2.py",
+      "source_location": "L186",
+      "weight": 1.0,
+      "source": "tui_app2_lataiapp_compose",
+      "target": "tui_chat_view_chatview"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app2.py",
+      "source_location": "L191",
+      "weight": 1.0,
+      "source": "tui_app2_lataiapp_compose",
+      "target": "tui_input_bar_inputbar"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app2.py",
+      "source_location": "L192",
+      "weight": 1.0,
+      "source": "tui_app2_lataiapp_compose",
+      "target": "tui_command_menu_commandmenu"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L246",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp_on_input_submitted",
+      "target": "tui_app2_stream_response"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_py",
+      "target": "tui_chat_view_thinkingindicator"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_py",
+      "target": "tui_chat_view_chatview"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_thinkingindicator",
+      "target": "tui_chat_view_thinkingindicator_on_mount"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_thinkingindicator",
+      "target": "tui_chat_view_thinkingindicator_update_frame"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_chatview_show_loading",
+      "target": "tui_chat_view_thinkingindicator"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L4",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_chat_view_thinkingindicator",
+      "target": "tui_message_chatmessage"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tui/chat_view.py",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "tui_chat_view_chatview",
+      "target": "tui_chat_view_thinkingindicator"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_chatview",
+      "target": "scrollablecontainer"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_chatview",
+      "target": "tui_chat_view_chatview_add_message"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_chatview",
+      "target": "tui_chat_view_chatview_update_message"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_chatview",
+      "target": "tui_chat_view_chatview_show_loading"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_chatview",
+      "target": "tui_chat_view_chatview_hide_loading"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": null,
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_chatview",
+      "target": "tui_message_chatmessage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/chat_view.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "tui_chat_view_chatview_add_message",
+      "target": "tui_message_chatmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_py",
+      "target": "tui_command_menu_commandmenu"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_py",
+      "target": "tui_command_menu_modelselected"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_py",
+      "target": "tui_command_menu_themeselected"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu",
+      "target": "container"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L140",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu",
+      "target": "tui_command_menu_commandmenu_compose"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L146",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu",
+      "target": "tui_command_menu_commandmenu_on_mount"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L151",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu",
+      "target": "tui_command_menu_commandmenu_open"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L156",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu",
+      "target": "tui_command_menu_commandmenu_close"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L163",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu",
+      "target": "tui_command_menu_commandmenu_build_menu"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L206",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu",
+      "target": "tui_command_menu_commandmenu_on_key"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L214",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu",
+      "target": "tui_command_menu_commandmenu_on_option_list_option_selected"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_rationale_49",
+      "target": "tui_command_menu_commandmenu"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/input_bar.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_input_bar_inputbar",
+      "target": "container"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/message.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_message_chatmessage",
+      "target": "container"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_modelselected",
+      "target": "message"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_modelselected",
+      "target": "tui_command_menu_modelselected_init"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L225",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu_on_option_list_option_selected",
+      "target": "tui_command_menu_modelselected"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_themeselected",
+      "target": "message"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_modelselected_init",
+      "target": "tui_command_menu_themeselected_init"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_themeselected",
+      "target": "tui_command_menu_themeselected_init"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L230",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu_on_option_list_option_selected",
+      "target": "tui_command_menu_themeselected"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L147",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu_on_mount",
+      "target": "tui_command_menu_commandmenu_build_menu"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L153",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu_open",
+      "target": "tui_command_menu_commandmenu_build_menu"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L152",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_rationale_152",
+      "target": "tui_command_menu_commandmenu_open"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L159",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu_close",
+      "target": "tui_command_menu_commandmenu_build_menu"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L209",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu_on_key",
+      "target": "tui_command_menu_commandmenu_close"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L226",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu_on_option_list_option_selected",
+      "target": "tui_command_menu_commandmenu_close"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L157",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_rationale_157",
+      "target": "tui_command_menu_commandmenu_close"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L211",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu_on_key",
+      "target": "tui_command_menu_commandmenu_build_menu"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L218",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu_on_option_list_option_selected",
+      "target": "tui_command_menu_commandmenu_build_menu"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/input_bar.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_input_bar_py",
+      "target": "tui_input_bar_inputbar"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/input_bar.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_input_bar_inputbar",
+      "target": "tui_input_bar_inputbar_compose"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/input_bar.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_input_bar_inputbar",
+      "target": "tui_input_bar_inputbar_focus_input"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/message.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_message_py",
+      "target": "tui_message_chatmessage"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/message.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_message_chatmessage",
+      "target": "tui_message_chatmessage_init"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/message.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_message_chatmessage",
+      "target": "tui_message_chatmessage_compose"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/message.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_message_chatmessage",
+      "target": "tui_message_chatmessage_watch_content"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_py",
+      "target": "utils_config_get_api_key"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_rationale_8",
+      "target": "utils_config_get_api_key"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gemini_md",
+      "target": "latai_gemini_project_langgraph_chat_tui"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_identity"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_code_style"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_instructions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_architecture_rules"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_supported_providers"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_naming"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_commands"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_what_to_avoid"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_streaming"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_graphify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_chat_agent_md",
+      "target": "docs_chat_agent_langgraph_simple_agent_specification_gemini_llm_node"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_chat_agent_langgraph_simple_agent_specification_gemini_llm_node",
+      "target": "docs_chat_agent_overview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_chat_agent_langgraph_simple_agent_specification_gemini_llm_node",
+      "target": "docs_chat_agent_graph_structure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_chat_agent_langgraph_simple_agent_specification_gemini_llm_node",
+      "target": "docs_chat_agent_state_schema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_chat_agent_graph_structure",
+      "target": "docs_chat_agent_nodes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_chat_agent_nodes",
+      "target": "docs_chat_agent_1_gemini_llm_node"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "debug_graph.py",
+      "source_location": 20,
+      "weight": 1.0,
+      "source": "debug_graph_debug",
+      "target": "agent_graph_graph"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "hyper_llm_orchestration",
+      "label": "LLM Orchestration Layer",
+      "nodes": [
+        "services_llm_get_llm",
+        "services_providers_mock_mockchatmodel",
+        "agent_graph_llm_node"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "services/llm.py"
+    },
+    {
+      "id": "hyper_state_management",
+      "label": "Centralized State Management",
+      "nodes": [
+        "services_session_session_instance",
+        "agent_state_agentstate",
+        "agent_graph_llm_node"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "services/session.py"
+    },
+    {
+      "id": "tui_lifecycle_pattern",
+      "label": "TUI Orchestration Pattern",
+      "nodes": [
+        "tui_app_lataiapp",
+        "tui_chat_view_chatview",
+        "tui_input_bar_inputbar",
+        "tui_command_menu_commandmenu"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tui/app.py"
+    },
+    {
+      "id": "swappable_provider_pattern",
+      "label": "Swappable LLM Provider Pattern",
+      "nodes": [
+        "arch_llm_factory",
+        "utils_config_get_api_key",
+        "tui_command_menu_commandmenu"
+      ],
+      "relation": "implement",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "GEMINI.md"
+    }
+  ],
+  "built_at_commit": "2ec551c8460bc6c661543a9d3b747424dcb03398"
+}
