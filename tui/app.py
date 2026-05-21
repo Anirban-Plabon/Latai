@@ -11,8 +11,7 @@ from commands.base import is_command, parse_command
 from commands import model as cmd_model
 from services.session import session
 from agent.graph import graph
-from langchain_core.messages import HumanMessage
-
+from res.ui.welcome import animate_welcome
 
 class CustomHeader(Static):
     def compose(self) -> ComposeResult:
@@ -20,13 +19,19 @@ class CustomHeader(Static):
 
 
 class LataiApp(App):
-    CSS = """
-    LataiApp {
-        background: transparent;
-        layers: base overlay;
+    # --- Developer Local Theme ---
+    DEV_LOCAL_THEME = {
+        "primary": "#FFB6C1",    # Light Pink
+        "secondary": "#ADD8E6"   # Light Blue
     }
 
-    CustomHeader {
+    CSS = f"""
+    LataiApp {{
+        background: transparent;
+        layers: base overlay;
+    }}
+
+    CustomHeader {{
         dock: top;
         height: 1;
         background: transparent;
@@ -34,13 +39,13 @@ class LataiApp(App):
         text-style: bold;
         content-align: center middle;
         padding-top: 1;
-    }
+    }}
 
-    #app-title {
+    #app-title {{
         background: transparent;
-    }
+    }}
 
-    ChatView {
+    ChatView {{
         height: 1fr;
         background: transparent;
         padding: 0;
@@ -48,66 +53,91 @@ class LataiApp(App):
         scrollbar-gutter: stable;
         scrollbar-size-vertical: 1;
         scrollbar-color: #4a7a9b;
-        scrollbar-color-hover: #ADD8E6;
-        scrollbar-color-active: #ADD8E6;
+        scrollbar-color-hover: {DEV_LOCAL_THEME['secondary']};
+        scrollbar-color-active: {DEV_LOCAL_THEME['secondary']};
         scrollbar-background: transparent;
-    }
+    }}
 
     /* ── Messages ───────────────────────────────────────────────────────── */
-    ChatMessage {
+    ChatMessage {{
         margin: 1 2;
         padding: 1 1 0 1;
         height: auto;
         background: transparent;
-    }
+    }}
 
-    ChatMessage.user {
+    ChatMessage.user {{
         background: #1e1e1e;
-        border-left: tall #FFB6C1;
-    }
+        border-left: tall {DEV_LOCAL_THEME['primary']};
+    }}
 
-    ChatMessage.ai {
+    ChatMessage.ai {{
         background: transparent;
-        border-left: tall #ADD8E6;
-    }
+        border-left: tall {DEV_LOCAL_THEME['secondary']};
+    }}
 
-    .message-row     { height: auto; }
-    .message-role    { color: white; text-style: bold; width: auto; min-width: 5; }
-    .message-content { color: #e0e0e0; width: 1fr; height: auto; }
+    .message-row     {{ height: auto; }}
+    .message-role    {{ color: white; text-style: bold; width: auto; min-width: 5; }}
+    .message-content {{ color: #e0e0e0; width: 1fr; height: auto; }}
 
-    Markdown {
+    Markdown {{
         height: auto;
         overflow-y: hidden;
         background: transparent;
         margin: 0;
         padding: 0;
-    }
+    }}
+
+    MarkdownFenceWithCopy {{
+        position: relative;
+        margin: 1 0;
+    }}
+
+    #copy-btn {{
+        position: absolute;
+        offset-y: 0;
+        offset-x: 100%;
+        margin-left: -5;
+        min-width: 4;
+        width: 4;
+        height: 1;
+        border: none;
+        padding: 0;
+        background: #333333;
+        color: #aaaaaa;
+        text-style: bold;
+    }}
+
+    #copy-btn:hover {{
+        background: #444444;
+        color: white;
+    }}
 
     /* ── Input area ─────────────────────────────────────────────────────── */
-    InputBar {
+    InputBar {{
         height: auto;
         min-height: 3;
         width: 1fr;
         background: transparent;
         padding: 0 1;
-        border: round #ADD8E6;
+        border: round {DEV_LOCAL_THEME['primary']};
         align: left middle;
-    }
+    }}
 
-    .rd-row    { height: auto; min-height: 1; width: 1fr; }
-    .rd-prefix { color: $text-muted; width: 2; content-align: left middle; text-style: bold; }
+    .rd-row    {{ height: auto; min-height: 1; width: 1fr; }}
+    .rd-prefix {{ color: $text-muted; width: 2; content-align: left middle; text-style: bold; }}
 
-    Input {
+    Input {{
         border: none;
         background: transparent;
         width: 1fr;
         height: auto;
         min-height: 1;
-    }
-    Input:focus { border: none; }
+    }}
+    Input:focus {{ border: none; }}
 
     /* ── Command palette button ─────────────────────────────────────────── */
-    #cmd-menu-btn {
+    #cmd-menu-btn {{
         min-width: 5;
         width: auto;
         min-height: 1;
@@ -119,17 +149,17 @@ class LataiApp(App):
         color: #888888;
         text-style: bold;
         content-align: center middle;
-    }
-    #cmd-menu-btn:hover { color: white; }
+    }}
+    #cmd-menu-btn:hover {{ color: white; }}
 
     /* ── Bottom zone ────────────────────────────────────────────────────── */
-    .bottom-zone  { dock: bottom; height: auto; background: transparent; }
-    .zone-separator { color: #333333; margin: 0; }
-    .input-wrapper  { layout: horizontal; height: 3; margin: 0 2 1 2; align: left middle; }
+    .bottom-zone  {{ dock: bottom; height: auto; background: transparent; }}
+    .zone-separator {{ color: #333333; margin: 0; }}
+    .input-wrapper  {{ layout: horizontal; height: 3; margin: 0 2 1 2; align: left middle; }}
 
-    Rule { color: #333333; margin: 0 2; height: 1; }
+    Rule {{ color: #333333; margin: 0 2; height: 1; }}
 
-    .loading-text { color: #aaaaaa; margin: 1 2; }
+    .loading-text {{ color: #aaaaaa; margin: 1 2; }}
     """
 
     BINDINGS = [
@@ -151,28 +181,16 @@ class LataiApp(App):
         yield CommandMenu(id="cmd-menu")          # full-screen overlay
 
     # ── Lifecycle ─────────────────────────────────────────────────────────────
+    from textual.widgets import Static
 
     def on_mount(self) -> None:
         self.query_one(InputBar).focus_input()
         chat_view = self.query_one("#chat-view", ChatView)
-        
-        # Pink: #FFB6C1, Blue: #ADD8E6
-        welcome_markup = (
-            "[#FFB6C1]  ____________  [/][#ADD8E6]____________  [/]\n"
-            "[#FFB6C1]||    //\\\\    ||[/][#ADD8E6]    //\\\\    ||[/]\n"
-            "[#FFB6C1]||   //  \\\\   ||[/][#ADD8E6]   //  \\\\   ||[/]\n"
-            "[#FFB6C1]||  //    \\\\  ||[/][#ADD8E6]  //    \\\\  ||   [/]Welcome to LATAI !!\n"
-            "[#FFB6C1]|| //      \\\\ ||[/][#ADD8E6] //      \\\\ ||[/]\n"
-            "[#FFB6C1]||//        \\\\||[/][#ADD8E6]//        \\\\||[/]"
-        )
-        
-        chat_view.add_message(
-            "system",
-            Static(welcome_markup)
-        )
-        chat_view.add_message(
-            "system",
-            f"Active model: {session.provider}/{session.model_name}"
+        animate_welcome(
+            self, 
+            chat_view, 
+            color_start=self.DEV_LOCAL_THEME["primary"], 
+            color_end=self.DEV_LOCAL_THEME["secondary"]
         )
 
     # ── Actions ───────────────────────────────────────────────────────────────

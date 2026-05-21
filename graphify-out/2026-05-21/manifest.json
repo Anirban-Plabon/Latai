@@ -1,0 +1,177 @@
+{
+  "/mnt/l/projects/Latai/debug_graph.py": {
+    "mtime": 1779202016.5148509,
+    "ast_hash": "74e58f40398f531bc69fb2b3658c9a3f",
+    "semantic_hash": "74e58f40398f531bc69fb2b3658c9a3f"
+  },
+  "/mnt/l/projects/Latai/main.py": {
+    "mtime": 1779202016.5463922,
+    "ast_hash": "e816d0b58c5beb192bfc3e8cdaf7044f",
+    "semantic_hash": "e816d0b58c5beb192bfc3e8cdaf7044f"
+  },
+  "/mnt/l/projects/Latai/.gemini/settings.json": {
+    "mtime": 1779204407.9955535,
+    "ast_hash": "8ce69198b56a0694f81e85bd4f33373b",
+    "semantic_hash": "8ce69198b56a0694f81e85bd4f33373b"
+  },
+  "/mnt/l/projects/Latai/agent/graph.py": {
+    "mtime": 1779202016.3168254,
+    "ast_hash": "04880ce391b12178d83044417ae3ab13",
+    "semantic_hash": "04880ce391b12178d83044417ae3ab13"
+  },
+  "/mnt/l/projects/Latai/agent/prompts.py": {
+    "mtime": 1779202016.3168254,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/mnt/l/projects/Latai/agent/state.py": {
+    "mtime": 1779202016.3433504,
+    "ast_hash": "422c4f3857779f55b0e756340e8d6c4b",
+    "semantic_hash": "422c4f3857779f55b0e756340e8d6c4b"
+  },
+  "/mnt/l/projects/Latai/agent/tools.py": {
+    "mtime": 1779202016.3461099,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/mnt/l/projects/Latai/agent/__init__.py": {
+    "mtime": 1779202016.168265,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/mnt/l/projects/Latai/commands/ask.py": {
+    "mtime": 1779202016.489643,
+    "ast_hash": "224eb1bdbede9d7f96f74d8e228bcdd7",
+    "semantic_hash": "224eb1bdbede9d7f96f74d8e228bcdd7"
+  },
+  "/mnt/l/projects/Latai/commands/base.py": {
+    "mtime": 1779202016.503222,
+    "ast_hash": "61c5b09f67529b4387fd133de2350fcc",
+    "semantic_hash": "61c5b09f67529b4387fd133de2350fcc"
+  },
+  "/mnt/l/projects/Latai/commands/model.py": {
+    "mtime": 1779202016.5148509,
+    "ast_hash": "2a4bdebb2e2fca186b72af8900e459bc",
+    "semantic_hash": "2a4bdebb2e2fca186b72af8900e459bc"
+  },
+  "/mnt/l/projects/Latai/commands/__init__.py": {
+    "mtime": 1779202016.3576975,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/mnt/l/projects/Latai/services/llm.py": {
+    "mtime": 1779202016.6786032,
+    "ast_hash": "88df889fb029520efd30ac94685b3e1e",
+    "semantic_hash": "88df889fb029520efd30ac94685b3e1e"
+  },
+  "/mnt/l/projects/Latai/services/session.py": {
+    "mtime": 1779202016.9229298,
+    "ast_hash": "d5047d18f47db29ef9dedf221dbe4052",
+    "semantic_hash": "d5047d18f47db29ef9dedf221dbe4052"
+  },
+  "/mnt/l/projects/Latai/services/__init__.py": {
+    "mtime": 1779202016.568508,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/mnt/l/projects/Latai/services/providers/anthropic.py": {
+    "mtime": 1779202016.847814,
+    "ast_hash": "13a4da6bee0b0fd522a912a281bc7e96",
+    "semantic_hash": "13a4da6bee0b0fd522a912a281bc7e96"
+  },
+  "/mnt/l/projects/Latai/services/providers/gemini.py": {
+    "mtime": 1779202016.8613348,
+    "ast_hash": "70d281d754fcd308c63f560c2566585d",
+    "semantic_hash": "70d281d754fcd308c63f560c2566585d"
+  },
+  "/mnt/l/projects/Latai/services/providers/mock.py": {
+    "mtime": 1779202016.8772707,
+    "ast_hash": "0ab480eac08e18d2f694d7cd56f70c6d",
+    "semantic_hash": "0ab480eac08e18d2f694d7cd56f70c6d"
+  },
+  "/mnt/l/projects/Latai/services/providers/openai.py": {
+    "mtime": 1779202016.8970466,
+    "ast_hash": "3861c7c0fa65ff57554a1fc8b8de8254",
+    "semantic_hash": "3861c7c0fa65ff57554a1fc8b8de8254"
+  },
+  "/mnt/l/projects/Latai/services/providers/openrouter.py": {
+    "mtime": 1779202016.908728,
+    "ast_hash": "0ff2b2a0caccbbf2d16b1f759b321e9d",
+    "semantic_hash": "0ff2b2a0caccbbf2d16b1f759b321e9d"
+  },
+  "/mnt/l/projects/Latai/tui/app.py": {
+    "mtime": 1779219556.0371037,
+    "ast_hash": "6d300d5f4a7e0a1a3e027ef99c31d725",
+    "semantic_hash": ""
+  },
+  "/mnt/l/projects/Latai/tui/app2.py": {
+    "mtime": 1779219562.561168,
+    "ast_hash": "b7b6035b7bd5f714c06dd67f34453c0b",
+    "semantic_hash": ""
+  },
+  "/mnt/l/projects/Latai/tui/chat_view.py": {
+    "mtime": 1779219549.6216106,
+    "ast_hash": "069f2d3de6676a44df7c12313250ca9a",
+    "semantic_hash": ""
+  },
+  "/mnt/l/projects/Latai/tui/command_menu.py": {
+    "mtime": 1779202017.176397,
+    "ast_hash": "08fef52bda2fbdab5b80f28f765a3e37",
+    "semantic_hash": "08fef52bda2fbdab5b80f28f765a3e37"
+  },
+  "/mnt/l/projects/Latai/tui/input_bar.py": {
+    "mtime": 1779202017.194544,
+    "ast_hash": "92508cf0d5619419675548027ca5ca69",
+    "semantic_hash": "92508cf0d5619419675548027ca5ca69"
+  },
+  "/mnt/l/projects/Latai/tui/message.py": {
+    "mtime": 1779208466.6873033,
+    "ast_hash": "e8a937012bfd97991444476c21f4dc50",
+    "semantic_hash": ""
+  },
+  "/mnt/l/projects/Latai/tui/__init__.py": {
+    "mtime": 1779202016.9286733,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/mnt/l/projects/Latai/utils/config.py": {
+    "mtime": 1779202017.287135,
+    "ast_hash": "674792a81930555d8698d0876edc0af0",
+    "semantic_hash": "674792a81930555d8698d0876edc0af0"
+  },
+  "/mnt/l/projects/Latai/utils/__init__.py": {
+    "mtime": 1779202017.2125778,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/mnt/l/projects/Latai/AGENTS.md": {
+    "mtime": 1779202016.0890126,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/mnt/l/projects/Latai/CLAUDE.md": {
+    "mtime": 1779202016.1046975,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/mnt/l/projects/Latai/GEMINI.md": {
+    "mtime": 1779204407.9780614,
+    "ast_hash": "6c56c5893e37385c186a392147ec91bc",
+    "semantic_hash": "6c56c5893e37385c186a392147ec91bc"
+  },
+  "/mnt/l/projects/Latai/requirements.txt": {
+    "mtime": 1779202016.5609686,
+    "ast_hash": "542e29fddd8d43143783e3d8fa07eabf",
+    "semantic_hash": "542e29fddd8d43143783e3d8fa07eabf"
+  },
+  "/mnt/l/projects/Latai/docs/chat-agent.md": {
+    "mtime": 1779202016.5307028,
+    "ast_hash": "c8ff003224077116a85531b59bfa3ee9",
+    "semantic_hash": "c8ff003224077116a85531b59bfa3ee9"
+  },
+  "/mnt/l/projects/Latai/docs/starter1.txt": {
+    "mtime": 1779205717.4894075,
+    "ast_hash": "7a882bdc30ad88b8b46e1c550afd072e",
+    "semantic_hash": "7a882bdc30ad88b8b46e1c550afd072e"
+  }
+}

@@ -218,7 +218,7 @@
       "source_file": "/mnt/l/projects/Latai/commands/base.py",
       "source_location": "L1",
       "id": "mnt_l_projects_latai_commands_base_py",
-      "community": 0,
+      "community": 3,
       "norm_label": "base.py"
     },
     {
@@ -227,7 +227,7 @@
       "source_file": "/mnt/l/projects/Latai/commands/base.py",
       "source_location": "L1",
       "id": "commands_base_is_command",
-      "community": 0,
+      "community": 3,
       "norm_label": "is_command()"
     },
     {
@@ -236,7 +236,7 @@
       "source_file": "/mnt/l/projects/Latai/commands/base.py",
       "source_location": "L4",
       "id": "commands_base_parse_command",
-      "community": 0,
+      "community": 3,
       "norm_label": "parse_command()"
     },
     {
@@ -264,132 +264,6 @@
       "source_location": "L1",
       "id": "mnt_l_projects_latai_commands_init_py",
       "community": 37,
-      "norm_label": "__init__.py"
-    },
-    {
-      "label": "loaders.py",
-      "file_type": "code",
-      "source_file": "res/ui/loaders.py",
-      "source_location": "L1",
-      "id": "res_ui_loaders_py",
-      "community": 2,
-      "norm_label": "loaders.py"
-    },
-    {
-      "label": "ThinkingIndicator",
-      "file_type": "code",
-      "source_file": "res/ui/loaders.py",
-      "source_location": "L118",
-      "id": "ui_loaders_thinkingindicator",
-      "community": 2,
-      "norm_label": "thinkingindicator"
-    },
-    {
-      "label": "Static",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "id": "static",
-      "community": 3,
-      "norm_label": "static"
-    },
-    {
-      "label": ".on_mount()",
-      "file_type": "code",
-      "source_file": "res/ui/loaders.py",
-      "source_location": "L119",
-      "id": "ui_loaders_thinkingindicator_on_mount",
-      "community": 2,
-      "norm_label": ".on_mount()"
-    },
-    {
-      "label": "._generate_color_steps()",
-      "file_type": "code",
-      "source_file": "res/ui/loaders.py",
-      "source_location": "L132",
-      "id": "ui_loaders_thinkingindicator_generate_color_steps",
-      "community": 2,
-      "norm_label": "._generate_color_steps()"
-    },
-    {
-      "label": ".update_frame()",
-      "file_type": "code",
-      "source_file": "res/ui/loaders.py",
-      "source_location": "L162",
-      "id": "ui_loaders_thinkingindicator_update_frame",
-      "community": 2,
-      "norm_label": ".update_frame()"
-    },
-    {
-      "label": "welcome.py",
-      "file_type": "code",
-      "source_file": "res/ui/welcome.py",
-      "source_location": "L1",
-      "id": "res_ui_welcome_py",
-      "community": 42,
-      "norm_label": "welcome.py"
-    },
-    {
-      "label": "hex_to_rgb()",
-      "file_type": "code",
-      "source_file": "res/ui/welcome.py",
-      "source_location": "L59",
-      "id": "ui_welcome_hex_to_rgb",
-      "community": 42,
-      "norm_label": "hex_to_rgb()"
-    },
-    {
-      "label": "get_interpolated_hex()",
-      "file_type": "code",
-      "source_file": "res/ui/welcome.py",
-      "source_location": "L64",
-      "id": "ui_welcome_get_interpolated_hex",
-      "community": 42,
-      "norm_label": "get_interpolated_hex()"
-    },
-    {
-      "label": "animate_welcome()",
-      "file_type": "code",
-      "source_file": "res/ui/welcome.py",
-      "source_location": "L72",
-      "id": "ui_welcome_animate_welcome",
-      "community": 42,
-      "norm_label": "animate_welcome()"
-    },
-    {
-      "label": "Converts #RRGGBB to (R, G, B) tuple.",
-      "file_type": "rationale",
-      "source_file": "res/ui/welcome.py",
-      "source_location": "L60",
-      "id": "ui_welcome_rationale_60",
-      "community": 42,
-      "norm_label": "converts #rrggbb to (r, g, b) tuple."
-    },
-    {
-      "label": "Returns hex string for a color between two RGB tuples.",
-      "file_type": "rationale",
-      "source_file": "res/ui/welcome.py",
-      "source_location": "L65",
-      "id": "ui_welcome_rationale_65",
-      "community": 42,
-      "norm_label": "returns hex string for a color between two rgb tuples."
-    },
-    {
-      "label": "Mounts and animates the welcome logo with a unified structure and dynamic colors",
-      "file_type": "rationale",
-      "source_file": "res/ui/welcome.py",
-      "source_location": "L79",
-      "id": "ui_welcome_rationale_79",
-      "community": 42,
-      "norm_label": "mounts and animates the welcome logo with a unified structure and dynamic colors"
-    },
-    {
-      "label": "__init__.py",
-      "file_type": "code",
-      "source_file": "res/ui/__init__.py",
-      "source_location": "L1",
-      "id": "res_ui_init_py",
-      "community": 41,
       "norm_label": "__init__.py"
     },
     {
@@ -641,32 +515,41 @@
       "source_file": "tui/app.py",
       "source_location": "L1",
       "id": "tui_app_py",
-      "community": 0,
+      "community": 3,
       "norm_label": "app.py"
     },
     {
       "label": "CustomHeader",
       "file_type": "code",
       "source_file": "tui/app.py",
-      "source_location": "L16",
+      "source_location": "L17",
       "id": "tui_app_customheader",
-      "community": 3,
+      "community": 0,
       "norm_label": "customheader"
+    },
+    {
+      "label": "Static",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "static",
+      "community": 0,
+      "norm_label": "static"
     },
     {
       "label": ".compose()",
       "file_type": "code",
       "source_file": "tui/app.py",
-      "source_location": "L17",
+      "source_location": "L18",
       "id": "tui_app_customheader_compose",
-      "community": 3,
+      "community": 0,
       "norm_label": ".compose()"
     },
     {
       "label": "LataiApp",
       "file_type": "code",
       "source_file": "tui/app.py",
-      "source_location": "L21",
+      "source_location": "L22",
       "id": "tui_app_lataiapp",
       "community": 0,
       "norm_label": "lataiapp"
@@ -684,25 +567,34 @@
       "label": ".compose()",
       "file_type": "code",
       "source_file": "tui/app.py",
-      "source_location": "L147",
+      "source_location": "L142",
       "id": "tui_app_lataiapp_compose",
-      "community": 3,
+      "community": 0,
       "norm_label": ".compose()"
     },
     {
       "label": ".on_mount()",
       "file_type": "code",
       "source_file": "tui/app.py",
-      "source_location": "L161",
+      "source_location": "L156",
       "id": "tui_app_lataiapp_on_mount",
-      "community": 42,
+      "community": 0,
       "norm_label": ".on_mount()"
+    },
+    {
+      "label": ".on_mount_prev()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L288",
+      "id": "tui_app_lataiapp_on_mount_prev",
+      "community": 0,
+      "norm_label": ".on_mount_prev()"
     },
     {
       "label": ".action_open_menu()",
       "file_type": "code",
       "source_file": "tui/app.py",
-      "source_location": "L173",
+      "source_location": "L313",
       "id": "tui_app_lataiapp_action_open_menu",
       "community": 0,
       "norm_label": ".action_open_menu()"
@@ -711,7 +603,7 @@
       "label": ".on_button_pressed()",
       "file_type": "code",
       "source_file": "tui/app.py",
-      "source_location": "L178",
+      "source_location": "L318",
       "id": "tui_app_lataiapp_on_button_pressed",
       "community": 0,
       "norm_label": ".on_button_pressed()"
@@ -720,7 +612,7 @@
       "label": ".on_command_menu_model_selected()",
       "file_type": "code",
       "source_file": "tui/app.py",
-      "source_location": "L184",
+      "source_location": "L324",
       "id": "tui_app_lataiapp_on_command_menu_model_selected",
       "community": 0,
       "norm_label": ".on_command_menu_model_selected()"
@@ -729,7 +621,7 @@
       "label": ".on_command_menu_theme_selected()",
       "file_type": "code",
       "source_file": "tui/app.py",
-      "source_location": "L199",
+      "source_location": "L339",
       "id": "tui_app_lataiapp_on_command_menu_theme_selected",
       "community": 0,
       "norm_label": ".on_command_menu_theme_selected()"
@@ -738,18 +630,18 @@
       "label": ".on_input_submitted()",
       "file_type": "code",
       "source_file": "tui/app.py",
-      "source_location": "L209",
+      "source_location": "L349",
       "id": "tui_app_lataiapp_on_input_submitted",
-      "community": 0,
+      "community": 3,
       "norm_label": ".on_input_submitted()"
     },
     {
       "label": "stream_response()",
       "file_type": "code",
       "source_file": "tui/app.py",
-      "source_location": "L247",
+      "source_location": "L387",
       "id": "tui_app_stream_response",
-      "community": 0,
+      "community": 3,
       "norm_label": "stream_response()"
     },
     {
@@ -758,7 +650,7 @@
       "source_file": "tui/app2.py",
       "source_location": "L1",
       "id": "tui_app2_py",
-      "community": 0,
+      "community": 3,
       "norm_label": "app2.py"
     },
     {
@@ -767,7 +659,7 @@
       "source_file": "tui/app2.py",
       "source_location": "L16",
       "id": "tui_app2_customheader",
-      "community": 3,
+      "community": 0,
       "norm_label": "customheader"
     },
     {
@@ -776,7 +668,7 @@
       "source_file": "tui/app2.py",
       "source_location": "L17",
       "id": "tui_app2_customheader_compose",
-      "community": 3,
+      "community": 0,
       "norm_label": ".compose()"
     },
     {
@@ -794,7 +686,7 @@
       "source_file": "tui/app2.py",
       "source_location": "L174",
       "id": "tui_app2_lataiapp_compose",
-      "community": 3,
+      "community": 0,
       "norm_label": ".compose()"
     },
     {
@@ -830,7 +722,7 @@
       "source_file": "tui/app2.py",
       "source_location": "L231",
       "id": "tui_app2_lataiapp_on_input_submitted",
-      "community": 0,
+      "community": 3,
       "norm_label": ".on_input_submitted()"
     },
     {
@@ -839,7 +731,7 @@
       "source_file": "tui/app2.py",
       "source_location": "L254",
       "id": "tui_app2_stream_response",
-      "community": 0,
+      "community": 3,
       "norm_label": "stream_response()"
     },
     {
@@ -861,10 +753,37 @@
       "norm_label": "chat_view.py"
     },
     {
+      "label": "ThinkingIndicator",
+      "file_type": "code",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L123",
+      "id": "tui_chat_view_thinkingindicator",
+      "community": 2,
+      "norm_label": "thinkingindicator"
+    },
+    {
+      "label": ".on_mount()",
+      "file_type": "code",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L124",
+      "id": "tui_chat_view_thinkingindicator_on_mount",
+      "community": 2,
+      "norm_label": ".on_mount()"
+    },
+    {
+      "label": ".update_frame()",
+      "file_type": "code",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L136",
+      "id": "tui_chat_view_thinkingindicator_update_frame",
+      "community": 2,
+      "norm_label": ".update_frame()"
+    },
+    {
       "label": "ChatView",
       "file_type": "code",
       "source_file": "tui/chat_view.py",
-      "source_location": "L8",
+      "source_location": "L141",
       "id": "tui_chat_view_chatview",
       "community": 2,
       "norm_label": "chatview"
@@ -882,7 +801,7 @@
       "label": ".add_message()",
       "file_type": "code",
       "source_file": "tui/chat_view.py",
-      "source_location": "L9",
+      "source_location": "L142",
       "id": "tui_chat_view_chatview_add_message",
       "community": 2,
       "norm_label": ".add_message()"
@@ -891,7 +810,7 @@
       "label": ".update_message()",
       "file_type": "code",
       "source_file": "tui/chat_view.py",
-      "source_location": "L22",
+      "source_location": "L155",
       "id": "tui_chat_view_chatview_update_message",
       "community": 2,
       "norm_label": ".update_message()"
@@ -900,7 +819,7 @@
       "label": ".show_loading()",
       "file_type": "code",
       "source_file": "tui/chat_view.py",
-      "source_location": "L30",
+      "source_location": "L163",
       "id": "tui_chat_view_chatview_show_loading",
       "community": 2,
       "norm_label": ".show_loading()"
@@ -909,7 +828,7 @@
       "label": ".hide_loading()",
       "file_type": "code",
       "source_file": "tui/chat_view.py",
-      "source_location": "L35",
+      "source_location": "L168",
       "id": "tui_chat_view_chatview_hide_loading",
       "community": 2,
       "norm_label": ".hide_loading()"
@@ -1082,7 +1001,7 @@
       "source_file": "/mnt/l/projects/Latai/tui/input_bar.py",
       "source_location": "L1",
       "id": "mnt_l_projects_latai_tui_input_bar_py",
-      "community": 3,
+      "community": 0,
       "norm_label": "input_bar.py"
     },
     {
@@ -1091,7 +1010,7 @@
       "source_file": "/mnt/l/projects/Latai/tui/input_bar.py",
       "source_location": "L5",
       "id": "tui_input_bar_inputbar",
-      "community": 3,
+      "community": 0,
       "norm_label": "inputbar"
     },
     {
@@ -1100,7 +1019,7 @@
       "source_file": "/mnt/l/projects/Latai/tui/input_bar.py",
       "source_location": "L6",
       "id": "tui_input_bar_inputbar_compose",
-      "community": 3,
+      "community": 0,
       "norm_label": ".compose()"
     },
     {
@@ -1109,7 +1028,7 @@
       "source_file": "/mnt/l/projects/Latai/tui/input_bar.py",
       "source_location": "L15",
       "id": "tui_input_bar_inputbar_focus_input",
-      "community": 3,
+      "community": 0,
       "norm_label": ".focus_input()"
     },
     {
@@ -1392,42 +1311,6 @@
       "norm_label": "state schema"
     },
     {
-      "label": ".on_mount_prev()",
-      "file_type": "code",
-      "source_file": "tui/app.py",
-      "source_location": "L288",
-      "community": 3,
-      "norm_label": ".on_mount_prev()",
-      "id": "tui_app_lataiapp_on_mount_prev"
-    },
-    {
-      "label": "ThinkingIndicator",
-      "file_type": "code",
-      "source_file": "tui/chat_view.py",
-      "source_location": "L123",
-      "community": 2,
-      "norm_label": "thinkingindicator",
-      "id": "tui_chat_view_thinkingindicator"
-    },
-    {
-      "label": ".on_mount()",
-      "file_type": "code",
-      "source_file": "tui/chat_view.py",
-      "source_location": "L124",
-      "community": 2,
-      "norm_label": ".on_mount()",
-      "id": "tui_chat_view_thinkingindicator_on_mount"
-    },
-    {
-      "label": ".update_frame()",
-      "file_type": "code",
-      "source_file": "tui/chat_view.py",
-      "source_location": "L136",
-      "community": 2,
-      "norm_label": ".update_frame()",
-      "id": "tui_chat_view_thinkingindicator_update_frame"
-    },
-    {
       "label": "debug_graph.py",
       "file_type": "code",
       "source_file": "debug_graph.py",
@@ -1504,7 +1387,7 @@
       "file_type": "code",
       "source_file": "commands/base.py",
       "source_location": "L1",
-      "community": 0,
+      "community": 3,
       "norm_label": "base.py",
       "id": "commands_base_py"
     },
@@ -1612,7 +1495,7 @@
       "file_type": "code",
       "source_file": "tui/input_bar.py",
       "source_location": "L1",
-      "community": 3,
+      "community": 0,
       "norm_label": "input_bar.py",
       "id": "tui_input_bar_py"
     },
@@ -1812,9 +1695,9 @@
       "source_file": "/mnt/l/projects/Latai/debug_graph.py",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_debug_graph_py",
-      "target": "latai_debug_graph_debug"
+      "target": "latai_debug_graph_debug",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1832,9 +1715,9 @@
       "source_file": "/mnt/l/projects/Latai/main.py",
       "source_location": "L9",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_main_py",
-      "target": "latai_main_main"
+      "target": "latai_main_main",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1872,9 +1755,9 @@
       "source_file": "/mnt/l/projects/Latai/agent/graph.py",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_agent_graph_py",
-      "target": "agent_graph_llm_node"
+      "target": "agent_graph_llm_node",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1882,9 +1765,9 @@
       "source_file": "/mnt/l/projects/Latai/agent/graph.py",
       "source_location": "L11",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_agent_graph_py",
-      "target": "agent_graph_build_graph"
+      "target": "agent_graph_build_graph",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1953,9 +1836,9 @@
       "source_file": "/mnt/l/projects/Latai/agent/state.py",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_agent_state_py",
-      "target": "agent_state_agentstate"
+      "target": "agent_state_agentstate",
+      "confidence_score": 1.0
     },
     {
       "relation": "inherits",
@@ -1983,9 +1866,9 @@
       "source_file": "/mnt/l/projects/Latai/commands/base.py",
       "source_location": "L1",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_commands_base_py",
-      "target": "commands_base_is_command"
+      "target": "commands_base_is_command",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1993,9 +1876,9 @@
       "source_file": "/mnt/l/projects/Latai/commands/base.py",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_commands_base_py",
-      "target": "commands_base_parse_command"
+      "target": "commands_base_parse_command",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -2067,9 +1950,9 @@
       "source_file": "/mnt/l/projects/Latai/commands/model.py",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_commands_model_py",
-      "target": "commands_model_execute"
+      "target": "commands_model_execute",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2104,272 +1987,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "res/ui/loaders.py",
-      "source_location": "L117",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "res_ui_loaders_py",
-      "target": "ui_loaders_thinkingindicator"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "res/ui/loaders.py",
-      "source_location": "L117",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_loaders_thinkingindicator",
-      "target": "static"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "res/ui/loaders.py",
-      "source_location": "L118",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_loaders_thinkingindicator",
-      "target": "ui_loaders_thinkingindicator_on_mount"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "res/ui/loaders.py",
-      "source_location": "L132",
-      "weight": 1.0,
-      "source": "ui_loaders_thinkingindicator",
-      "target": "ui_loaders_thinkingindicator_generate_color_steps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "res/ui/loaders.py",
-      "source_location": "L130",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_loaders_thinkingindicator",
-      "target": "ui_loaders_thinkingindicator_update_frame"
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "tui/chat_view.py",
-      "source_location": "L5",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "tui_chat_view_chatview",
-      "target": "ui_loaders_thinkingindicator"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "tui/chat_view.py",
-      "source_location": "L31",
-      "weight": 1.0,
-      "source": "tui_chat_view_chatview_show_loading",
-      "target": "ui_loaders_thinkingindicator"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "tui/app.py",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tui_app_customheader",
-      "target": "static"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "tui/app.py",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tui_app_customheader_compose",
-      "target": "static"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "tui/app2.py",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tui_app2_customheader",
-      "target": "static"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "tui/app2.py",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tui_app2_customheader_compose",
-      "target": "static"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "tui/app2.py",
-      "source_location": "L208",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tui_app2_lataiapp_on_mount",
-      "target": "static"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "tui/app.py",
-      "source_location": "L171",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tui_app_lataiapp_on_mount",
-      "target": "static"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "tui/app.py",
-      "source_location": "L304",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tui_app_lataiapp_on_mount_prev",
-      "target": "static"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "tui/chat_view.py",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tui_chat_view_thinkingindicator",
-      "target": "static"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "res/ui/loaders.py",
-      "source_location": "L129",
-      "weight": 1.0,
-      "source": "ui_loaders_thinkingindicator_on_mount",
-      "target": "ui_loaders_thinkingindicator_generate_color_steps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "res/ui/loaders.py",
-      "source_location": "L140",
-      "weight": 1.0,
-      "source": "ui_loaders_thinkingindicator_generate_color_steps",
-      "target": "ui_welcome_hex_to_rgb"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "res/ui/welcome.py",
-      "source_location": "L59",
-      "weight": 1.0,
-      "source": "res_ui_welcome_py",
-      "target": "ui_welcome_hex_to_rgb",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "res/ui/welcome.py",
-      "source_location": "L64",
-      "weight": 1.0,
-      "source": "res_ui_welcome_py",
-      "target": "ui_welcome_get_interpolated_hex",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "res/ui/welcome.py",
-      "source_location": "L39",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "res_ui_welcome_py",
-      "target": "ui_welcome_animate_welcome"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "res/ui/welcome.py",
-      "source_location": "L81",
-      "weight": 1.0,
-      "source": "ui_welcome_animate_welcome",
-      "target": "ui_welcome_hex_to_rgb",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "res/ui/welcome.py",
-      "source_location": "L60",
-      "weight": 1.0,
-      "source": "ui_welcome_rationale_60",
-      "target": "ui_welcome_hex_to_rgb",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "res/ui/welcome.py",
-      "source_location": "L65",
-      "weight": 1.0,
-      "source": "ui_welcome_rationale_65",
-      "target": "ui_welcome_get_interpolated_hex",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "res/ui/welcome.py",
-      "source_location": "L79",
-      "weight": 1.0,
-      "source": "ui_welcome_rationale_79",
-      "target": "ui_welcome_animate_welcome",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "tui/app.py",
-      "source_location": "L159",
-      "weight": 1.0,
-      "source": "tui_app_lataiapp_on_mount",
-      "target": "ui_welcome_animate_welcome"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "/mnt/l/projects/Latai/services/llm.py",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_services_llm_py",
-      "target": "services_llm_get_llm"
+      "target": "services_llm_get_llm",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -2428,9 +2051,9 @@
       "source_file": "/mnt/l/projects/Latai/services/session.py",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_services_session_py",
-      "target": "services_session_session"
+      "target": "services_session_session",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2508,9 +2131,9 @@
       "source_file": "/mnt/l/projects/Latai/services/providers/anthropic.py",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_services_providers_anthropic_py",
-      "target": "providers_anthropic_get_model"
+      "target": "providers_anthropic_get_model",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2528,9 +2151,9 @@
       "source_file": "/mnt/l/projects/Latai/services/providers/gemini.py",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_services_providers_gemini_py",
-      "target": "providers_gemini_get_model"
+      "target": "providers_gemini_get_model",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2548,9 +2171,9 @@
       "source_file": "/mnt/l/projects/Latai/services/providers/mock.py",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_services_providers_mock_py",
-      "target": "providers_mock_mockchatmodel"
+      "target": "providers_mock_mockchatmodel",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2558,9 +2181,9 @@
       "source_file": "/mnt/l/projects/Latai/services/providers/mock.py",
       "source_location": "L19",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_services_providers_mock_py",
-      "target": "providers_mock_llm_type"
+      "target": "providers_mock_llm_type",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2568,9 +2191,9 @@
       "source_file": "/mnt/l/projects/Latai/services/providers/mock.py",
       "source_location": "L22",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_services_providers_mock_py",
-      "target": "providers_mock_get_model"
+      "target": "providers_mock_get_model",
+      "confidence_score": 1.0
     },
     {
       "relation": "inherits",
@@ -2649,9 +2272,9 @@
       "source_file": "/mnt/l/projects/Latai/services/providers/openai.py",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_services_providers_openai_py",
-      "target": "providers_openai_get_model"
+      "target": "providers_openai_get_model",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2669,9 +2292,9 @@
       "source_file": "/mnt/l/projects/Latai/services/providers/openrouter.py",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_services_providers_openrouter_py",
-      "target": "providers_openrouter_get_model"
+      "target": "providers_openrouter_get_model",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2712,6 +2335,16 @@
       "confidence_score": 1.0,
       "source": "tui_app_py",
       "target": "tui_app_stream_response"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_customheader",
+      "target": "static"
     },
     {
       "relation": "method",
@@ -2765,6 +2398,81 @@
       "target": "tui_command_menu_commandmenu"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_customheader_compose",
+      "target": "static"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L171",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp_on_mount",
+      "target": "static"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L304",
+      "weight": 1.0,
+      "source": "tui_app_lataiapp_on_mount_prev",
+      "target": "static",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_customheader",
+      "target": "static"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_customheader_compose",
+      "target": "static"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L208",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp_on_mount",
+      "target": "static"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_thinkingindicator",
+      "target": "static"
+    },
+    {
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "tui/app.py",
@@ -2793,6 +2501,16 @@
       "confidence_score": 1.0,
       "source": "tui_app_lataiapp",
       "target": "tui_app_lataiapp_on_mount"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L288",
+      "weight": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_on_mount_prev",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -2873,16 +2591,6 @@
       "confidence_score": 1.0,
       "source": "tui_app_lataiapp",
       "target": "tui_command_menu_commandmenu"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "tui/app.py",
-      "source_location": "L288",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tui_app_lataiapp",
-      "target": "tui_app_lataiapp_on_mount_prev"
     },
     {
       "relation": "implements",
@@ -3197,6 +2905,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tui/chat_view.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_py",
+      "target": "tui_chat_view_thinkingindicator"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
       "source_location": "L24",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -3204,13 +2922,54 @@
       "target": "tui_chat_view_chatview"
     },
     {
-      "relation": "contains",
+      "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "tui/chat_view.py",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "tui_chat_view_py",
+      "source": "tui_chat_view_thinkingindicator",
+      "target": "tui_chat_view_thinkingindicator_on_mount"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_thinkingindicator",
+      "target": "tui_chat_view_thinkingindicator_update_frame"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_chatview_show_loading",
+      "target": "tui_chat_view_thinkingindicator"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L4",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_chat_view_thinkingindicator",
+      "target": "tui_message_chatmessage"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tui/chat_view.py",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "tui_chat_view_chatview",
       "target": "tui_chat_view_thinkingindicator"
     },
     {
@@ -3275,16 +3034,6 @@
     },
     {
       "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "tui/chat_view.py",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "tui_chat_view_chatview",
-      "target": "tui_chat_view_thinkingindicator"
-    },
-    {
-      "relation": "calls",
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
@@ -3295,25 +3044,14 @@
       "target": "tui_message_chatmessage"
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "tui/chat_view.py",
-      "source_location": "L47",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tui_chat_view_chatview_show_loading",
-      "target": "tui_chat_view_thinkingindicator"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/mnt/l/projects/Latai/tui/command_menu.py",
       "source_location": "L48",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_tui_command_menu_py",
-      "target": "tui_command_menu_commandmenu"
+      "target": "tui_command_menu_commandmenu",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3321,9 +3059,9 @@
       "source_file": "/mnt/l/projects/Latai/tui/command_menu.py",
       "source_location": "L64",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_tui_command_menu_py",
-      "target": "tui_command_menu_modelselected"
+      "target": "tui_command_menu_modelselected",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3331,9 +3069,9 @@
       "source_file": "/mnt/l/projects/Latai/tui/command_menu.py",
       "source_location": "L69",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_tui_command_menu_py",
-      "target": "tui_command_menu_themeselected"
+      "target": "tui_command_menu_themeselected",
+      "confidence_score": 1.0
     },
     {
       "relation": "inherits",
@@ -3651,9 +3389,9 @@
       "source_file": "/mnt/l/projects/Latai/tui/input_bar.py",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_tui_input_bar_py",
-      "target": "tui_input_bar_inputbar"
+      "target": "tui_input_bar_inputbar",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -3726,24 +3464,14 @@
       "target": "tui_message_chatmessage_watch_content"
     },
     {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "tui/chat_view.py",
-      "source_location": "L4",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "tui_chat_view_thinkingindicator",
-      "target": "tui_message_chatmessage"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/mnt/l/projects/Latai/utils/config.py",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "mnt_l_projects_latai_utils_config_py",
-      "target": "utils_config_get_api_key"
+      "target": "utils_config_get_api_key",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -3934,26 +3662,6 @@
       "confidence_score": 1.0,
       "source": "docs_chat_agent_nodes",
       "target": "docs_chat_agent_1_gemini_llm_node"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "tui/chat_view.py",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tui_chat_view_thinkingindicator",
-      "target": "tui_chat_view_thinkingindicator_on_mount"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "tui/chat_view.py",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tui_chat_view_thinkingindicator",
-      "target": "tui_chat_view_thinkingindicator_update_frame"
     },
     {
       "relation": "references",

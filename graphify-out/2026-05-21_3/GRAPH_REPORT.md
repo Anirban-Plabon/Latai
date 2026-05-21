@@ -1,12 +1,12 @@
 # Graph Report - Latai  (2026-05-21)
 
 ## Corpus Check
-- 36 files · ~4,827 words
+- 36 files · ~4,445 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 189 nodes · 212 edges · 43 communities (31 shown, 12 thin omitted)
-- Extraction: 84% EXTRACTED · 16% INFERRED · 0% AMBIGUOUS · INFERRED: 33 edges (avg confidence: 0.72)
+- 183 nodes · 203 edges · 42 communities (30 shown, 12 thin omitted)
+- Extraction: 84% EXTRACTED · 16% INFERRED · 0% AMBIGUOUS · INFERRED: 32 edges (avg confidence: 0.71)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
@@ -36,7 +36,6 @@
 - [[_COMMUNITY_LLM Abstraction|LLM Abstraction]]
 - [[_COMMUNITY_Community 27|Community 27]]
 - [[_COMMUNITY_Community 30|Community 30]]
-- [[_COMMUNITY_Community 42|Community 42]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `LataiApp` - 17 edges
@@ -47,8 +46,8 @@
 6. `Project: LangGraph Chat TUI` - 11 edges
 7. `Session` - 8 edges
 8. `ChatMessage` - 8 edges
-9. `ThinkingIndicator` - 7 edges
-10. `get_llm()` - 7 edges
+9. `get_llm()` - 7 edges
+10. `CustomHeader` - 7 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `LataiApp` --implements--> `Token-by-Token Streaming`  [INFERRED]
@@ -68,18 +67,18 @@
 - **TUI Orchestration Pattern** — tui_app_lataiapp, tui_chat_view_chatview, tui_input_bar_inputbar, tui_command_menu_commandmenu [EXTRACTED 1.00]
 - **Swappable LLM Provider Pattern** — arch_llm_factory, utils_config_get_api_key, tui_command_menu_commandmenu [INFERRED 0.90]
 
-## Communities (43 total, 12 thin omitted)
+## Communities (42 total, 12 thin omitted)
 
 ### Community 0 - "TUI Application Core"
-Cohesion: 0.11
-Nodes (10): App, Token-by-Token Streaming, UI Layer Isolation, is_command(), parse_command(), LataiApp, 'ascii', 'blank', 'block', 'dashed', 'double', 'heavy', 'hidden', 'hkey', 'inner, stream_response() (+2 more)
+Cohesion: 0.10
+Nodes (11): App, Token-by-Token Streaming, UI Layer Isolation, is_command(), parse_command(), LataiApp, 'ascii', 'blank', 'block', 'dashed', 'double', 'heavy', 'hidden', 'hkey', 'inner, stream_response() (+3 more)
 
 ### Community 1 - "Command Interface"
 Cohesion: 0.20
 Nodes (7): Message, CommandMenu, ModelSelected, Show the menu, optionally jumping straight to a sub-menu., Hide and reset to main menu., Centered overlay command palette.      Navigation:       • Main menu  →  Models, ThemeSelected
 
 ### Community 2 - "Chat View Display"
-Cohesion: 0.12
+Cohesion: 0.13
 Nodes (6): Container, ScrollableContainer, ChatView, ThinkingIndicator, ChatMessage, ThinkingIndicator
 
 ### Community 3 - "UI Components"
@@ -106,10 +105,6 @@ Nodes (6): 1. `gemini_llm_node`, Graph Structure, LangGraph Simple Agent Specifi
 Cohesion: 0.20
 Nodes (6): LLM Provider Abstraction, get_llm(), Factory to return the appropriate LangChain ChatModel instance., Mock LLM Implementation, get_api_key(), Retrieve the API key for a given provider from environment variables.
 
-### Community 42 - "Community 42"
-Cohesion: 0.29
-Nodes (6): animate_welcome(), get_interpolated_hex(), hex_to_rgb(), Converts #RRGGBB to (R, G, B) tuple., Returns hex string for a color between two RGB tuples., Mounts and animates the welcome logo with a unified structure and dynamic colors
-
 ## Knowledge Gaps
 - **20 isolated node(s):** `BeforeTool`, `Identity`, `Code Style`, `Instructions`, `Architecture Rules` (+15 more)
   These have ≤1 connection - possible missing edges or undocumented components.
@@ -118,12 +113,12 @@ Nodes (6): animate_welcome(), get_interpolated_hex(), hex_to_rgb(), Converts #RR
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `LataiApp` connect `TUI Application Core` to `Command Interface`, `Chat View Display`, `UI Components`, `Community 42`, `Community 27`?**
-  _High betweenness centrality (0.100) - this node is a cross-community bridge._
+- **Why does `LataiApp` connect `TUI Application Core` to `Community 27`, `Command Interface`, `Chat View Display`, `UI Components`?**
+  _High betweenness centrality (0.090) - this node is a cross-community bridge._
 - **Why does `CommandMenu` connect `Command Interface` to `TUI Application Core`, `Chat View Display`, `UI Components`?**
-  _High betweenness centrality (0.077) - this node is a cross-community bridge._
+  _High betweenness centrality (0.075) - this node is a cross-community bridge._
 - **Why does `ChatView` connect `Chat View Display` to `TUI Application Core`, `UI Components`?**
-  _High betweenness centrality (0.064) - this node is a cross-community bridge._
+  _High betweenness centrality (0.061) - this node is a cross-community bridge._
 - **Are the 4 inferred relationships involving `LataiApp` (e.g. with `Token-by-Token Streaming` and `UI Layer Isolation`) actually correct?**
   _`LataiApp` has 4 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 5 inferred relationships involving `CommandMenu` (e.g. with `CustomHeader` and `CustomHeader`) actually correct?**

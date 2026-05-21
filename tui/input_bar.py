@@ -5,7 +5,7 @@ from textual.widgets import Input, Static, Button
 class InputBar(Container):
     def compose(self) -> ComposeResult:
         with Horizontal(classes="rd-row"):
-            yield Static("> ", classes="rd-prefix")
+            yield Static("❯ ", classes="rd-prefix")
             yield Input(
                 placeholder="Type a message or command (e.g., /model, /ask)...",
                 id="chat-input",

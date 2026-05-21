@@ -100,8 +100,8 @@
     "semantic_hash": ""
   },
   "F:\\Anirban_250509\\Projects\\Latai\\tui\\app.py": {
-    "mtime": 1779351911.3810427,
-    "ast_hash": "9ab26754ebad3c0f0a0cb83b987d26bc",
+    "mtime": 1779335234.4436848,
+    "ast_hash": "2c8095d7239ebf0357e86e2fbcb52a14",
     "semantic_hash": ""
   },
   "F:\\Anirban_250509\\Projects\\Latai\\tui\\app2.py": {
@@ -110,8 +110,8 @@
     "semantic_hash": ""
   },
   "F:\\Anirban_250509\\Projects\\Latai\\tui\\chat_view.py": {
-    "mtime": 1779344702.5790253,
-    "ast_hash": "62b6d9c374f66d42c36097788d2bfecb",
+    "mtime": 1779335553.883628,
+    "ast_hash": "0a0e8628f7f86f95164b78f7532d91b4",
     "semantic_hash": ""
   },
   "F:\\Anirban_250509\\Projects\\Latai\\tui\\command_menu.py": {
@@ -172,21 +172,6 @@
   "F:\\Anirban_250509\\Projects\\Latai\\docs\\starter1.txt": {
     "mtime": 1779244109.5315225,
     "ast_hash": "7a882bdc30ad88b8b46e1c550afd072e",
-    "semantic_hash": ""
-  },
-  "F:\\Anirban_250509\\Projects\\Latai\\res\\ui\\loaders.py": {
-    "mtime": 1779351932.6677833,
-    "ast_hash": "e29858934b0108c3aee15a6f359a09d3",
-    "semantic_hash": ""
-  },
-  "F:\\Anirban_250509\\Projects\\Latai\\res\\ui\\welcome.py": {
-    "mtime": 1779351893.3300292,
-    "ast_hash": "a6a02be783eed0228703dd04547c23c7",
-    "semantic_hash": ""
-  },
-  "F:\\Anirban_250509\\Projects\\Latai\\res\\ui\\__init__.py": {
-    "mtime": 1779344628.9691164,
-    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
     "semantic_hash": ""
   }
 }
