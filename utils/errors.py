@@ -10,7 +10,9 @@ def format_error_message(error: Exception | str) -> str:
     error_str = str(error)
     
     # Common error cleanup/translation logic
-    if "401" in error_str or "unauthorized" in error_str.lower():
+    if "400" in error_str or "invalid_argumant" in error_str.lower():
+        msg = "Invalid API Key: Please check your API key in config.yaml."    
+    elif "401" in error_str or "unauthorized" in error_str.lower():
         msg = "Authentication Failed: Please check your API key in config.yaml."
     elif "404" in error_str or "not found" in error_str.lower():
         msg = "Resource Not Found: The selected model or endpoint is unavailable."
@@ -22,4 +24,4 @@ def format_error_message(error: Exception | str) -> str:
         # Generic fallback, cleaning up potential tracebacks or tech-heavy strings
         msg = f"System Error: {error_str}"
 
-    return f"[bold red]❌ {msg}[/]"
+    return f"❌ {msg}"

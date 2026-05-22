@@ -7,7 +7,7 @@ class MarkdownFenceWithCopy(MarkdownFence):
     
     def compose(self) -> ComposeResult:
         yield from super().compose()
-        yield Button("📋", variant="primary", id="copy-btn")
+        yield Button("❐", variant="primary", id="copy-btn")
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
         if event.button.id == "copy-btn":
@@ -19,7 +19,7 @@ class MarkdownFenceWithCopy(MarkdownFence):
             
             # Reset button after 2 seconds
             def reset():
-                event.button.label = "📋"
+                event.button.label = "❐"
                 event.button.variant = "primary"
             self.set_timer(2.0, reset)
 
