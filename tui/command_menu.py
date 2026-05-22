@@ -9,6 +9,8 @@ from textual.message import Message
 
 # ── Data ──────────────────────────────────────────────────────────────────────
 
+from utils.config import get_configured_models
+
 TEXTUAL_THEMES = [
     "textual-dark",
     "textual-light",
@@ -21,12 +23,6 @@ TEXTUAL_THEMES = [
     "dracula",
     "solarized-light",
     "solarized-dark",
-]
-
-AVAILABLE_MODELS = [
-    ("Gemini 2.0 Flash",   "model_gemini"),
-    ("GPT-4o  (OpenAI)",   "model_openai"),
-    ("Mock    (test)",     "model_mock"),
 ]
 
 AVAILABLE_COMMANDS = [
@@ -183,8 +179,17 @@ class CommandMenu(Container):
         elif menu == MENU_MODELS:
             header.update("Select Model")
             hint.update("Esc  back")
-            for label, opt_id in AVAILABLE_MODELS:
-                ol.add_option(Option(label, id=opt_id))
+            configured = get_configured_models()
+            if not configured:
+                ol.add_option(Option("No providers configured", id="no_models", disabled=True))
+            else:
+                current_provider = None
+                for provider, label, model in configured:
+                    if provider != current_provider:
+                        current_provider = provider
+                        ol.add_option(Option(f"── {provider.upper()} ──", id=f"sep_{provider}", disabled=True))
+                    opt_id = f"model__{provider}__{model}"
+                    ol.add_option(Option(label, id=opt_id))
 
         elif menu == MENU_THEMES:
             header.update("Select Theme")
@@ -221,7 +226,7 @@ class CommandMenu(Container):
         elif oid == "quit":          self.app.exit()
 
         # ── Model selection ───────────────────────────────────────────────────
-        elif oid in ("model_gemini", "model_openai", "model_mock"):
+        elif oid.startswith("model_"):
             self.post_message(self.ModelSelected(oid))
             self.close()
 

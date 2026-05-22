@@ -3,6 +3,7 @@ from textual.app import App, ComposeResult
 from textual.widgets import Input, Static, Rule, Button, OptionList
 from textual.containers import Horizontal, Vertical
 from textual import work
+from langchain_core.messages import HumanMessage
 
 from tui.chat_view import ChatView
 from tui.input_bar import InputBar
@@ -91,25 +92,23 @@ class LataiApp(App):
     MarkdownFenceWithCopy {{
         position: relative;
         margin: 1 0;
+        width: 1fr;
     }}
 
     #copy-btn {{
-        position: absolute;
-        offset-y: 0;
-        offset-x: 100%;
-        margin-left: -5;
-        min-width: 4;
-        width: 4;
+        dock: right;
+        width: 1;
         height: 1;
+        margin: 0;
         border: none;
         padding: 0;
-        background: #333333;
+        background: transparent;
         color: #aaaaaa;
         text-style: bold;
     }}
 
     #copy-btn:hover {{
-        background: #444444;
+        background: transparent;
         color: white;
     }}
 
@@ -210,16 +209,18 @@ class LataiApp(App):
         self, event: CommandMenu.ModelSelected
     ) -> None:
         chat_view = self.query_one("#chat-view", ChatView)
+        oid = event.option_id
 
-        if event.option_id == "model_gemini":
-            session.set_model("gemini", "gemini-2.0-flash")
-            chat_view.add_message("system", "Switched to gemini-2.0-flash")
-        elif event.option_id == "model_openai":
-            session.set_model("openai", "gpt-4o")
-            chat_view.add_message("system", "Switched to gpt-4o")
-        elif event.option_id == "model_mock":
-            session.set_model("mock", "test")
-            chat_view.add_message("system", "Switched to mock model")
+        if not oid.startswith("model__"):
+            return
+
+        parts = oid.split("__")
+        if len(parts) != 3:
+            return
+
+        provider, model = parts[1], parts[2]
+        session.set_model(provider, model)
+        chat_view.add_message("system", f"Switched to {provider}/{model}")
 
     def on_command_menu_theme_selected(
         self, event: CommandMenu.ThemeSelected

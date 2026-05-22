@@ -1,0 +1,21 @@
+providers:
+  gemini:
+    default: ""
+  openrouter:
+    default: "sk-or-v1-"
+
+models:
+  gemini:
+    - name: "gemini-2.0-flash"
+      label: "Gemini 2.0 Flash"
+    - name: "gemini-1.5-flash"
+      label: "Gemini 1.5 Flash"
+  openrouter:
+    - name: "google/gemma-4-26b-a4b-it:free"
+      label: "Gemma 4 (Free)"
+    - name: "mistralai/mistral-7b-instruct:free"
+      label: "Mistral 7B (Free)"
+
+defaults:
+  provider: "gemini"
+  model: "gemini-2.0-flash"
