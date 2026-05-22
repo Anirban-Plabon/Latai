@@ -1,10 +1,6 @@
-import os, subprocess, yaml
+import subprocess, yaml
 from pathlib import Path
 from typing import Optional, List, Tuple
-from dotenv import load_dotenv
-
-# Load .env explicitly from the project root
-load_dotenv(dotenv_path=os.path.join(os.getcwd(), ".env"))
 
 CONFIG_PATH = Path(__file__).resolve().parents[1] / "config.yaml"
 SUPPORTED_PROVIDERS = ["gemini", "openai", "anthropic", "openrouter", "ollama", "mock"]

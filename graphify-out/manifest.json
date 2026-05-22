@@ -75,8 +75,8 @@
     "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "/mnt/l/projects/Latai/res/ui/loaders.py": {
-    "mtime": 1779476206.934965,
-    "ast_hash": "12b2c6ba45283d28835324726d9e17df",
+    "mtime": 1779477707.4967434,
+    "ast_hash": "7da41293e469f166fdb7dc79e6c967c1",
     "semantic_hash": ""
   },
   "/mnt/l/projects/Latai/res/ui/welcome.py": {
@@ -145,18 +145,13 @@
     "semantic_hash": "15cd49edf50176846e9abbee74b7274d"
   },
   "/mnt/l/projects/Latai/tui/app.py": {
-    "mtime": 1779476020.6347268,
-    "ast_hash": "afb87c214a23664019e29e19b9ade584",
+    "mtime": 1779479622.7676306,
+    "ast_hash": "3eaba3645fe1034f0d4e0a4e04ae6070",
     "semantic_hash": ""
   },
-  "/mnt/l/projects/Latai/tui/app2.py": {
-    "mtime": 1779219562.561168,
-    "ast_hash": "b7b6035b7bd5f714c06dd67f34453c0b",
-    "semantic_hash": "b7b6035b7bd5f714c06dd67f34453c0b"
-  },
   "/mnt/l/projects/Latai/tui/chat_view.py": {
-    "mtime": 1779467990.9524734,
-    "ast_hash": "d77120f00730a8143fc6500086f46045",
+    "mtime": 1779479604.1260173,
+    "ast_hash": "75b13bff4f9c4405273538f6cfe05bcb",
     "semantic_hash": ""
   },
   "/mnt/l/projects/Latai/tui/command_menu.py": {
@@ -185,9 +180,9 @@
     "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "/mnt/l/projects/Latai/utils/config.py": {
-    "mtime": 1779456728.825748,
-    "ast_hash": "5183bbfd3436c45a994bc70429ba9440",
-    "semantic_hash": "5183bbfd3436c45a994bc70429ba9440"
+    "mtime": 1779479608.1674187,
+    "ast_hash": "4d90263ca97541e5ac372beaab4a712d",
+    "semantic_hash": ""
   },
   "/mnt/l/projects/Latai/utils/errors.py": {
     "mtime": 1779459691.891356,
@@ -242,6 +237,16 @@
   "/mnt/l/projects/Latai/.antigravitycli/34791a4f-f634-4272-958b-bbe2f50b2746.json": {
     "mtime": 1779468213.3370762,
     "ast_hash": "3db9dc2ebefecd961651e6fe789a8a30",
+    "semantic_hash": ""
+  },
+  "/mnt/l/projects/Latai/tui/footer.py": {
+    "mtime": 1779479612.7281609,
+    "ast_hash": "0db03d9fd340e087f0c7c992b4f26c35",
+    "semantic_hash": ""
+  },
+  "/mnt/l/projects/Latai/tui/header.py": {
+    "mtime": 1779479609.9093103,
+    "ast_hash": "6df93aa02f8df7dbd609b928a27abbba",
     "semantic_hash": ""
   }
 }

@@ -1,7 +1,6 @@
 import uuid
-import os
 from textual.app import App, ComposeResult
-from textual.widgets import Input, Static, Rule, Button, OptionList
+from textual.widgets import Input, Rule, Button
 from textual.containers import Horizontal, Vertical
 from textual import work
 from langchain_core.messages import HumanMessage
@@ -15,38 +14,15 @@ from services.session import session
 from agent.graph import graph
 from res.ui.welcome import animate_welcome
 from res.ui.loaders import ThinkingIndicator
-from utils.errors import format_error_message
-
-class CustomHeader(Static):
-    def compose(self) -> ComposeResult:
-        yield Static("craftChat", id="app-title")
-
-
-class CustomFooter(Horizontal):
-    def compose(self) -> ComposeResult:
-        yield Static(f"Workspace: {os.getcwd()}", id="footer-workspace")
-        yield Static(f"/model {session.provider}/{session.model_name}", id="footer-model")
-        yield Static(f"Tokens: {self.format_tokens(session.total_tokens)}", id="footer-tokens")
-
-    def on_mount(self) -> None:
-        self.set_interval(1.0, self.update_footer)
-
-    def update_footer(self) -> None:
-        self.query_one("#footer-model", Static).update(f"/model {session.provider}/{session.model_name}")
-        self.query_one("#footer-tokens", Static).update(f"Tokens: {self.format_tokens(session.total_tokens)}")
-
-    def format_tokens(self, count: int) -> str:
-        if count >= 1_000_000_000:
-            return f"{count / 1_000_000_000:.1f}b"
-        if count >= 1_000_000:
-            return f"{count / 1_000_000:.1f}m"
-        if count >= 1_000:
-            return f"{count / 1_000:.1f}k"
-        return str(count)
+from tui.header import CustomHeader
+from tui.footer import CustomFooter
 
 
 class LataiApp(App):
-    # --- Developer Local Theme ---
+    """The main Latai TUI chat application class."""
+
+    CSS_PATH = "app.css"
+
     DEV_LOCAL_THEME = {
         "primary": "#FFB6C1",    # Light Pink
         "secondary": "#ADD8E6",   # Light Blue
@@ -54,188 +30,10 @@ class LataiApp(App):
         "loader_generating": "loader77",
     }
 
-    CSS = f"""
-    LataiApp {{
-        background: transparent;
-        layers: base overlay;
-    }}
-    
-    
-
-    CustomHeader {{
-        dock: top;
-        height: 1;
-        background: transparent;
-        color: white;
-        text-style: bold;
-        content-align: center middle;
-        padding-top: 1;
-    }}
-
-    #app-title {{
-        background: transparent;
-    }}
-
-    ChatView {{
-        height: 1fr;
-        background: transparent;
-        padding: 0;
-        overflow-y: scroll;
-        scrollbar-gutter: stable;
-        scrollbar-size-vertical: 1;
-        scrollbar-color: #4a7a9b;
-        scrollbar-color-hover: {DEV_LOCAL_THEME['secondary']};
-        scrollbar-color-active: {DEV_LOCAL_THEME['secondary']};
-        scrollbar-background: transparent;
-    }}
-    
-    #loading-container {{
-        height: 0;
-        margin: 0 2;
-        background: transparent;
-        overflow: hidden;
-    }}
-
-    #loading-container.-active {{
-        height: 1;
-    }}
-
-    #loading-indicator {{
-        width: 100%;
-        height: 1;
-        content-align: left middle;
-    }}
-
-    /* ── Messages ───────────────────────────────────────────────────────── */
-    ChatMessage {{
-        margin: 1 2;
-        padding: 1 1 0 1;
-        height: auto;
-        background: transparent;
-    }}
-
-    ChatMessage.user {{
-        background: #1e1e1e;
-        border-left: tall {DEV_LOCAL_THEME['primary']};
-    }}
-
-    ChatMessage.ai {{
-        background: transparent;
-        border-left: tall {DEV_LOCAL_THEME['secondary']};
-    }}
-
-    .message-row     {{ height: auto; }}
-    .message-role    {{ color: white; text-style: bold; width: auto; min-width: 5; }}
-    .message-content {{ color: #e0e0e0; width: 1fr; height: auto; }}
-
-    Markdown {{
-        height: auto;
-        overflow-y: hidden;
-        background: transparent;
-        margin: 0;
-        padding: 0;
-    }}
-
-    MarkdownFenceWithCopy {{
-        position: relative;
-        margin: 1 0;
-        width: 1fr;
-    }}
-
-    #copy-btn {{
-        dock: right;
-        width: 1;
-        height: 1;
-        margin: 0;
-        border: none;
-        padding: 0;
-        background: transparent;
-        color: #aaaaaa;
-        text-style: bold;
-    }}
-
-    #copy-btn:hover {{
-        background: transparent;
-        color: white;
-    }}
-
-    /* ── Input area ─────────────────────────────────────────────────────── */
-    InputBar {{
-        height: auto;
-        min-height: 3;
-        width: 1fr;
-        background: transparent;
-        padding: 0 1;
-        border: round {DEV_LOCAL_THEME['primary']};
-        align: left middle;
-    }}
-
-    .rd-row    {{ height: auto; min-height: 1; width: 1fr; }}
-    .rd-prefix {{ color: $text-muted; width: 2; content-align: left middle; text-style: bold; }}
-
-    Input {{
-        border: none;
-        background: transparent;
-        width: 1fr;
-        height: auto;
-        min-height: 1;
-    }}
-    Input:focus {{ border: none; }}
-
-    /* ── Command palette button ─────────────────────────────────────────── */
-    #cmd-menu-btn {{
-        min-width: 5;
-        width: auto;
-        min-height: 1;
-        height: 1;
-        padding: 0;
-        margin: 0;
-        border: none;
-        background: transparent;
-        color: #888888;
-        text-style: bold;
-        content-align: center middle;
-    }}
-    #cmd-menu-btn:hover {{ color: white; }}
-
-    /* ── Bottom zone ────────────────────────────────────────────────────── */
-    .bottom-zone  {{ dock: bottom; height: auto; background: transparent; }}
-    .zone-separator {{ color: #333333; margin: 0; }}
-    .input-wrapper  {{ layout: horizontal; height: 3; margin: 0 2 1 2; align: left middle; }}
-
-    Rule {{ color: #333333; margin: 0 2; height: 1; }}
-
-    .loading-text {{ color: #aaaaaa; margin: 0; width: 100%; }}
-
-    CustomFooter {{
-        dock: bottom;
-        height: 1;
-        background: #1e1e1e;
-        color: #888888;
-        padding: 0 2;
-    }}
-
-    #footer-workspace {{
-        width: 1fr;
-    }}
-
-    #footer-model {{
-        width: 1fr;
-        content-align: center middle;
-    }}
-
-    #footer-tokens {{
-        width: 1fr;
-        content-align: right middle;
-    }}
-    """
-
     BINDINGS = [
         ("q",      "quit",         "Quit"),
         ("ctrl+p", "open_menu",    "Command menu"),
     ]
-
-    # ── Compose ───────────────────────────────────────────────────────────────
 
     def compose(self) -> ComposeResult:
         yield CustomHeader()
@@ -248,10 +46,8 @@ class LataiApp(App):
                 yield InputBar()
 
         yield CustomFooter()
-        yield CommandMenu(id="cmd-menu")          # full-screen overlay
+        yield CommandMenu(id="cmd-menu")
 
-    # ── Lifecycle ─────────────────────────────────────────────────────────────
-    
     def on_mount(self) -> None:
         self.query_one(InputBar).focus_input()
         chat_view = self.query_one("#chat-view", ChatView)
@@ -261,8 +57,6 @@ class LataiApp(App):
             color_start=self.DEV_LOCAL_THEME["primary"], 
             color_end=self.DEV_LOCAL_THEME["secondary"]
         )
-
-    # ── Loading ───────────────────────────────────────────────────────────────
 
     def show_loading(self) -> None:
         container = self.query_one("#loading-container", Vertical)
@@ -326,8 +120,7 @@ class LataiApp(App):
                     indicator.stop()
                 indicator.mark_done()
                 
-                # Setup auto-remove and store it so we can cancel if a new prompt arrives
-                def cleanup():
+                def cleanup() -> None:
                     try:
                         container.remove_class("-active")
                         indicator.remove()
@@ -336,24 +129,15 @@ class LataiApp(App):
                 indicator.cleanup_timer = indicator.set_timer(2.0, cleanup)
         except Exception:
             pass
-    
-
-    # ── Actions ───────────────────────────────────────────────────────────────
 
     def action_open_menu(self) -> None:
         self.query_one(CommandMenu).open()
-
-    # ── Button: [⌘P] ─────────────────────────────────────────────────────────
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
         if event.button.id == "cmd-menu-btn":
             self.query_one(CommandMenu).open()
 
-    # ── CommandMenu messages ──────────────────────────────────────────────────
-
-    def on_command_menu_model_selected(
-        self, event: CommandMenu.ModelSelected
-    ) -> None:
+    def on_command_menu_model_selected(self, event: CommandMenu.ModelSelected) -> None:
         chat_view = self.query_one("#chat-view", ChatView)
         oid = event.option_id
 
@@ -368,15 +152,11 @@ class LataiApp(App):
         session.set_model(provider, model)
         chat_view.add_message("system", f"Switched to {provider}/{model}")
 
-    def on_command_menu_theme_selected(
-        self, event: CommandMenu.ThemeSelected
-    ) -> None:
+    def on_command_menu_theme_selected(self, event: CommandMenu.ThemeSelected) -> None:
         self.theme = event.theme_name
         self.query_one("#chat-view", ChatView).add_message(
             "system", f"Theme set to: {event.theme_name}"
         )
-
-    # ── Input submitted ───────────────────────────────────────────────────────
 
     async def on_input_submitted(self, event: Input.Submitted) -> None:
         user_input = event.value.strip()
@@ -387,7 +167,6 @@ class LataiApp(App):
         chat_view = self.query_one("#chat-view", ChatView)
         menu      = self.query_one(CommandMenu)
 
-        # ── Shortcut slash-commands that open specific sub-menus ──────────────
         if user_input in ("/models", "/model"):
             menu.open(MENU_MODELS)
             return
@@ -413,9 +192,6 @@ class LataiApp(App):
             session.add_user_message(user_input)
             self.stream_response(user_input, bypass_history=False)
 
-    # ── Streaming ─────────────────────────────────────────────────────────────
-    
-    
     @work(exclusive=True)
     async def stream_response(self, user_input: str, bypass_history: bool) -> None:
         chat_view = self.query_one("#chat-view", ChatView)
@@ -475,81 +251,6 @@ class LataiApp(App):
                 chat_view.add_message("system", f"Error: {str(e)}", msg_id)
             else:
                 chat_view.update_message(msg_id, f"Error: {str(e)}")
-
-    # @work(exclusive=True)
-    # async def stream_response(self, user_input: str, bypass_history: bool) -> None:
-    #     chat_view = self.query_one("#chat-view", ChatView)
-    #     msg_id    = f"msg-{uuid.uuid4()}"
-
-    #     self.show_loading()
-
-    #     accumulated_content   = ""
-    #     first_chunk_received  = False
-    #     message_added         = False
-
-    #     try:
-    #         # We call get_llm which now uses our factory
-    #         from services.llm import get_llm
-    #         llm = get_llm(session.provider, session.model_name)
-            
-    #         messages = (
-    #             [HumanMessage(content=user_input)]
-    #             if bypass_history
-    #             else session.get_messages()
-    #         )
-    #         state = {"messages": messages}
-
-    #         async for msg, metadata in graph.astream(state, stream_mode="messages"):
-    #             # Extract usage metadata if available
-    #             usage = getattr(msg, "usage_metadata", None)
-    #             if usage and "total_tokens" in usage:
-    #                 session.add_tokens(usage["total_tokens"])
-    #             elif hasattr(msg, "response_metadata"):
-    #                 tok_usage = msg.response_metadata.get("token_usage")
-    #                 if tok_usage and "total_tokens" in tok_usage:
-    #                     session.add_tokens(tok_usage["total_tokens"])
-
-    #             content = ""
-    #             if hasattr(msg, "content"):
-    #                 if isinstance(msg.content, str):
-    #                     content = msg.content
-    #                 elif isinstance(msg.content, list):
-    #                     for part in msg.content:
-    #                         if isinstance(part, dict) and part.get("type") == "text":
-    #                             content += part.get("text", "")
-    #                         elif isinstance(part, str):
-    #                             content += part
-
-    #             if content:
-    #                 if not first_chunk_received:
-    #                     first_chunk_received = True
-    #                     self.show_generating()
-    #                     chat_view.add_message("ai", "", msg_id)
-    #                     message_added = True
-
-    #                 accumulated_content += content
-    #                 chat_view.update_message(msg_id, accumulated_content)
-
-    #         # ← no show_done() here anymore
-    #         if message_added:
-    #             self.show_done()
-    #         else:
-    #             self.hide_loading()
-    #             if accumulated_content:
-    #                 chat_view.add_message("ai", accumulated_content, msg_id)
-    #             else:
-    #                 chat_view.add_message("system", "No response from model.")
-
-    #         if not bypass_history:
-    #             session.add_ai_message(accumulated_content)
-
-    #     except Exception as e:
-    #         self.hide_loading()
-    #         error_msg = format_error_message(e)
-    #         if not message_added:
-    #             chat_view.add_message("system", error_msg, msg_id)
-    #         else:
-    #             chat_view.update_message(msg_id, error_msg)
 
 
 if __name__ == "__main__":
