@@ -28,13 +28,7 @@ class ChatView(ScrollableContainer):
             pass
             
     def show_loading(self) -> None:
-        indicator = ThinkingIndicator("⁎ AI is thinking...", id="loading-indicator", classes="loading-text")
-        self.mount(indicator)
-        self.call_after_refresh(self.scroll_end, animate=False)
+        self.app.show_loading()
         
     def hide_loading(self) -> None:
-        try:
-            indicator = self.query_one("#loading-indicator")
-            indicator.remove()
-        except Exception:
-            pass
+        self.app.hide_loading()

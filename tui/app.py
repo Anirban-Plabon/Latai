@@ -1,4 +1,5 @@
 import uuid
+import os
 from textual.app import App, ComposeResult
 from textual.widgets import Input, Static, Rule, Button, OptionList
 from textual.containers import Horizontal, Vertical
@@ -13,10 +14,35 @@ from commands import model as cmd_model
 from services.session import session
 from agent.graph import graph
 from res.ui.welcome import animate_welcome
+from res.ui.loaders import ThinkingIndicator
+from utils.errors import format_error_message
 
 class CustomHeader(Static):
     def compose(self) -> ComposeResult:
         yield Static("⛏️ craftChat", id="app-title")
+
+
+class CustomFooter(Horizontal):
+    def compose(self) -> ComposeResult:
+        yield Static(f"📂 {os.getcwd()}", id="footer-workspace")
+        yield Static(f"🤖 /model {session.provider}/{session.model_name}", id="footer-model")
+        yield Static(f"🪙 Tokens: {self.format_tokens(session.total_tokens)}", id="footer-tokens")
+
+    def on_mount(self) -> None:
+        self.set_interval(1.0, self.update_footer)
+
+    def update_footer(self) -> None:
+        self.query_one("#footer-model", Static).update(f"🤖 /model {session.provider}/{session.model_name}")
+        self.query_one("#footer-tokens", Static).update(f"🪙 Tokens: {self.format_tokens(session.total_tokens)}")
+
+    def format_tokens(self, count: int) -> str:
+        if count >= 1_000_000_000:
+            return f"{count / 1_000_000_000:.1f}b"
+        if count >= 1_000_000:
+            return f"{count / 1_000_000:.1f}m"
+        if count >= 1_000:
+            return f"{count / 1_000:.1f}k"
+        return str(count)
 
 
 class LataiApp(App):
@@ -57,6 +83,23 @@ class LataiApp(App):
         scrollbar-color-hover: {DEV_LOCAL_THEME['secondary']};
         scrollbar-color-active: {DEV_LOCAL_THEME['secondary']};
         scrollbar-background: transparent;
+    }}
+
+    #loading-container {{
+        height: 0;
+        margin: 0 2;
+        background: transparent;
+        overflow: hidden;
+    }}
+
+    #loading-container.-active {{
+        height: 1;
+    }}
+
+    #loading-indicator {{
+        width: 100%;
+        height: 1;
+        content-align: left middle;
     }}
 
     /* ── Messages ───────────────────────────────────────────────────────── */
@@ -159,6 +202,28 @@ class LataiApp(App):
     Rule {{ color: #333333; margin: 0 2; height: 1; }}
 
     .loading-text {{ color: #aaaaaa; margin: 1 2; }}
+
+    CustomFooter {{
+        dock: bottom;
+        height: 1;
+        background: #1e1e1e;
+        color: #888888;
+        padding: 0 2;
+    }}
+
+    #footer-workspace {{
+        width: 1fr;
+    }}
+
+    #footer-model {{
+        width: 1fr;
+        content-align: center middle;
+    }}
+
+    #footer-tokens {{
+        width: 1fr;
+        content-align: right middle;
+    }}
     """
 
     BINDINGS = [
@@ -173,15 +238,16 @@ class LataiApp(App):
         yield ChatView(id="chat-view")
 
         with Vertical(classes="bottom-zone"):
+            yield Vertical(id="loading-container")
             yield Rule(classes="zone-separator")
             with Horizontal(classes="input-wrapper"):
                 yield InputBar()
 
+        yield CustomFooter()
         yield CommandMenu(id="cmd-menu")          # full-screen overlay
 
     # ── Lifecycle ─────────────────────────────────────────────────────────────
-    from textual.widgets import Static
-
+    
     def on_mount(self) -> None:
         self.query_one(InputBar).focus_input()
         chat_view = self.query_one("#chat-view", ChatView)
@@ -191,6 +257,61 @@ class LataiApp(App):
             color_start=self.DEV_LOCAL_THEME["primary"], 
             color_end=self.DEV_LOCAL_THEME["secondary"]
         )
+
+    # ── Loading ───────────────────────────────────────────────────────────────
+
+    def show_loading(self) -> None:
+        container = self.query_one("#loading-container", Vertical)
+        # Clear container
+        for child in container.query("*"):
+            if hasattr(child, "stop"):
+                child.stop()
+            child.remove()
+        
+        container.mount(ThinkingIndicator(
+            id="loading-indicator",
+            loader_name="loader642",
+            label="AI is thinking..."
+        ))
+        container.add_class("-active")
+
+    def hide_loading(self) -> None:
+        try:
+            container = self.query_one("#loading-container", Vertical)
+            for child in container.query("*"):
+                if hasattr(child, "stop"):
+                    child.stop()
+                child.remove()
+            container.remove_class("-active")
+        except Exception:
+            pass
+
+    def show_generating(self) -> None:
+        container = self.query_one("#loading-container", Vertical)
+        # Remove thinking indicator if it exists
+        for child in container.query("#loading-indicator"):
+            if hasattr(child, "stop"):
+                child.stop()
+            child.remove()
+            
+        container.mount(ThinkingIndicator(
+            id="loading-indicator",
+            loader_name="loader70",
+            label="Generating..."
+        ))
+        container.add_class("-active")
+
+    def show_done(self) -> None:
+        try:
+            container = self.query_one("#loading-container", Vertical)
+            indicator = self.query_one("#loading-indicator")
+            if hasattr(indicator, "stop"):
+                indicator.stop()
+            indicator.update("☑  Done")
+            # Container stays active to show the Done message
+        except Exception:
+            pass
+    
 
     # ── Actions ───────────────────────────────────────────────────────────────
 
@@ -281,6 +402,10 @@ class LataiApp(App):
         message_added         = False
 
         try:
+            # We call get_llm which now uses our factory
+            from services.llm import get_llm
+            llm = get_llm(session.provider, session.model_name)
+            
             messages = (
                 [HumanMessage(content=user_input)]
                 if bypass_history
@@ -289,6 +414,15 @@ class LataiApp(App):
             state = {"messages": messages}
 
             async for msg, metadata in graph.astream(state, stream_mode="messages"):
+                # Extract usage metadata if available
+                usage = getattr(msg, "usage_metadata", None)
+                if usage and "total_tokens" in usage:
+                    session.add_tokens(usage["total_tokens"])
+                elif hasattr(msg, "response_metadata"):
+                    tok_usage = msg.response_metadata.get("token_usage")
+                    if tok_usage and "total_tokens" in tok_usage:
+                        session.add_tokens(tok_usage["total_tokens"])
+
                 content = ""
                 if hasattr(msg, "content"):
                     if isinstance(msg.content, str):
@@ -303,15 +437,17 @@ class LataiApp(App):
                 if content:
                     if not first_chunk_received:
                         first_chunk_received = True
-                        chat_view.hide_loading()
+                        self.show_generating()
                         chat_view.add_message("ai", "", msg_id)
                         message_added = True
 
                     accumulated_content += content
                     chat_view.update_message(msg_id, accumulated_content)
+                    
+            self.show_done()
 
             if not message_added:
-                chat_view.hide_loading()
+                self.hide_loading()
                 if accumulated_content:
                     chat_view.add_message("ai", accumulated_content, msg_id)
                 else:
@@ -321,11 +457,12 @@ class LataiApp(App):
                 session.add_ai_message(accumulated_content)
 
         except Exception as e:
-            chat_view.hide_loading()
+            self.hide_loading()
+            error_msg = format_error_message(e)
             if not message_added:
-                chat_view.add_message("system", f"Error: {str(e)}", msg_id)
+                chat_view.add_message("system", error_msg, msg_id)
             else:
-                chat_view.update_message(msg_id, f"Error: {str(e)}")
+                chat_view.update_message(msg_id, error_msg)
 
 
 if __name__ == "__main__":

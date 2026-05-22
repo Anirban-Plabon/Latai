@@ -1,0 +1,373 @@
+{
+  "communities": {
+    "0": [
+      "app",
+      "commands_base_is_command",
+      "commands_base_parse_command",
+      "commands_base_py",
+      "container",
+      "static",
+      "tui_app2_customheader",
+      "tui_app2_lataiapp",
+      "tui_app2_lataiapp_compose",
+      "tui_app2_lataiapp_on_button_pressed",
+      "tui_app2_lataiapp_on_input_submitted",
+      "tui_app2_lataiapp_on_mount",
+      "tui_app2_lataiapp_on_option_list_option_selected",
+      "tui_app2_py",
+      "tui_app2_rationale_21",
+      "tui_app2_stream_response",
+      "tui_app_customheader",
+      "tui_app_lataiapp",
+      "tui_app_lataiapp_action_open_menu",
+      "tui_app_lataiapp_compose",
+      "tui_app_lataiapp_on_button_pressed",
+      "tui_app_lataiapp_on_command_menu_model_selected",
+      "tui_app_lataiapp_on_input_submitted",
+      "tui_app_py",
+      "tui_app_stream_response",
+      "tui_command_menu_commandmenu_compose",
+      "tui_input_bar_inputbar",
+      "tui_input_bar_inputbar_compose",
+      "tui_input_bar_inputbar_focus_input",
+      "tui_input_bar_py"
+    ],
+    "1": [
+      "f_anirban_250509_projects_latai_tui_chat_view_py",
+      "markdown",
+      "markdownfence",
+      "scrollablecontainer",
+      "tui_chat_view_chatview",
+      "tui_chat_view_chatview_add_message",
+      "tui_chat_view_chatview_hide_loading",
+      "tui_chat_view_chatview_update_message",
+      "tui_custom_markdown_custommarkdown_get_block_class",
+      "tui_custom_markdown_markdownfencewithcopy",
+      "tui_custom_markdown_markdownfencewithcopy_compose",
+      "tui_custom_markdown_markdownfencewithcopy_on_button_pressed",
+      "tui_custom_markdown_py",
+      "tui_custom_markdown_rationale_27",
+      "tui_custom_markdown_rationale_6",
+      "tui_message_chatmessage",
+      "tui_message_chatmessage_compose",
+      "tui_message_chatmessage_init",
+      "tui_message_chatmessage_watch_content",
+      "tui_message_py"
+    ],
+    "2": [
+      "agent_graph_build_graph",
+      "agent_graph_graph",
+      "agent_graph_llm_node",
+      "agent_graph_py",
+      "agent_state_agentstate",
+      "agent_state_py",
+      "commands_model_execute",
+      "commands_model_py",
+      "debug_graph_debug",
+      "res_ui_welcome_animate_welcome",
+      "services_session_py",
+      "services_session_session",
+      "services_session_session_add_ai_message",
+      "services_session_session_add_user_message",
+      "services_session_session_clear_messages",
+      "services_session_session_get_messages",
+      "services_session_session_init",
+      "services_session_session_set_model",
+      "typeddict"
+    ],
+    "3": [
+      "message",
+      "tui_command_menu_commandmenu_build_menu",
+      "tui_command_menu_commandmenu_close",
+      "tui_command_menu_commandmenu_on_key",
+      "tui_command_menu_commandmenu_on_mount",
+      "tui_command_menu_commandmenu_on_option_list_option_selected",
+      "tui_command_menu_commandmenu_open",
+      "tui_command_menu_modelselected",
+      "tui_command_menu_modelselected_init",
+      "tui_command_menu_py",
+      "tui_command_menu_rationale_155",
+      "tui_command_menu_rationale_160",
+      "tui_command_menu_rationale_52",
+      "tui_command_menu_themeselected"
+    ],
+    "4": [
+      "res_ui_loaders_py",
+      "res_ui_welcome_py",
+      "tui_app_lataiapp_on_mount",
+      "tui_chat_view_chatview_show_loading",
+      "ui_loaders_thinkingindicator",
+      "ui_loaders_thinkingindicator_generate_color_steps",
+      "ui_loaders_thinkingindicator_on_mount",
+      "ui_loaders_thinkingindicator_update_frame",
+      "ui_welcome_animate_welcome",
+      "ui_welcome_get_interpolated_hex",
+      "ui_welcome_hex_to_rgb",
+      "ui_welcome_rationale_60",
+      "ui_welcome_rationale_65",
+      "ui_welcome_rationale_79"
+    ],
+    "5": [
+      "latai_gemini_architecture_rules",
+      "latai_gemini_code_style",
+      "latai_gemini_commands",
+      "latai_gemini_graphify",
+      "latai_gemini_identity",
+      "latai_gemini_instructions",
+      "latai_gemini_naming",
+      "latai_gemini_project_langgraph_chat_tui",
+      "latai_gemini_streaming",
+      "latai_gemini_supported_providers",
+      "latai_gemini_what_to_avoid"
+    ],
+    "6": [
+      "gemini_md",
+      "services_llm_get_llm",
+      "services_llm_py",
+      "services_llm_rationale_7",
+      "services_providers_anthropic_get_model",
+      "services_providers_gemini_get_model",
+      "utils_config_get_api_key",
+      "utils_config_py",
+      "utils_config_rationale_8"
+    ],
+    "7": [
+      "basechatmodel",
+      "providers_mock_get_model",
+      "providers_mock_llm_type",
+      "providers_mock_mockchatmodel",
+      "providers_mock_mockchatmodel_astream",
+      "providers_mock_mockchatmodel_generate",
+      "services_providers_mock_py"
+    ],
+    "8": [
+      "docs_chat_agent_1_gemini_llm_node",
+      "docs_chat_agent_graph_structure",
+      "docs_chat_agent_langgraph_simple_agent_specification_gemini_llm_node",
+      "docs_chat_agent_md",
+      "docs_chat_agent_nodes",
+      "docs_chat_agent_overview",
+      "docs_chat_agent_state_schema"
+    ],
+    "9": [
+      "gemini_settings_hooks",
+      "gemini_settings_hooks_beforetool",
+      "gemini_settings_json"
+    ],
+    "10": [
+      "debug_graph_py",
+      "latai_debug_graph_debug"
+    ],
+    "11": [
+      "latai_main_main",
+      "main_py"
+    ],
+    "12": [
+      "providers_gemini_get_model",
+      "services_providers_gemini_py"
+    ],
+    "13": [
+      "providers_openrouter_get_model",
+      "services_providers_openrouter_py"
+    ],
+    "14": [
+      "providers_anthropic_get_model",
+      "services_providers_anthropic_py"
+    ],
+    "15": [
+      "providers_openai_get_model",
+      "services_providers_openai_py"
+    ],
+    "16": [
+      "agent_prompts_py"
+    ],
+    "17": [
+      "agent_tools_py"
+    ],
+    "18": [
+      "agent_init_py"
+    ],
+    "19": [
+      "commands_ask_py"
+    ],
+    "20": [
+      "commands_init_py"
+    ],
+    "21": [
+      "f_anirban_250509_projects_latai_res_ui_init_py"
+    ],
+    "22": [
+      "services_init_py"
+    ],
+    "23": [
+      "tui_init_py"
+    ],
+    "24": [
+      "utils_init_py"
+    ],
+    "25": [
+      "agents_md"
+    ],
+    "26": [
+      "claude_md"
+    ],
+    "27": [
+      "main_main"
+    ],
+    "28": [
+      "res_ui_loaders_thinkingindicator"
+    ],
+    "29": [
+      "services_providers_openai_get_model"
+    ],
+    "30": [
+      "services_providers_openrouter_get_model"
+    ]
+  },
+  "cohesion": {
+    "0": 0.10344827586206896,
+    "1": 0.11052631578947368,
+    "2": 0.1111111111111111,
+    "3": 0.26373626373626374,
+    "4": 0.16483516483516483,
+    "5": 0.18181818181818182,
+    "6": 0.2222222222222222,
+    "7": 0.3333333333333333,
+    "8": 0.2857142857142857,
+    "9": 0.6666666666666666,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0,
+    "28": 1.0,
+    "29": 1.0,
+    "30": 1.0
+  },
+  "gods": [
+    {
+      "id": "tui_app_lataiapp",
+      "label": "LataiApp",
+      "degree": 13
+    },
+    {
+      "id": "services_session_session",
+      "label": "Session",
+      "degree": 12
+    },
+    {
+      "id": "latai_gemini_project_langgraph_chat_tui",
+      "label": "Project: LangGraph Chat TUI",
+      "degree": 11
+    },
+    {
+      "id": "tui_app2_lataiapp",
+      "label": "LataiApp",
+      "degree": 10
+    },
+    {
+      "id": "tui_chat_view_chatview",
+      "label": "ChatView",
+      "degree": 10
+    },
+    {
+      "id": "tui_input_bar_inputbar",
+      "label": "InputBar",
+      "degree": 10
+    },
+    {
+      "id": "tui_message_chatmessage",
+      "label": "ChatMessage",
+      "degree": 8
+    },
+    {
+      "id": "ui_loaders_thinkingindicator",
+      "label": "ThinkingIndicator",
+      "degree": 6
+    },
+    {
+      "id": "services_llm_get_llm",
+      "label": "get_llm()",
+      "degree": 6
+    },
+    {
+      "id": "providers_mock_mockchatmodel",
+      "label": "MockChatModel",
+      "degree": 5
+    }
+  ],
+  "surprises": [
+    {
+      "source": "llm_node()",
+      "target": "get_llm()",
+      "source_files": [
+        "agent/graph.py",
+        "services/llm.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "execute()",
+      "target": "Session",
+      "source_files": [
+        "commands/model.py",
+        "services/session.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; peripheral node `execute()` unexpectedly reaches hub `Session`"
+    },
+    {
+      "source": "get_llm()",
+      "target": "get_api_key()",
+      "source_files": [
+        "services/llm.py",
+        "utils/config.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    },
+    {
+      "source": "Debug Graph Script",
+      "target": "Session",
+      "source_files": [
+        "debug_graph.py",
+        "services/session.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; peripheral node `Debug Graph Script` unexpectedly reaches hub `Session`"
+    },
+    {
+      "source": "Welcome Animation Logic",
+      "target": "Session",
+      "source_files": [
+        "res/ui/welcome.py",
+        "services/session.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; peripheral node `Welcome Animation Logic` unexpectedly reaches hub `Session`"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

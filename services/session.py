@@ -8,10 +8,14 @@ class Session:
         self.provider: str = get_default_provider()
         self.model_name: str = get_default_model()
         self.messages: List[BaseMessage] = []
+        self.total_tokens: int = 0
 
     def set_model(self, provider: str, model_name: str) -> None:
         self.provider = provider
         self.model_name = model_name
+
+    def add_tokens(self, count: int) -> None:
+        self.total_tokens += count
 
     def add_user_message(self, content: str) -> None:
         self.messages.append(HumanMessage(content=content))

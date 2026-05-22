@@ -49,7 +49,7 @@ LOADERS = {
     "loader45": "𐂂𐂃𐂄𐂅",
     "loader46": "𑪞𑪟𑪠𑪢",
     "loader47": "⠁⠂⠄⡀⠂⠁⠂⠄⡀⠂",
-    "loader48": "𒀠𒀡𒀢𒀣𒀤𒀥𒀦𒀧𒀨",
+    "loader48": "𒀠𒀡𒀢𒀣𒀤𒀥𒀦𒀧運",
     "loader49": "𒉒𒉔𒉕𒉓𒀭𒀮𒀯",
     "loader50": "🌍🌎🌏",
     "loader51": "বরকধঝ",
@@ -57,11 +57,11 @@ LOADERS = {
     "loader53": "◯ ☽ ◑ ● ◐ ❨ ◯",
     "loader54": "𐦂𖨆𐀪𖠋𐀪𐀪",
     "loader55": "🀢🀣🀦🀤",
-    "loader56": "𖡼𖤣𖥧𖡼𓋼𖤣▥𓋼𓍊",
+    "loader56": "𖡼𖤣▧𖡼𓋼𖤣▥𓋼𓍊",
     "loader57": "𓅰 𓅬 𓅭 𓅮 𓅯",
     "loader58": "𒅒𒈔𒅒𒇫𒄆",
     "loader59": ":･ﾟ✧:･.☽˚｡･ﾟ✧:･.:",
-    "loader60": "𖡼.𖤣𖥧𖡼.𖤣▧",
+    "loader60": "𖡼.𖤣▧𖡼.𖤣▧",
     "loader61": "⏹🅾⏺🔴⚪",
     "loader62": "𓆝 𓆟 𓆞 𓆝 𓆟",
     "loader63": [
@@ -94,14 +94,14 @@ LOADERS = {
         "⣀⣴⣦⣀",
         "⣴⣦⣀⣴",
         "⣦⣀⣴⣦",
-        "⣀⣴⣴⣀",
+        "⣀⣴⣦⣀",
     ],
     "loader65": [
         "○   ○\n \\ /\n  ○\n / \\\n○   ○",
         "●   ○\n \\ /\n  ○\n / \\\n○   ○",
         "○   ●\n \\ /\n  ○\n / \\\n○   ○",
         "○   ○\n \\ /\n  ●\n / \\\n○   ○",
-        "○   ○\n \\ /\n  ○\n / \\\n●   ○",
+        "○   ○\n \\ /\n  ○\n / \\\n●   ●",
         "○   ○\n \\ /\n  ○\n / \\\n○   ●",
     ],
     "loader66": [
@@ -110,14 +110,100 @@ LOADERS = {
         "○●○\n○○●\n●○○",
         "○○●\n●○○\n○●○",
         "○○○\n○●○\n○○○",
+    ],
+    "loader67": [
+        "█            |",
+        "██           |",
+        "●██          |",
+        "○●██         |",
+        "○○●██        |",
+        "○○○●██       |",
+        "○○○○●██      |",
+        "○○○○○○●██    |",
+        "○○○○○○○●██   |",
+        "○○○○○○○○●██  |",
+        "○○○○○○○○○●██ |",
+    ],
+    "loader68": [
+        "▄             ├",
+        ".▄▄           ├",
+        "..▄▄▄         ├",
+        "...▄▄▄▄       ├",
+        "....▄▄▄▄▄     ├",
+        ".....▄▄▄▄▄▄   ├",
+        "......▄▄▄▄▄▄▄ ├",
+    ],
+    "loader69": [
+        "▄             ├",
+        ".▄▄           ├",
+        "..▄▄▄         ├",
+        "...▄▄▄▄       ├",
+        "....▄▄▄▄▄     ├",
+        ".....▄▄▄▄▄▄   ├",
+        "......▄▄▄▄▄▄▄ ├",
+    ],
+    "loader70": [
+        "▄             ",
+        ".▄▄           ",
+        "..▄▄▄         ",
+        "...▄▄▄▄       ",
+        "....▄▄▄▄▄     ",
+        ".....▄▄▄▄▄▄   ",
+        "......▄▄▄▄▄▄▄ ",  
+    ],
+    "loader71": [
+        "▄             ",
+        ".▄▄           ",
+        "..▄▄▄         ",
+        "...▄▄▄▄       ",
+        "....▄▄▄▄▄     ",
+        ".....▄▄▄▄▄▄   ",
+        "......▄▄▄▄▄▄▄ ",
+        ".......▄▄▄▄▄▄ ",
+        "........▄▄▄▄▄ ",
+        ".........▄▄▄▄ ",
+        "..........▄▄▄ ",
+        "...........▄▄ ",
+        "............▄ ",
+    ],
+    "loader72": [
+        "▄             ",
+        ".▄▄           ",
+        "..▄▄▄         ",
+        "...▄▄▄▄       ",
+        "....▄▄▄▄▄     ",
+        ".....▄▄▄▄▄▄   ",
+        "......▄▄▄▄▄▄▄ ",
+        ".......▄▄▄▄▄▄ ",
+        "........▄▄▄▄▄ ",
+        ".........▄▄▄▄ ",
+        "..........▄▄▄ ",
+        "...........▄▄ ",
+        "............▄ ",
+        "...........▄▄ ",
+        "..........▄▄▄ ",
+        ".........▄▄▄▄ ",
+        "........▄▄▄▄▄ ",
+        ".......▄▄▄▄▄▄ ",
+        "......▄▄▄▄▄▄▄ ",
+        ".....▄▄▄▄▄▄   ",
+        "....▄▄▄▄▄     ",
+        "...▄▄▄▄       ",
+        "..▄▄▄         ",
+        ".▄▄           ",
     ]
 }
 
-ACTIVE_LOADER = "loader642"
+ACTIVE_LOADER = "loader72"
 
 class ThinkingIndicator(Static):
+    def __init__(self, *args, loader_name: str = ACTIVE_LOADER, label: str = "AI is thinking...", **kwargs):
+        super().__init__(*args, **kwargs)
+        self._loader_name = loader_name
+        self._label = label
+
     def on_mount(self) -> None:
-        self.frames = LOADERS.get(ACTIVE_LOADER, LOADERS["loader1"])
+        self.frames = LOADERS.get(self._loader_name, LOADERS["loader1"])
         self.frame_index = 0
         self.color_cycle_index = 0
         
@@ -128,7 +214,12 @@ class ThinkingIndicator(Static):
         
         # Dynamically generate animation colors transition
         self.animation_colors = self._generate_color_steps(primary, secondary, 10)
-        self.update_timer = self.set_interval(0.05, self.update_frame)
+        self.update_frame() # Initial update
+        self.update_timer = self.set_interval(0.08, self.update_frame)
+
+    def stop(self) -> None:
+        if hasattr(self, "update_timer"):
+            self.update_timer.stop()
 
     def _generate_color_steps(self, start_hex: str, end_hex: str, steps: int) -> List[str]:
         def hex_to_rgb(h: str) -> Tuple[int, int, int]:
@@ -164,4 +255,4 @@ class ThinkingIndicator(Static):
         self.frame_index = (self.frame_index + 1) % len(self.frames)
         self.color_cycle_index = (self.color_cycle_index + 1) % len(self.animation_colors)
         color = self.animation_colors[self.color_cycle_index]
-        self.update(f"[{color}]{self.frames[self.frame_index]}  AI is thinking...[/]")
+        self.update(f"[{color}]{self.frames[self.frame_index]}  {self._label}[/]")
