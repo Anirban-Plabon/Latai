@@ -26,11 +26,16 @@ TEXTUAL_THEMES = [
 ]
 
 AVAILABLE_COMMANDS = [
-    ("/ask", ""),
-    ("/model", ""),
-    ("/models", ""),
-    ("/themes", ""),
-    ("/commands", ""),
+    ("/ask", "Route directly to agent, bypass history"),
+    ("/model", "Swap provider and model at runtime"),
+    ("/models", "Show models selection menu"),
+    ("/themes", "Show themes selection menu"),
+    ("/commands", "Show available commands list"),
+    ("/tree [glob]", "Show project directory tree"),
+    ("/open <path>", "Open a file in read-only viewer"),
+    ("/edit <path>", "Open a file in editable TextArea"),
+    ("/save", "Save current editor buffer"),
+    ("/close", "Close the file panel and return to chat"),
 ]
 
 MENU_MAIN     = "main"

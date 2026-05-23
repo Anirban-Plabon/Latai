@@ -9,6 +9,10 @@ class Session:
         self.model_name: str = get_default_model()
         self.messages: List[BaseMessage] = []
         self.total_tokens: int = 0
+        self.is_terminal_mode: bool = False
+        self.is_file_panel_open: bool = False
+        self.current_file_path: str | None = None
+        self.is_editing: bool = False
 
     def set_model(self, provider: str, model_name: str) -> None:
         self.provider = provider

@@ -1,0 +1,272 @@
+{
+  "F:\\Anirban_250509\\Projects\\Latai\\debug_graph.py": {
+    "mtime": 1779417481.6076066,
+    "ast_hash": "2d681422ac03453d6d61df1b0e2f7084",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\main.py": {
+    "mtime": 1779417481.6235483,
+    "ast_hash": "22b7440c1fc6956a812af0cfd316c57b",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\.gemini\\settings.json": {
+    "mtime": 1779244109.5197031,
+    "ast_hash": "30f7caa61b7e1a0f487fc38ea20d7a11",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\agent\\graph.py": {
+    "mtime": 1779061227.0,
+    "ast_hash": "04880ce391b12178d83044417ae3ab13",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\agent\\prompts.py": {
+    "mtime": 1779038497.0,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\agent\\state.py": {
+    "mtime": 1779057410.0,
+    "ast_hash": "422c4f3857779f55b0e756340e8d6c4b",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\agent\\tools.py": {
+    "mtime": 1779038497.0,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\agent\\__init__.py": {
+    "mtime": 1779038497.0,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\api\\models_service.py": {
+    "mtime": 1779429365.5325556,
+    "ast_hash": "92394cbe27c9ef12c74d95ad9ffbcb90",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\api\\schemas.py": {
+    "mtime": 1779422429.7897987,
+    "ast_hash": "d73be2eef567d2e0f86b8aa184ce9e2c",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\api\\server.py": {
+    "mtime": 1779422596.1361513,
+    "ast_hash": "3b29f403d10079dc790978021b0a7866",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\commands\\ask.py": {
+    "mtime": 1779041811.0,
+    "ast_hash": "224eb1bdbede9d7f96f74d8e228bcdd7",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\commands\\base.py": {
+    "mtime": 1779041811.0,
+    "ast_hash": "61c5b09f67529b4387fd133de2350fcc",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\commands\\model.py": {
+    "mtime": 1779417481.6076066,
+    "ast_hash": "9fc9d151cb546d43a8cd0bebcbca15a1",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\commands\\__init__.py": {
+    "mtime": 1779038497.0,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\res\\ui\\loaders.py": {
+    "mtime": 1779503751.4174776,
+    "ast_hash": "7da41293e469f166fdb7dc79e6c967c1",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\res\\ui\\welcome.py": {
+    "mtime": 1779432840.315777,
+    "ast_hash": "19f7faa8d28e4d235e2c1f7a9f0bc005",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\res\\ui\\__init__.py": {
+    "mtime": 1779344628.9691164,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\services\\llm.py": {
+    "mtime": 1779429294.4974473,
+    "ast_hash": "459cbdf0d5f30d3f5246e3c4168a3bf4",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\services\\llm_factory.py": {
+    "mtime": 1779422582.6154814,
+    "ast_hash": "25489ec0d44e2affc2da1a0e874046f1",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\services\\session.py": {
+    "mtime": 1779518469.9800756,
+    "ast_hash": "b38b244ee3d52ae10d233869373c37a2",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\services\\__init__.py": {
+    "mtime": 1779038497.0,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\services\\providers\\anthropic.py": {
+    "mtime": 1779041791.0,
+    "ast_hash": "13a4da6bee0b0fd522a912a281bc7e96",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\services\\providers\\gemini.py": {
+    "mtime": 1779057854.0,
+    "ast_hash": "70d281d754fcd308c63f560c2566585d",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\services\\providers\\mock.py": {
+    "mtime": 1779059917.0,
+    "ast_hash": "0ab480eac08e18d2f694d7cd56f70c6d",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\services\\providers\\ollama.py": {
+    "mtime": 1779417481.6265476,
+    "ast_hash": "3e58b7dc3d27a39d8ee86348d9205a5c",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\services\\providers\\openai.py": {
+    "mtime": 1779041791.0,
+    "ast_hash": "3861c7c0fa65ff57554a1fc8b8de8254",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\services\\providers\\openrouter.py": {
+    "mtime": 1779041791.0,
+    "ast_hash": "0ff2b2a0caccbbf2d16b1f759b321e9d",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\services\\providers\\__init__.py": {
+    "mtime": 1779417481.6265476,
+    "ast_hash": "e79711d4882dda8df782887ef0634546",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\tui\\app.py": {
+    "mtime": 1779518492.964553,
+    "ast_hash": "b17b5ca30d1dd42a694b1bd58d1abd30",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\tui\\chat_view.py": {
+    "mtime": 1779503751.4204824,
+    "ast_hash": "75b13bff4f9c4405273538f6cfe05bcb",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\tui\\command_menu.py": {
+    "mtime": 1779417481.6295469,
+    "ast_hash": "839d603958bf44936ab604ebedecb31a",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\tui\\custom_markdown.py": {
+    "mtime": 1779503751.4204824,
+    "ast_hash": "723835a74b5238d4425438ea50dc5465",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\tui\\footer.py": {
+    "mtime": 1779503751.4214828,
+    "ast_hash": "55713c636d994e0423dde865dc0d2c20",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\tui\\header.py": {
+    "mtime": 1779503751.4214828,
+    "ast_hash": "027f88db43ce1f19666224e22a136707",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\tui\\input_bar.py": {
+    "mtime": 1779417481.6295469,
+    "ast_hash": "bf526545347c4e140124cae714be46c4",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\tui\\message.py": {
+    "mtime": 1779417481.6295469,
+    "ast_hash": "9d31b174dbcb27fde5f3ace931319093",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\tui\\__init__.py": {
+    "mtime": 1779038497.0,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\utils\\config.py": {
+    "mtime": 1779503751.4224832,
+    "ast_hash": "4d90263ca97541e5ac372beaab4a712d",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\utils\\errors.py": {
+    "mtime": 1779503751.4234848,
+    "ast_hash": "b19cc691ffa69a3ba449b599c2182220",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\utils\\__init__.py": {
+    "mtime": 1779038497.0,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\AGENTS.md": {
+    "mtime": 1779417481.6065488,
+    "ast_hash": "2b9e5b0c483f6f80876e5f761bd11e55",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\CLAUDE.md": {
+    "mtime": 1779038497.0,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\GEMINI.md": {
+    "mtime": 1779244109.5197031,
+    "ast_hash": "2b9e5b0c483f6f80876e5f761bd11e55",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\gkey.txt": {
+    "mtime": 1779417481.6076066,
+    "ast_hash": "8384c6f0d6d5c01457a72611333d5368",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\requirements.txt": {
+    "mtime": 1779430768.9992442,
+    "ast_hash": "7d594db602ff9d985e18f58f5fc76e84",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\docs\\chat-agent.md": {
+    "mtime": 1779040968.0,
+    "ast_hash": "a00f109659723dbf03f382868f363248",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\docs\\starter1.txt": {
+    "mtime": 1779244109.5315225,
+    "ast_hash": "7a882bdc30ad88b8b46e1c550afd072e",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\tui\\status_event.py": {
+    "mtime": 1779505783.4539423,
+    "ast_hash": "f4b3b245717852d57529f473e0a862ef",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\tui\\status_panel.py": {
+    "mtime": 1779517317.939247,
+    "ast_hash": "75f8e5e9fa4f850562cb0384557085db",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\tui\\splitter.py": {
+    "mtime": 1779517569.3625968,
+    "ast_hash": "b4286035003b0adc85e554713d138d6a",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\commands\\term.py": {
+    "mtime": 1779518473.6054475,
+    "ast_hash": "c03af400b949e9666b8a91d417a5159a",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\implementation_plan.md": {
+    "mtime": 1779518409.5233605,
+    "ast_hash": "f5a0ff3754638b62445e77dde42568cd",
+    "semantic_hash": ""
+  },
+  "F:\\Anirban_250509\\Projects\\Latai\\task.md": {
+    "mtime": 1779518463.8765159,
+    "ast_hash": "28f90091e5f391ec71b59771764e1f11",
+    "semantic_hash": ""
+  }
+}

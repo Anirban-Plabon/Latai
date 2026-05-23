@@ -1,0 +1,6480 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "llm_invocation_flow",
+        "label": "LLM Invocation Flow",
+        "nodes": [
+          "api_server_chat",
+          "agent_graph_llm_node",
+          "services_llm_factory_get_chat_model"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "services/llm_factory.py"
+      },
+      {
+        "id": "provider_implementations",
+        "label": "Provider Implementations",
+        "nodes": [
+          "providers_anthropic_get_model",
+          "providers_gemini_get_model",
+          "providers_mock_get_model"
+        ],
+        "relation": "implement",
+        "confidence": "INFERRED",
+        "confidence_score": 0.9,
+        "source_file": "services/providers/mock.py"
+      },
+      {
+        "id": "tui_core_components",
+        "label": "TUI Core Components",
+        "nodes": [
+          "tui_app_lataiapp",
+          "tui_chat_view_chatview",
+          "tui_input_bar_inputbar",
+          "tui_command_menu_commandmenu"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.95,
+        "source_file": "tui/app.py"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "debug_graph.py",
+      "file_type": "code",
+      "source_file": "debug_graph.py",
+      "source_location": "L1",
+      "id": "debug_graph_py",
+      "community": 4,
+      "norm_label": "debug_graph.py"
+    },
+    {
+      "label": "debug()",
+      "file_type": "code",
+      "source_file": "debug_graph.py",
+      "source_location": "L7",
+      "id": "latai_debug_graph_debug",
+      "community": 4,
+      "norm_label": "debug()"
+    },
+    {
+      "label": "main.py",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L1",
+      "id": "main_py",
+      "community": 1,
+      "norm_label": "main.py"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L4",
+      "id": "latai_main_main",
+      "community": 1,
+      "norm_label": "main()"
+    },
+    {
+      "label": "settings.json",
+      "file_type": "code",
+      "source_file": ".gemini/settings.json",
+      "source_location": "L1",
+      "id": "gemini_settings_json",
+      "community": 12,
+      "norm_label": "settings.json"
+    },
+    {
+      "label": "hooks",
+      "file_type": "code",
+      "source_file": ".gemini/settings.json",
+      "source_location": "L2",
+      "id": "gemini_settings_hooks",
+      "community": 12,
+      "norm_label": "hooks"
+    },
+    {
+      "label": "BeforeTool",
+      "file_type": "code",
+      "source_file": ".gemini/settings.json",
+      "source_location": "L3",
+      "id": "gemini_settings_hooks_beforetool",
+      "community": 12,
+      "norm_label": "beforetool"
+    },
+    {
+      "label": "graph.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/agent/graph.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_agent_graph_py",
+      "community": 4,
+      "norm_label": "graph.py"
+    },
+    {
+      "label": "llm_node()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/agent/graph.py",
+      "source_location": "L6",
+      "id": "agent_graph_llm_node",
+      "community": 4,
+      "norm_label": "llm_node()"
+    },
+    {
+      "label": "build_graph()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/agent/graph.py",
+      "source_location": "L11",
+      "id": "agent_graph_build_graph",
+      "community": 4,
+      "norm_label": "build_graph()"
+    },
+    {
+      "label": "prompts.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/agent/prompts.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_agent_prompts_py",
+      "community": 33,
+      "norm_label": "prompts.py"
+    },
+    {
+      "label": "state.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/agent/state.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_agent_state_py",
+      "community": 11,
+      "norm_label": "state.py"
+    },
+    {
+      "label": "AgentState",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/agent/state.py",
+      "source_location": "L5",
+      "id": "agent_state_agentstate",
+      "community": 11,
+      "norm_label": "agentstate"
+    },
+    {
+      "label": "TypedDict",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "typeddict",
+      "community": 11,
+      "norm_label": "typeddict"
+    },
+    {
+      "label": "tools.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/agent/tools.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_agent_tools_py",
+      "community": 34,
+      "norm_label": "tools.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/agent/__init__.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_agent_init_py",
+      "community": 32,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "models_service.py",
+      "file_type": "code",
+      "source_file": "api/models_service.py",
+      "source_location": "L1",
+      "id": "api_models_service_py",
+      "community": 5,
+      "norm_label": "models_service.py"
+    },
+    {
+      "label": "_load_cfg()",
+      "file_type": "code",
+      "source_file": "api/models_service.py",
+      "source_location": "L9",
+      "id": "api_models_service_load_cfg",
+      "community": 5,
+      "norm_label": "_load_cfg()"
+    },
+    {
+      "label": "get_available_models()",
+      "file_type": "code",
+      "source_file": "api/models_service.py",
+      "source_location": "L18",
+      "id": "api_models_service_get_available_models",
+      "community": 5,
+      "norm_label": "get_available_models()"
+    },
+    {
+      "label": "schemas.py",
+      "file_type": "code",
+      "source_file": "api/schemas.py",
+      "source_location": "L1",
+      "id": "api_schemas_py",
+      "community": 5,
+      "norm_label": "schemas.py"
+    },
+    {
+      "label": "ModelOption",
+      "file_type": "code",
+      "source_file": "api/schemas.py",
+      "source_location": "L4",
+      "id": "api_schemas_modeloption",
+      "community": 5,
+      "norm_label": "modeloption"
+    },
+    {
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "basemodel",
+      "community": 5,
+      "norm_label": "basemodel"
+    },
+    {
+      "label": "ProviderOptions",
+      "file_type": "code",
+      "source_file": "api/schemas.py",
+      "source_location": "L8",
+      "id": "api_schemas_provideroptions",
+      "community": 5,
+      "norm_label": "provideroptions"
+    },
+    {
+      "label": "Message",
+      "file_type": "code",
+      "source_file": "api/schemas.py",
+      "source_location": "L12",
+      "id": "api_schemas_message",
+      "community": 5,
+      "norm_label": "message"
+    },
+    {
+      "label": "ChatRequest",
+      "file_type": "code",
+      "source_file": "api/schemas.py",
+      "source_location": "L16",
+      "id": "api_schemas_chatrequest",
+      "community": 5,
+      "norm_label": "chatrequest"
+    },
+    {
+      "label": "server.py",
+      "file_type": "code",
+      "source_file": "api/server.py",
+      "source_location": "L1",
+      "id": "api_server_py",
+      "community": 7,
+      "norm_label": "server.py"
+    },
+    {
+      "label": "list_models()",
+      "file_type": "code",
+      "source_file": "api/server.py",
+      "source_location": "L12",
+      "id": "api_server_list_models",
+      "community": 7,
+      "norm_label": "list_models()"
+    },
+    {
+      "label": "chat()",
+      "file_type": "code",
+      "source_file": "api/server.py",
+      "source_location": "L20",
+      "id": "api_server_chat",
+      "community": 7,
+      "norm_label": "chat()"
+    },
+    {
+      "label": "Returns a filtered structure of all currently available model options.",
+      "file_type": "rationale",
+      "source_file": "api/server.py",
+      "source_location": "L13",
+      "id": "api_server_rationale_13",
+      "community": 7,
+      "norm_label": "returns a filtered structure of all currently available model options."
+    },
+    {
+      "label": "Instantiate the matching LangChain chat model and invoke it with messages.",
+      "file_type": "rationale",
+      "source_file": "api/server.py",
+      "source_location": "L21",
+      "id": "api_server_rationale_21",
+      "community": 7,
+      "norm_label": "instantiate the matching langchain chat model and invoke it with messages."
+    },
+    {
+      "label": "ask.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/commands/ask.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_commands_ask_py",
+      "community": 36,
+      "norm_label": "ask.py"
+    },
+    {
+      "label": "base.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/commands/base.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_commands_base_py",
+      "community": 1,
+      "norm_label": "base.py"
+    },
+    {
+      "label": "is_command()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/commands/base.py",
+      "source_location": "L1",
+      "id": "commands_base_is_command",
+      "community": 1,
+      "norm_label": "is_command()"
+    },
+    {
+      "label": "parse_command()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/commands/base.py",
+      "source_location": "L4",
+      "id": "commands_base_parse_command",
+      "community": 1,
+      "norm_label": "parse_command()"
+    },
+    {
+      "label": "model.py",
+      "file_type": "code",
+      "source_file": "commands/model.py",
+      "source_location": "L1",
+      "id": "commands_model_py",
+      "community": 4,
+      "norm_label": "model.py"
+    },
+    {
+      "label": "execute()",
+      "file_type": "code",
+      "source_file": "commands/model.py",
+      "source_location": "L5",
+      "id": "commands_model_execute",
+      "community": 4,
+      "norm_label": "execute()"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/commands/__init__.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_commands_init_py",
+      "community": 37,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "loaders.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/res/ui/loaders.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_res_ui_loaders_py",
+      "community": 9,
+      "norm_label": "loaders.py"
+    },
+    {
+      "label": "ThinkingIndicator",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/res/ui/loaders.py",
+      "source_location": "L417",
+      "id": "ui_loaders_thinkingindicator",
+      "community": 9,
+      "norm_label": "thinkingindicator"
+    },
+    {
+      "label": "Static",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "static",
+      "community": 0,
+      "norm_label": "static"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/res/ui/loaders.py",
+      "source_location": "L418",
+      "id": "ui_loaders_thinkingindicator_init",
+      "community": 9,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".on_mount()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/res/ui/loaders.py",
+      "source_location": "L425",
+      "id": "ui_loaders_thinkingindicator_on_mount",
+      "community": 9,
+      "norm_label": ".on_mount()"
+    },
+    {
+      "label": ".stop()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/res/ui/loaders.py",
+      "source_location": "L438",
+      "id": "ui_loaders_thinkingindicator_stop",
+      "community": 9,
+      "norm_label": ".stop()"
+    },
+    {
+      "label": ".change_state()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/res/ui/loaders.py",
+      "source_location": "L442",
+      "id": "ui_loaders_thinkingindicator_change_state",
+      "community": 9,
+      "norm_label": ".change_state()"
+    },
+    {
+      "label": "._generate_color_steps()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/res/ui/loaders.py",
+      "source_location": "L454",
+      "id": "ui_loaders_thinkingindicator_generate_color_steps",
+      "community": 9,
+      "norm_label": "._generate_color_steps()"
+    },
+    {
+      "label": "._col_width()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/res/ui/loaders.py",
+      "source_location": "L482",
+      "id": "ui_loaders_thinkingindicator_col_width",
+      "community": 9,
+      "norm_label": "._col_width()"
+    },
+    {
+      "label": "._make_table()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/res/ui/loaders.py",
+      "source_location": "L486",
+      "id": "ui_loaders_thinkingindicator_make_table",
+      "community": 9,
+      "norm_label": "._make_table()"
+    },
+    {
+      "label": "._render_frame()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/res/ui/loaders.py",
+      "source_location": "L502",
+      "id": "ui_loaders_thinkingindicator_render_frame",
+      "community": 9,
+      "norm_label": "._render_frame()"
+    },
+    {
+      "label": ".mark_done()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/res/ui/loaders.py",
+      "source_location": "L514",
+      "id": "ui_loaders_thinkingindicator_mark_done",
+      "community": 9,
+      "norm_label": ".mark_done()"
+    },
+    {
+      "label": "welcome.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/res/ui/welcome.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_res_ui_welcome_py",
+      "community": 31,
+      "norm_label": "welcome.py"
+    },
+    {
+      "label": "hex_to_rgb()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/res/ui/welcome.py",
+      "source_location": "L59",
+      "id": "ui_welcome_hex_to_rgb",
+      "community": 31,
+      "norm_label": "hex_to_rgb()"
+    },
+    {
+      "label": "get_interpolated_hex()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/res/ui/welcome.py",
+      "source_location": "L64",
+      "id": "ui_welcome_get_interpolated_hex",
+      "community": 31,
+      "norm_label": "get_interpolated_hex()"
+    },
+    {
+      "label": "animate_welcome()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/res/ui/welcome.py",
+      "source_location": "L72",
+      "id": "ui_welcome_animate_welcome",
+      "community": 31,
+      "norm_label": "animate_welcome()"
+    },
+    {
+      "label": "Converts #RRGGBB to (R, G, B) tuple.",
+      "file_type": "rationale",
+      "source_file": "/mnt/l/projects/Latai/res/ui/welcome.py",
+      "source_location": "L60",
+      "id": "ui_welcome_rationale_60",
+      "community": 31,
+      "norm_label": "converts #rrggbb to (r, g, b) tuple."
+    },
+    {
+      "label": "Returns hex string for a color between two RGB tuples.",
+      "file_type": "rationale",
+      "source_file": "/mnt/l/projects/Latai/res/ui/welcome.py",
+      "source_location": "L65",
+      "id": "ui_welcome_rationale_65",
+      "community": 31,
+      "norm_label": "returns hex string for a color between two rgb tuples."
+    },
+    {
+      "label": "Mounts and animates the welcome logo with a unified structure and dynamic colors",
+      "file_type": "rationale",
+      "source_file": "/mnt/l/projects/Latai/res/ui/welcome.py",
+      "source_location": "L79",
+      "id": "ui_welcome_rationale_79",
+      "community": 31,
+      "norm_label": "mounts and animates the welcome logo with a unified structure and dynamic colors"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "res/ui/__init__.py",
+      "source_location": "L1",
+      "id": "res_ui_init_py",
+      "community": 41,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "llm.py",
+      "file_type": "code",
+      "source_file": "services/llm.py",
+      "source_location": "L1",
+      "id": "services_llm_py",
+      "community": 4,
+      "norm_label": "llm.py"
+    },
+    {
+      "label": "get_llm()",
+      "file_type": "code",
+      "source_file": "services/llm.py",
+      "source_location": "L4",
+      "id": "services_llm_get_llm",
+      "community": 4,
+      "norm_label": "get_llm()"
+    },
+    {
+      "label": "Legacy wrapper for the new LLM factory.",
+      "file_type": "rationale",
+      "source_file": "services/llm.py",
+      "source_location": "L5",
+      "id": "services_llm_rationale_5",
+      "community": 4,
+      "norm_label": "legacy wrapper for the new llm factory."
+    },
+    {
+      "label": "llm_factory.py",
+      "file_type": "code",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L1",
+      "id": "services_llm_factory_py",
+      "community": 7,
+      "norm_label": "llm_factory.py"
+    },
+    {
+      "label": "_load_cfg()",
+      "file_type": "code",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L8",
+      "id": "services_llm_factory_load_cfg",
+      "community": 7,
+      "norm_label": "_load_cfg()"
+    },
+    {
+      "label": "resolve_key()",
+      "file_type": "code",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L16",
+      "id": "services_llm_factory_resolve_key",
+      "community": 7,
+      "norm_label": "resolve_key()"
+    },
+    {
+      "label": "get_base_url()",
+      "file_type": "code",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L41",
+      "id": "services_llm_factory_get_base_url",
+      "community": 7,
+      "norm_label": "get_base_url()"
+    },
+    {
+      "label": "get_chat_model()",
+      "file_type": "code",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L45",
+      "id": "services_llm_factory_get_chat_model",
+      "community": 7,
+      "norm_label": "get_chat_model()"
+    },
+    {
+      "label": "Resolve API key based on provider and model rules.",
+      "file_type": "rationale",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L17",
+      "id": "services_llm_factory_rationale_17",
+      "community": 7,
+      "norm_label": "resolve api key based on provider and model rules."
+    },
+    {
+      "label": "Instantiate LangChain chat model with explicit parameters.",
+      "file_type": "rationale",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L46",
+      "id": "services_llm_factory_rationale_46",
+      "community": 7,
+      "norm_label": "instantiate langchain chat model with explicit parameters."
+    },
+    {
+      "label": "session.py",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": "L1",
+      "id": "services_session_py",
+      "community": 4,
+      "norm_label": "session.py"
+    },
+    {
+      "label": "Session",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": "L6",
+      "id": "services_session_session",
+      "community": 4,
+      "norm_label": "session"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": "L7",
+      "id": "services_session_session_init",
+      "community": 8,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".set_model()",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": "L13",
+      "id": "services_session_session_set_model",
+      "community": 4,
+      "norm_label": ".set_model()"
+    },
+    {
+      "label": ".add_tokens()",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": "L17",
+      "id": "services_session_session_add_tokens",
+      "community": 4,
+      "norm_label": ".add_tokens()"
+    },
+    {
+      "label": ".add_user_message()",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": "L20",
+      "id": "services_session_session_add_user_message",
+      "community": 4,
+      "norm_label": ".add_user_message()"
+    },
+    {
+      "label": ".add_ai_message()",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": "L23",
+      "id": "services_session_session_add_ai_message",
+      "community": 4,
+      "norm_label": ".add_ai_message()"
+    },
+    {
+      "label": ".get_messages()",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": "L26",
+      "id": "services_session_session_get_messages",
+      "community": 4,
+      "norm_label": ".get_messages()"
+    },
+    {
+      "label": ".clear_messages()",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": "L29",
+      "id": "services_session_session_clear_messages",
+      "community": 4,
+      "norm_label": ".clear_messages()"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/services/__init__.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_services_init_py",
+      "community": 38,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "anthropic.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/services/providers/anthropic.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_services_providers_anthropic_py",
+      "community": 6,
+      "norm_label": "anthropic.py"
+    },
+    {
+      "label": "get_model()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/services/providers/anthropic.py",
+      "source_location": "L4",
+      "id": "providers_anthropic_get_model",
+      "community": 6,
+      "norm_label": "get_model()"
+    },
+    {
+      "label": "gemini.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/services/providers/gemini.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_services_providers_gemini_py",
+      "community": 6,
+      "norm_label": "gemini.py"
+    },
+    {
+      "label": "get_model()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/services/providers/gemini.py",
+      "source_location": "L4",
+      "id": "providers_gemini_get_model",
+      "community": 6,
+      "norm_label": "get_model()"
+    },
+    {
+      "label": "mock.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/services/providers/mock.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_services_providers_mock_py",
+      "community": 6,
+      "norm_label": "mock.py"
+    },
+    {
+      "label": "MockChatModel",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/services/providers/mock.py",
+      "source_location": "L7",
+      "id": "providers_mock_mockchatmodel",
+      "community": 6,
+      "norm_label": "mockchatmodel"
+    },
+    {
+      "label": "BaseChatModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "basechatmodel",
+      "community": 6,
+      "norm_label": "basechatmodel"
+    },
+    {
+      "label": "._generate()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/services/providers/mock.py",
+      "source_location": "L8",
+      "id": "providers_mock_mockchatmodel_generate",
+      "community": 6,
+      "norm_label": "._generate()"
+    },
+    {
+      "label": "._astream()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/services/providers/mock.py",
+      "source_location": "L11",
+      "id": "providers_mock_mockchatmodel_astream",
+      "community": 6,
+      "norm_label": "._astream()"
+    },
+    {
+      "label": "_llm_type()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/services/providers/mock.py",
+      "source_location": "L19",
+      "id": "providers_mock_llm_type",
+      "community": 6,
+      "norm_label": "_llm_type()"
+    },
+    {
+      "label": "get_model()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/services/providers/mock.py",
+      "source_location": "L22",
+      "id": "providers_mock_get_model",
+      "community": 6,
+      "norm_label": "get_model()"
+    },
+    {
+      "label": "ollama.py",
+      "file_type": "code",
+      "source_file": "services/providers/ollama.py",
+      "source_location": "L1",
+      "id": "services_providers_ollama_py",
+      "community": 10,
+      "norm_label": "ollama.py"
+    },
+    {
+      "label": "get_model()",
+      "file_type": "code",
+      "source_file": "services/providers/ollama.py",
+      "source_location": "L5",
+      "id": "providers_ollama_get_model",
+      "community": 10,
+      "norm_label": "get_model()"
+    },
+    {
+      "label": "openai.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/services/providers/openai.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_services_providers_openai_py",
+      "community": 10,
+      "norm_label": "openai.py"
+    },
+    {
+      "label": "get_model()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/services/providers/openai.py",
+      "source_location": "L4",
+      "id": "providers_openai_get_model",
+      "community": 10,
+      "norm_label": "get_model()"
+    },
+    {
+      "label": "openrouter.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/services/providers/openrouter.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_services_providers_openrouter_py",
+      "community": 10,
+      "norm_label": "openrouter.py"
+    },
+    {
+      "label": "get_model()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/services/providers/openrouter.py",
+      "source_location": "L4",
+      "id": "providers_openrouter_get_model",
+      "community": 10,
+      "norm_label": "get_model()"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/providers/__init__.py",
+      "source_location": "L1",
+      "id": "services_providers_init_py",
+      "community": 22,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "app.py",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L1",
+      "id": "tui_app_py",
+      "community": 1,
+      "norm_label": "app.py"
+    },
+    {
+      "label": "LataiApp",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L21",
+      "id": "tui_app_lataiapp",
+      "community": 1,
+      "norm_label": "lataiapp"
+    },
+    {
+      "label": "App",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "app",
+      "community": 0,
+      "norm_label": "app"
+    },
+    {
+      "label": ".compose()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L38",
+      "id": "tui_app_lataiapp_compose",
+      "community": 0,
+      "norm_label": ".compose()"
+    },
+    {
+      "label": ".on_mount()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L51",
+      "id": "tui_app_lataiapp_on_mount",
+      "community": 31,
+      "norm_label": ".on_mount()"
+    },
+    {
+      "label": ".show_loading()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L61",
+      "id": "tui_app_lataiapp_show_loading",
+      "community": 1,
+      "norm_label": ".show_loading()"
+    },
+    {
+      "label": ".hide_loading()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L81",
+      "id": "tui_app_lataiapp_hide_loading",
+      "community": 1,
+      "norm_label": ".hide_loading()"
+    },
+    {
+      "label": ".show_generating()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L94",
+      "id": "tui_app_lataiapp_show_generating",
+      "community": 1,
+      "norm_label": ".show_generating()"
+    },
+    {
+      "label": ".show_done()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L112",
+      "id": "tui_app_lataiapp_show_done",
+      "community": 1,
+      "norm_label": ".show_done()"
+    },
+    {
+      "label": ".action_open_menu()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L133",
+      "id": "tui_app_lataiapp_action_open_menu",
+      "community": 1,
+      "norm_label": ".action_open_menu()"
+    },
+    {
+      "label": ".on_button_pressed()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L136",
+      "id": "tui_app_lataiapp_on_button_pressed",
+      "community": 1,
+      "norm_label": ".on_button_pressed()"
+    },
+    {
+      "label": ".on_command_menu_model_selected()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L140",
+      "id": "tui_app_lataiapp_on_command_menu_model_selected",
+      "community": 1,
+      "norm_label": ".on_command_menu_model_selected()"
+    },
+    {
+      "label": ".on_command_menu_theme_selected()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L155",
+      "id": "tui_app_lataiapp_on_command_menu_theme_selected",
+      "community": 1,
+      "norm_label": ".on_command_menu_theme_selected()"
+    },
+    {
+      "label": ".on_input_submitted()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L161",
+      "id": "tui_app_lataiapp_on_input_submitted",
+      "community": 1,
+      "norm_label": ".on_input_submitted()"
+    },
+    {
+      "label": "stream_response()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L196",
+      "id": "tui_app_stream_response",
+      "community": 1,
+      "norm_label": "stream_response()"
+    },
+    {
+      "label": "The main Latai TUI chat application class.",
+      "file_type": "rationale",
+      "source_file": "tui/app.py",
+      "source_location": "L22",
+      "id": "tui_app_rationale_22",
+      "community": 1,
+      "norm_label": "the main latai tui chat application class."
+    },
+    {
+      "label": "chat_view.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/chat_view.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_tui_chat_view_py",
+      "community": 0,
+      "norm_label": "chat_view.py"
+    },
+    {
+      "label": "ChatView",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/chat_view.py",
+      "source_location": "L5",
+      "id": "tui_chat_view_chatview",
+      "community": 0,
+      "norm_label": "chatview"
+    },
+    {
+      "label": "ScrollableContainer",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "scrollablecontainer",
+      "community": 0,
+      "norm_label": "scrollablecontainer"
+    },
+    {
+      "label": ".add_message()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/chat_view.py",
+      "source_location": "L6",
+      "id": "tui_chat_view_chatview_add_message",
+      "community": 0,
+      "norm_label": ".add_message()"
+    },
+    {
+      "label": ".update_message()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/chat_view.py",
+      "source_location": "L19",
+      "id": "tui_chat_view_chatview_update_message",
+      "community": 0,
+      "norm_label": ".update_message()"
+    },
+    {
+      "label": "command_menu.py",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L1",
+      "id": "tui_command_menu_py",
+      "community": 2,
+      "norm_label": "command_menu.py"
+    },
+    {
+      "label": "CommandMenu",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L44",
+      "id": "tui_command_menu_commandmenu",
+      "community": 2,
+      "norm_label": "commandmenu"
+    },
+    {
+      "label": "Container",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "container",
+      "community": 0,
+      "norm_label": "container"
+    },
+    {
+      "label": "ModelSelected",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L60",
+      "id": "tui_command_menu_modelselected",
+      "community": 2,
+      "norm_label": "modelselected"
+    },
+    {
+      "label": "Message",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "message",
+      "community": 2,
+      "norm_label": "message"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L61",
+      "id": "tui_command_menu_modelselected_init",
+      "community": 2,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": "ThemeSelected",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L65",
+      "id": "tui_command_menu_themeselected",
+      "community": 2,
+      "norm_label": "themeselected"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L66",
+      "id": "tui_command_menu_themeselected_init",
+      "community": 2,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".compose()",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L136",
+      "id": "tui_command_menu_commandmenu_compose",
+      "community": 2,
+      "norm_label": ".compose()"
+    },
+    {
+      "label": ".on_mount()",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L142",
+      "id": "tui_command_menu_commandmenu_on_mount",
+      "community": 2,
+      "norm_label": ".on_mount()"
+    },
+    {
+      "label": ".open()",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L147",
+      "id": "tui_command_menu_commandmenu_open",
+      "community": 2,
+      "norm_label": ".open()"
+    },
+    {
+      "label": ".close()",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L152",
+      "id": "tui_command_menu_commandmenu_close",
+      "community": 2,
+      "norm_label": ".close()"
+    },
+    {
+      "label": "._build_menu()",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L159",
+      "id": "tui_command_menu_commandmenu_build_menu",
+      "community": 2,
+      "norm_label": "._build_menu()"
+    },
+    {
+      "label": ".on_key()",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L211",
+      "id": "tui_command_menu_commandmenu_on_key",
+      "community": 2,
+      "norm_label": ".on_key()"
+    },
+    {
+      "label": ".on_option_list_option_selected()",
+      "file_type": "code",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L219",
+      "id": "tui_command_menu_commandmenu_on_option_list_option_selected",
+      "community": 2,
+      "norm_label": ".on_option_list_option_selected()"
+    },
+    {
+      "label": "Centered overlay command palette.      Navigation:       \u2022 Main menu  \u2192  Mode",
+      "file_type": "rationale",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L45",
+      "id": "tui_command_menu_rationale_45",
+      "community": 2,
+      "norm_label": "centered overlay command palette.      navigation:       \u2022 main menu  \u2192  mode"
+    },
+    {
+      "label": "Show the menu, optionally jumping straight to a sub-menu.",
+      "file_type": "rationale",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L148",
+      "id": "tui_command_menu_rationale_148",
+      "community": 2,
+      "norm_label": "show the menu, optionally jumping straight to a sub-menu."
+    },
+    {
+      "label": "Hide and reset to main menu.",
+      "file_type": "rationale",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L153",
+      "id": "tui_command_menu_rationale_153",
+      "community": 2,
+      "norm_label": "hide and reset to main menu."
+    },
+    {
+      "label": "custom_markdown.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/custom_markdown.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_tui_custom_markdown_py",
+      "community": 3,
+      "norm_label": "custom_markdown.py"
+    },
+    {
+      "label": "MarkdownFenceWithCopy",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/custom_markdown.py",
+      "source_location": "L5",
+      "id": "tui_custom_markdown_markdownfencewithcopy",
+      "community": 3,
+      "norm_label": "markdownfencewithcopy"
+    },
+    {
+      "label": "MarkdownFence",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "markdownfence",
+      "community": 3,
+      "norm_label": "markdownfence"
+    },
+    {
+      "label": ".compose()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/custom_markdown.py",
+      "source_location": "L8",
+      "id": "tui_custom_markdown_markdownfencewithcopy_compose",
+      "community": 3,
+      "norm_label": ".compose()"
+    },
+    {
+      "label": ".on_button_pressed()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/custom_markdown.py",
+      "source_location": "L12",
+      "id": "tui_custom_markdown_markdownfencewithcopy_on_button_pressed",
+      "community": 3,
+      "norm_label": ".on_button_pressed()"
+    },
+    {
+      "label": "CustomMarkdown",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/custom_markdown.py",
+      "source_location": "L26",
+      "id": "tui_custom_markdown_custommarkdown",
+      "community": 3,
+      "norm_label": "custommarkdown"
+    },
+    {
+      "label": "Markdown",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "markdown",
+      "community": 3,
+      "norm_label": "markdown"
+    },
+    {
+      "label": ".get_block_class()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/custom_markdown.py",
+      "source_location": "L29",
+      "id": "tui_custom_markdown_custommarkdown_get_block_class",
+      "community": 3,
+      "norm_label": ".get_block_class()"
+    },
+    {
+      "label": "A code block with a 'Copy' button in the top right.",
+      "file_type": "rationale",
+      "source_file": "/mnt/l/projects/Latai/tui/custom_markdown.py",
+      "source_location": "L6",
+      "id": "tui_custom_markdown_rationale_6",
+      "community": 3,
+      "norm_label": "a code block with a 'copy' button in the top right."
+    },
+    {
+      "label": "Markdown widget that uses our custom code block class.",
+      "file_type": "rationale",
+      "source_file": "/mnt/l/projects/Latai/tui/custom_markdown.py",
+      "source_location": "L27",
+      "id": "tui_custom_markdown_rationale_27",
+      "community": 3,
+      "norm_label": "markdown widget that uses our custom code block class."
+    },
+    {
+      "label": "footer.py",
+      "file_type": "code",
+      "source_file": "tui/footer.py",
+      "source_location": "L1",
+      "id": "tui_footer_py",
+      "community": 14,
+      "norm_label": "footer.py"
+    },
+    {
+      "label": "CustomFooter",
+      "file_type": "code",
+      "source_file": "tui/footer.py",
+      "source_location": "L8",
+      "id": "tui_footer_customfooter",
+      "community": 14,
+      "norm_label": "customfooter"
+    },
+    {
+      "label": "Horizontal",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "horizontal",
+      "community": 0,
+      "norm_label": "horizontal"
+    },
+    {
+      "label": ".compose()",
+      "file_type": "code",
+      "source_file": "tui/footer.py",
+      "source_location": "L11",
+      "id": "tui_footer_customfooter_compose",
+      "community": 14,
+      "norm_label": ".compose()"
+    },
+    {
+      "label": ".on_mount()",
+      "file_type": "code",
+      "source_file": "tui/footer.py",
+      "source_location": "L16",
+      "id": "tui_footer_customfooter_on_mount",
+      "community": 14,
+      "norm_label": ".on_mount()"
+    },
+    {
+      "label": ".update_footer()",
+      "file_type": "code",
+      "source_file": "tui/footer.py",
+      "source_location": "L19",
+      "id": "tui_footer_customfooter_update_footer",
+      "community": 14,
+      "norm_label": ".update_footer()"
+    },
+    {
+      "label": ".format_tokens()",
+      "file_type": "code",
+      "source_file": "tui/footer.py",
+      "source_location": "L23",
+      "id": "tui_footer_customfooter_format_tokens",
+      "community": 14,
+      "norm_label": ".format_tokens()"
+    },
+    {
+      "label": "The application's custom footer bar showing workspace info, selected model, and",
+      "file_type": "rationale",
+      "source_file": "tui/footer.py",
+      "source_location": "L9",
+      "id": "tui_footer_rationale_9",
+      "community": 14,
+      "norm_label": "the application's custom footer bar showing workspace info, selected model, and"
+    },
+    {
+      "label": "header.py",
+      "file_type": "code",
+      "source_file": "tui/header.py",
+      "source_location": "L1",
+      "id": "tui_header_py",
+      "community": 0,
+      "norm_label": "header.py"
+    },
+    {
+      "label": "CustomHeader",
+      "file_type": "code",
+      "source_file": "tui/header.py",
+      "source_location": "L5",
+      "id": "tui_header_customheader",
+      "community": 0,
+      "norm_label": "customheader"
+    },
+    {
+      "label": ".compose()",
+      "file_type": "code",
+      "source_file": "tui/header.py",
+      "source_location": "L8",
+      "id": "tui_header_customheader_compose",
+      "community": 0,
+      "norm_label": ".compose()"
+    },
+    {
+      "label": "The application's custom header bar.",
+      "file_type": "rationale",
+      "source_file": "tui/header.py",
+      "source_location": "L6",
+      "id": "tui_header_rationale_6",
+      "community": 0,
+      "norm_label": "the application's custom header bar."
+    },
+    {
+      "label": "input_bar.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/input_bar.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_tui_input_bar_py",
+      "community": 0,
+      "norm_label": "input_bar.py"
+    },
+    {
+      "label": "InputBar",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/input_bar.py",
+      "source_location": "L5",
+      "id": "tui_input_bar_inputbar",
+      "community": 0,
+      "norm_label": "inputbar"
+    },
+    {
+      "label": ".compose()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/input_bar.py",
+      "source_location": "L6",
+      "id": "tui_input_bar_inputbar_compose",
+      "community": 0,
+      "norm_label": ".compose()"
+    },
+    {
+      "label": ".focus_input()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/input_bar.py",
+      "source_location": "L15",
+      "id": "tui_input_bar_inputbar_focus_input",
+      "community": 0,
+      "norm_label": ".focus_input()"
+    },
+    {
+      "label": "message.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/message.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_tui_message_py",
+      "community": 0,
+      "norm_label": "message.py"
+    },
+    {
+      "label": "ChatMessage",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/message.py",
+      "source_location": "L9",
+      "id": "tui_message_chatmessage",
+      "community": 0,
+      "norm_label": "chatmessage"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/message.py",
+      "source_location": "L12",
+      "id": "tui_message_chatmessage_init",
+      "community": 0,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".compose()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/message.py",
+      "source_location": "L18",
+      "id": "tui_message_chatmessage_compose",
+      "community": 0,
+      "norm_label": ".compose()"
+    },
+    {
+      "label": ".watch_content()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/message.py",
+      "source_location": "L36",
+      "id": "tui_message_chatmessage_watch_content",
+      "community": 0,
+      "norm_label": ".watch_content()"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/tui/__init__.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_tui_init_py",
+      "community": 39,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "config.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/utils/config.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_utils_config_py",
+      "community": 8,
+      "norm_label": "config.py"
+    },
+    {
+      "label": "_load_cfg()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/utils/config.py",
+      "source_location": "L8",
+      "id": "utils_config_load_cfg",
+      "community": 8,
+      "norm_label": "_load_cfg()"
+    },
+    {
+      "label": "get_api_key()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/utils/config.py",
+      "source_location": "L17",
+      "id": "utils_config_get_api_key",
+      "community": 8,
+      "norm_label": "get_api_key()"
+    },
+    {
+      "label": "get_base_url()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/utils/config.py",
+      "source_location": "L30",
+      "id": "utils_config_get_base_url",
+      "community": 8,
+      "norm_label": "get_base_url()"
+    },
+    {
+      "label": "get_configured_models()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/utils/config.py",
+      "source_location": "L34",
+      "id": "utils_config_get_configured_models",
+      "community": 8,
+      "norm_label": "get_configured_models()"
+    },
+    {
+      "label": "get_default_provider()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/utils/config.py",
+      "source_location": "L73",
+      "id": "utils_config_get_default_provider",
+      "community": 8,
+      "norm_label": "get_default_provider()"
+    },
+    {
+      "label": "get_default_model()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/utils/config.py",
+      "source_location": "L74",
+      "id": "utils_config_get_default_model",
+      "community": 8,
+      "norm_label": "get_default_model()"
+    },
+    {
+      "label": "is_provider_configured()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/utils/config.py",
+      "source_location": "L76",
+      "id": "utils_config_is_provider_configured",
+      "community": 8,
+      "norm_label": "is_provider_configured()"
+    },
+    {
+      "label": "Get key from config.yaml. Supports model-level resolution for openrouter.",
+      "file_type": "rationale",
+      "source_file": "/mnt/l/projects/Latai/utils/config.py",
+      "source_location": "L18",
+      "id": "utils_config_rationale_18",
+      "community": 8,
+      "norm_label": "get key from config.yaml. supports model-level resolution for openrouter."
+    },
+    {
+      "label": "Get base_url (e.g. for Ollama).",
+      "file_type": "rationale",
+      "source_file": "/mnt/l/projects/Latai/utils/config.py",
+      "source_location": "L31",
+      "id": "utils_config_rationale_31",
+      "community": 8,
+      "norm_label": "get base_url (e.g. for ollama)."
+    },
+    {
+      "label": "Returns (provider, label, model_name) for active models based on visibility rule",
+      "file_type": "rationale",
+      "source_file": "/mnt/l/projects/Latai/utils/config.py",
+      "source_location": "L35",
+      "id": "utils_config_rationale_35",
+      "community": 8,
+      "norm_label": "returns (provider, label, model_name) for active models based on visibility rule"
+    },
+    {
+      "label": "errors.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/utils/errors.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_utils_errors_py",
+      "community": 13,
+      "norm_label": "errors.py"
+    },
+    {
+      "label": "format_error_message()",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/utils/errors.py",
+      "source_location": "L3",
+      "id": "utils_errors_format_error_message",
+      "community": 13,
+      "norm_label": "format_error_message()"
+    },
+    {
+      "label": "Standardizes error messages across different providers (OpenAI, Anthropic, Gemin",
+      "file_type": "rationale",
+      "source_file": "/mnt/l/projects/Latai/utils/errors.py",
+      "source_location": "L4",
+      "id": "utils_errors_rationale_4",
+      "community": 13,
+      "norm_label": "standardizes error messages across different providers (openai, anthropic, gemin"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "/mnt/l/projects/Latai/utils/__init__.py",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_utils_init_py",
+      "community": 40,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "AGENTS.md",
+      "file_type": "document",
+      "source_file": "/mnt/l/projects/Latai/AGENTS.md",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_agents_md",
+      "community": 27,
+      "norm_label": "agents.md"
+    },
+    {
+      "label": "Project: LangGraph Chat TUI",
+      "file_type": "document",
+      "source_file": "/mnt/l/projects/Latai/AGENTS.md",
+      "source_location": "L1",
+      "id": "latai_agents_project_langgraph_chat_tui",
+      "community": 27,
+      "norm_label": "project: langgraph chat tui"
+    },
+    {
+      "label": "Identity",
+      "file_type": "document",
+      "source_file": "/mnt/l/projects/Latai/AGENTS.md",
+      "source_location": "L3",
+      "id": "latai_agents_identity",
+      "community": 27,
+      "norm_label": "identity"
+    },
+    {
+      "label": "Code Style",
+      "file_type": "document",
+      "source_file": "/mnt/l/projects/Latai/AGENTS.md",
+      "source_location": "L7",
+      "id": "latai_agents_code_style",
+      "community": 27,
+      "norm_label": "code style"
+    },
+    {
+      "label": "Instructions",
+      "file_type": "document",
+      "source_file": "/mnt/l/projects/Latai/AGENTS.md",
+      "source_location": "L17",
+      "id": "latai_agents_instructions",
+      "community": 27,
+      "norm_label": "instructions"
+    },
+    {
+      "label": "Architecture Rules",
+      "file_type": "document",
+      "source_file": "/mnt/l/projects/Latai/AGENTS.md",
+      "source_location": "L20",
+      "id": "latai_agents_architecture_rules",
+      "community": 27,
+      "norm_label": "architecture rules"
+    },
+    {
+      "label": "Supported Providers",
+      "file_type": "document",
+      "source_file": "/mnt/l/projects/Latai/AGENTS.md",
+      "source_location": "L29",
+      "id": "latai_agents_supported_providers",
+      "community": 27,
+      "norm_label": "supported providers"
+    },
+    {
+      "label": "Naming",
+      "file_type": "document",
+      "source_file": "/mnt/l/projects/Latai/AGENTS.md",
+      "source_location": "L37",
+      "id": "latai_agents_naming",
+      "community": 27,
+      "norm_label": "naming"
+    },
+    {
+      "label": "Commands",
+      "file_type": "document",
+      "source_file": "/mnt/l/projects/Latai/AGENTS.md",
+      "source_location": "L44",
+      "id": "latai_agents_commands",
+      "community": 27,
+      "norm_label": "commands"
+    },
+    {
+      "label": "What to Avoid",
+      "file_type": "document",
+      "source_file": "/mnt/l/projects/Latai/AGENTS.md",
+      "source_location": "L49",
+      "id": "latai_agents_what_to_avoid",
+      "community": 27,
+      "norm_label": "what to avoid"
+    },
+    {
+      "label": "Streaming",
+      "file_type": "document",
+      "source_file": "/mnt/l/projects/Latai/AGENTS.md",
+      "source_location": "L57",
+      "id": "latai_agents_streaming",
+      "community": 27,
+      "norm_label": "streaming"
+    },
+    {
+      "label": "graphify",
+      "file_type": "document",
+      "source_file": "/mnt/l/projects/Latai/AGENTS.md",
+      "source_location": "L62",
+      "id": "latai_agents_graphify",
+      "community": 27,
+      "norm_label": "graphify"
+    },
+    {
+      "label": "CLAUDE.md",
+      "file_type": "document",
+      "source_file": "/mnt/l/projects/Latai/CLAUDE.md",
+      "source_location": "L1",
+      "id": "mnt_l_projects_latai_claude_md",
+      "community": 35,
+      "norm_label": "claude.md"
+    },
+    {
+      "label": "GEMINI.md",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L1",
+      "id": "gemini_md",
+      "community": 25,
+      "norm_label": "gemini.md"
+    },
+    {
+      "label": "Project: LangGraph Chat TUI",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L1",
+      "id": "latai_gemini_project_langgraph_chat_tui",
+      "community": 25,
+      "norm_label": "project: langgraph chat tui"
+    },
+    {
+      "label": "Identity",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L3",
+      "id": "latai_gemini_identity",
+      "community": 25,
+      "norm_label": "identity"
+    },
+    {
+      "label": "Code Style",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L7",
+      "id": "latai_gemini_code_style",
+      "community": 25,
+      "norm_label": "code style"
+    },
+    {
+      "label": "Instructions",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L17",
+      "id": "latai_gemini_instructions",
+      "community": 25,
+      "norm_label": "instructions"
+    },
+    {
+      "label": "Architecture Rules",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L20",
+      "id": "latai_gemini_architecture_rules",
+      "community": 25,
+      "norm_label": "architecture rules"
+    },
+    {
+      "label": "Supported Providers",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L29",
+      "id": "latai_gemini_supported_providers",
+      "community": 25,
+      "norm_label": "supported providers"
+    },
+    {
+      "label": "Naming",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L37",
+      "id": "latai_gemini_naming",
+      "community": 25,
+      "norm_label": "naming"
+    },
+    {
+      "label": "Commands",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L44",
+      "id": "latai_gemini_commands",
+      "community": 25,
+      "norm_label": "commands"
+    },
+    {
+      "label": "What to Avoid",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L49",
+      "id": "latai_gemini_what_to_avoid",
+      "community": 25,
+      "norm_label": "what to avoid"
+    },
+    {
+      "label": "Streaming",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L57",
+      "id": "latai_gemini_streaming",
+      "community": 25,
+      "norm_label": "streaming"
+    },
+    {
+      "label": "graphify",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L62",
+      "id": "latai_gemini_graphify",
+      "community": 25,
+      "norm_label": "graphify"
+    },
+    {
+      "label": "chat-agent.md",
+      "file_type": "document",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L1",
+      "id": "docs_chat_agent_md",
+      "community": 28,
+      "norm_label": "chat-agent.md"
+    },
+    {
+      "label": "LangGraph Simple Agent Specification (Gemini LLM Node)",
+      "file_type": "document",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L1",
+      "id": "docs_chat_agent_langgraph_simple_agent_specification_gemini_llm_node",
+      "community": 28,
+      "norm_label": "langgraph simple agent specification (gemini llm node)"
+    },
+    {
+      "label": "Overview",
+      "file_type": "document",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L3",
+      "id": "docs_chat_agent_overview",
+      "community": 28,
+      "norm_label": "overview"
+    },
+    {
+      "label": "Graph Structure",
+      "file_type": "document",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L14",
+      "id": "docs_chat_agent_graph_structure",
+      "community": 28,
+      "norm_label": "graph structure"
+    },
+    {
+      "label": "Nodes",
+      "file_type": "document",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L16",
+      "id": "docs_chat_agent_nodes",
+      "community": 28,
+      "norm_label": "nodes"
+    },
+    {
+      "label": "1. `gemini_llm_node`",
+      "file_type": "document",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L18",
+      "id": "docs_chat_agent_1_gemini_llm_node",
+      "community": 28,
+      "norm_label": "1. `gemini_llm_node`"
+    },
+    {
+      "label": "State Schema",
+      "file_type": "document",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L28",
+      "id": "docs_chat_agent_state_schema",
+      "community": 28,
+      "norm_label": "state schema"
+    },
+    {
+      "label": "34791a4f-f634-4272-958b-bbe2f50b2746.json",
+      "file_type": "code",
+      "source_file": ".antigravitycli/34791a4f-f634-4272-958b-bbe2f50b2746.json",
+      "source_location": "L1",
+      "community": 30,
+      "norm_label": "34791a4f-f634-4272-958b-bbe2f50b2746.json",
+      "id": "antigravitycli_34791a4f_f634_4272_958b_bbe2f50b2746_json"
+    },
+    {
+      "label": "id",
+      "file_type": "code",
+      "source_file": ".antigravitycli/34791a4f-f634-4272-958b-bbe2f50b2746.json",
+      "source_location": "L2",
+      "community": 30,
+      "norm_label": "id",
+      "id": "antigravitycli_34791a4f_f634_4272_958b_bbe2f50b2746_id"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": ".antigravitycli/34791a4f-f634-4272-958b-bbe2f50b2746.json",
+      "source_location": "L3",
+      "community": 30,
+      "norm_label": "name",
+      "id": "antigravitycli_34791a4f_f634_4272_958b_bbe2f50b2746_name"
+    },
+    {
+      "label": "projectResources",
+      "file_type": "code",
+      "source_file": ".antigravitycli/34791a4f-f634-4272-958b-bbe2f50b2746.json",
+      "source_location": "L4",
+      "community": 30,
+      "norm_label": "projectresources",
+      "id": "antigravitycli_34791a4f_f634_4272_958b_bbe2f50b2746_projectresources"
+    },
+    {
+      "label": "resources",
+      "file_type": "code",
+      "source_file": ".antigravitycli/34791a4f-f634-4272-958b-bbe2f50b2746.json",
+      "source_location": "L5",
+      "community": 30,
+      "norm_label": "resources",
+      "id": "antigravitycli_34791a4f_f634_4272_958b_bbe2f50b2746_projectresources_resources"
+    },
+    {
+      "label": "graph.py",
+      "file_type": "code",
+      "source_file": "agent/graph.py",
+      "source_location": "L1",
+      "community": 4,
+      "norm_label": "graph.py",
+      "id": "agent_graph_py"
+    },
+    {
+      "label": "prompts.py",
+      "file_type": "code",
+      "source_file": "agent/prompts.py",
+      "source_location": "L1",
+      "community": 15,
+      "norm_label": "prompts.py",
+      "id": "agent_prompts_py"
+    },
+    {
+      "label": "state.py",
+      "file_type": "code",
+      "source_file": "agent/state.py",
+      "source_location": "L1",
+      "community": 11,
+      "norm_label": "state.py",
+      "id": "agent_state_py"
+    },
+    {
+      "label": "tools.py",
+      "file_type": "code",
+      "source_file": "agent/tools.py",
+      "source_location": "L1",
+      "community": 16,
+      "norm_label": "tools.py",
+      "id": "agent_tools_py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "agent/__init__.py",
+      "source_location": "L1",
+      "community": 17,
+      "norm_label": "__init__.py",
+      "id": "agent_init_py"
+    },
+    {
+      "label": "models_service.py",
+      "file_type": "code",
+      "source_file": "api/models_service.py",
+      "source_location": "L1",
+      "community": 5,
+      "norm_label": "models_service.py",
+      "id": "f_anirban_250509_projects_latai_api_models_service_py"
+    },
+    {
+      "label": "schemas.py",
+      "file_type": "code",
+      "source_file": "api/schemas.py",
+      "source_location": "L1",
+      "community": 5,
+      "norm_label": "schemas.py",
+      "id": "f_anirban_250509_projects_latai_api_schemas_py"
+    },
+    {
+      "label": "server.py",
+      "file_type": "code",
+      "source_file": "api/server.py",
+      "source_location": "L1",
+      "community": 7,
+      "norm_label": "server.py",
+      "id": "f_anirban_250509_projects_latai_api_server_py"
+    },
+    {
+      "label": "ask.py",
+      "file_type": "code",
+      "source_file": "commands/ask.py",
+      "source_location": "L1",
+      "community": 18,
+      "norm_label": "ask.py",
+      "id": "commands_ask_py"
+    },
+    {
+      "label": "base.py",
+      "file_type": "code",
+      "source_file": "commands/base.py",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "base.py",
+      "id": "commands_base_py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "commands/__init__.py",
+      "source_location": "L1",
+      "community": 19,
+      "norm_label": "__init__.py",
+      "id": "commands_init_py"
+    },
+    {
+      "label": "loaders.py",
+      "file_type": "code",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L1",
+      "community": 9,
+      "norm_label": "loaders.py",
+      "id": "res_ui_loaders_py"
+    },
+    {
+      "label": "welcome.py",
+      "file_type": "code",
+      "source_file": "res/ui/welcome.py",
+      "source_location": "L1",
+      "community": 31,
+      "norm_label": "welcome.py",
+      "id": "res_ui_welcome_py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "res/ui/__init__.py",
+      "source_location": "L1",
+      "community": 20,
+      "norm_label": "__init__.py",
+      "id": "f_anirban_250509_projects_latai_res_ui_init_py"
+    },
+    {
+      "label": "llm.py",
+      "file_type": "code",
+      "source_file": "services/llm.py",
+      "source_location": "L1",
+      "community": 4,
+      "norm_label": "llm.py",
+      "id": "f_anirban_250509_projects_latai_services_llm_py"
+    },
+    {
+      "label": "llm_factory.py",
+      "file_type": "code",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L1",
+      "community": 7,
+      "norm_label": "llm_factory.py",
+      "id": "f_anirban_250509_projects_latai_services_llm_factory_py"
+    },
+    {
+      "label": "session.py",
+      "file_type": "code",
+      "source_file": "services/session.py",
+      "source_location": "L1",
+      "community": 4,
+      "norm_label": "session.py",
+      "id": "f_anirban_250509_projects_latai_services_session_py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "services/__init__.py",
+      "source_location": "L1",
+      "community": 21,
+      "norm_label": "__init__.py",
+      "id": "services_init_py"
+    },
+    {
+      "label": "anthropic.py",
+      "file_type": "code",
+      "source_file": "services/providers/anthropic.py",
+      "source_location": "L1",
+      "community": 6,
+      "norm_label": "anthropic.py",
+      "id": "services_providers_anthropic_py"
+    },
+    {
+      "label": "gemini.py",
+      "file_type": "code",
+      "source_file": "services/providers/gemini.py",
+      "source_location": "L1",
+      "community": 6,
+      "norm_label": "gemini.py",
+      "id": "services_providers_gemini_py"
+    },
+    {
+      "label": "mock.py",
+      "file_type": "code",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L1",
+      "community": 6,
+      "norm_label": "mock.py",
+      "id": "services_providers_mock_py"
+    },
+    {
+      "label": "openai.py",
+      "file_type": "code",
+      "source_file": "services/providers/openai.py",
+      "source_location": "L1",
+      "community": 10,
+      "norm_label": "openai.py",
+      "id": "services_providers_openai_py"
+    },
+    {
+      "label": "openrouter.py",
+      "file_type": "code",
+      "source_file": "services/providers/openrouter.py",
+      "source_location": "L1",
+      "community": 10,
+      "norm_label": "openrouter.py",
+      "id": "services_providers_openrouter_py"
+    },
+    {
+      "label": "chat_view.py",
+      "file_type": "code",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "chat_view.py",
+      "id": "tui_chat_view_py"
+    },
+    {
+      "label": "custom_markdown.py",
+      "file_type": "code",
+      "source_file": "tui/custom_markdown.py",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "custom_markdown.py",
+      "id": "tui_custom_markdown_py"
+    },
+    {
+      "label": "input_bar.py",
+      "file_type": "code",
+      "source_file": "tui/input_bar.py",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "input_bar.py",
+      "id": "tui_input_bar_py"
+    },
+    {
+      "label": "message.py",
+      "file_type": "code",
+      "source_file": "tui/message.py",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "message.py",
+      "id": "tui_message_py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "tui/__init__.py",
+      "source_location": "L1",
+      "community": 23,
+      "norm_label": "__init__.py",
+      "id": "tui_init_py"
+    },
+    {
+      "label": "config.py",
+      "file_type": "code",
+      "source_file": "utils/config.py",
+      "source_location": "L1",
+      "community": 8,
+      "norm_label": "config.py",
+      "id": "utils_config_py"
+    },
+    {
+      "label": "errors.py",
+      "file_type": "code",
+      "source_file": "utils/errors.py",
+      "source_location": "L1",
+      "community": 13,
+      "norm_label": "errors.py",
+      "id": "utils_errors_py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "utils/__init__.py",
+      "source_location": "L1",
+      "community": 24,
+      "norm_label": "__init__.py",
+      "id": "utils_init_py"
+    },
+    {
+      "label": "AGENTS.md",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "community": 27,
+      "norm_label": "agents.md",
+      "id": "agents_md"
+    },
+    {
+      "label": "CLAUDE.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L1",
+      "community": 29,
+      "norm_label": "claude.md",
+      "id": "claude_md"
+    },
+    {
+      "label": ".update_frame()",
+      "file_type": "code",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L483",
+      "community": 9,
+      "norm_label": ".update_frame()",
+      "id": "ui_loaders_thinkingindicator_update_frame"
+    },
+    {
+      "label": ".update()",
+      "file_type": "code",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L509",
+      "community": 9,
+      "norm_label": ".update()",
+      "id": "ui_loaders_thinkingindicator_update"
+    },
+    {
+      "label": "CustomHeader",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L20",
+      "community": 0,
+      "norm_label": "customheader",
+      "id": "tui_app_customheader"
+    },
+    {
+      "label": ".compose()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L21",
+      "community": 0,
+      "norm_label": ".compose()",
+      "id": "tui_app_customheader_compose"
+    },
+    {
+      "label": "CustomFooter",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L25",
+      "community": 0,
+      "norm_label": "customfooter",
+      "id": "tui_app_customfooter"
+    },
+    {
+      "label": ".compose()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L26",
+      "community": 0,
+      "norm_label": ".compose()",
+      "id": "tui_app_customfooter_compose"
+    },
+    {
+      "label": ".on_mount()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L31",
+      "community": 0,
+      "norm_label": ".on_mount()",
+      "id": "tui_app_customfooter_on_mount"
+    },
+    {
+      "label": ".update_footer()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L34",
+      "community": 0,
+      "norm_label": ".update_footer()",
+      "id": "tui_app_customfooter_update_footer"
+    },
+    {
+      "label": ".format_tokens()",
+      "file_type": "code",
+      "source_file": "tui/app.py",
+      "source_location": "L38",
+      "community": 0,
+      "norm_label": ".format_tokens()",
+      "id": "tui_app_customfooter_format_tokens"
+    },
+    {
+      "label": "app2.py",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "app2.py",
+      "id": "tui_app2_py"
+    },
+    {
+      "label": "CustomHeader",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L16",
+      "community": 0,
+      "norm_label": "customheader",
+      "id": "tui_app2_customheader"
+    },
+    {
+      "label": ".compose()",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L17",
+      "community": 0,
+      "norm_label": ".compose()",
+      "id": "tui_app2_customheader_compose"
+    },
+    {
+      "label": "LataiApp",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L20",
+      "community": 0,
+      "norm_label": "lataiapp",
+      "id": "tui_app2_lataiapp"
+    },
+    {
+      "label": ".compose()",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L174",
+      "community": 0,
+      "norm_label": ".compose()",
+      "id": "tui_app2_lataiapp_compose"
+    },
+    {
+      "label": ".on_mount()",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L184",
+      "community": 0,
+      "norm_label": ".on_mount()",
+      "id": "tui_app2_lataiapp_on_mount"
+    },
+    {
+      "label": ".on_button_pressed()",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L201",
+      "community": 0,
+      "norm_label": ".on_button_pressed()",
+      "id": "tui_app2_lataiapp_on_button_pressed"
+    },
+    {
+      "label": ".on_option_list_option_selected()",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L210",
+      "community": 0,
+      "norm_label": ".on_option_list_option_selected()",
+      "id": "tui_app2_lataiapp_on_option_list_option_selected"
+    },
+    {
+      "label": ".on_input_submitted()",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L231",
+      "community": 1,
+      "norm_label": ".on_input_submitted()",
+      "id": "tui_app2_lataiapp_on_input_submitted"
+    },
+    {
+      "label": "stream_response()",
+      "file_type": "code",
+      "source_file": "tui/app2.py",
+      "source_location": "L254",
+      "community": 0,
+      "norm_label": "stream_response()",
+      "id": "tui_app2_stream_response"
+    },
+    {
+      "label": "'ascii', 'blank', 'block', 'dashed', 'double', 'heavy', 'hidden', 'hkey', 'inner",
+      "file_type": "rationale",
+      "source_file": "tui/app2.py",
+      "source_location": "L21",
+      "community": 0,
+      "norm_label": "'ascii', 'blank', 'block', 'dashed', 'double', 'heavy', 'hidden', 'hkey', 'inner",
+      "id": "tui_app2_rationale_21"
+    },
+    {
+      "label": "config.py",
+      "file_type": "code",
+      "source_file": "utils/config.py",
+      "source_location": "L1",
+      "community": 8,
+      "norm_label": "config.py",
+      "id": "f_anirban_250509_projects_latai_utils_config_py"
+    },
+    {
+      "label": "Get key from config.yaml. Supports model-level resolution for openrouter.",
+      "file_type": "rationale",
+      "source_file": "utils/config.py",
+      "source_location": "L22",
+      "community": 8,
+      "norm_label": "get key from config.yaml. supports model-level resolution for openrouter.",
+      "id": "utils_config_rationale_22"
+    },
+    {
+      "label": "Returns (provider, label, model_name) for active models based on visibility rule",
+      "file_type": "rationale",
+      "source_file": "utils/config.py",
+      "source_location": "L39",
+      "community": 8,
+      "norm_label": "returns (provider, label, model_name) for active models based on visibility rule",
+      "id": "utils_config_rationale_39"
+    },
+    {
+      "label": ".show_loading()",
+      "file_type": "code",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L29",
+      "community": 0,
+      "norm_label": ".show_loading()",
+      "id": "tui_chat_view_chatview_show_loading"
+    },
+    {
+      "label": ".hide_loading()",
+      "file_type": "code",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L32",
+      "community": 0,
+      "norm_label": ".hide_loading()",
+      "id": "tui_chat_view_chatview_hide_loading"
+    },
+    {
+      "label": "graph",
+      "file_type": "code",
+      "source_file": "agent/graph.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 1,
+      "norm_label": "graph",
+      "id": "agent_graph_graph"
+    },
+    {
+      "label": "Gemini LLM Node",
+      "file_type": "concept",
+      "source_file": "docs/chat-agent.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 26,
+      "norm_label": "gemini llm node",
+      "id": "docs_chat_agent_gemini_llm_node"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "debug_graph.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "debug_graph_py",
+      "target": "latai_debug_graph_debug"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "debug_graph.py",
+      "weight": 1.0,
+      "source": "latai_debug_graph_debug",
+      "target": "services_session_session"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "debug_graph.py",
+      "weight": 1.0,
+      "source": "latai_debug_graph_debug",
+      "target": "agent_graph_build_graph"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "main.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "main_py",
+      "target": "latai_main_main"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "main.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "latai_main_main",
+      "target": "tui_app_lataiapp"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".gemini/settings.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gemini_settings_json",
+      "target": "gemini_settings_hooks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".gemini/settings.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gemini_settings_hooks",
+      "target": "gemini_settings_hooks_beforetool"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/agent/graph.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_agent_graph_py",
+      "target": "agent_graph_llm_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/agent/graph.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_agent_graph_py",
+      "target": "agent_graph_build_graph",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agent/graph.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "agent_graph_llm_node",
+      "target": "services_llm_get_llm"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent/graph.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agent_graph_py",
+      "target": "agent_graph_llm_node"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agent/graph.py",
+      "weight": 1.0,
+      "source": "agent_graph_llm_node",
+      "target": "services_session_session"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "agent/graph.py",
+      "weight": 1.0,
+      "source": "agent_graph_build_graph",
+      "target": "agent_graph_llm_node"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent/graph.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agent_graph_py",
+      "target": "agent_graph_build_graph"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/agent/state.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_agent_state_py",
+      "target": "agent_state_agentstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "agent/state.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agent_state_agentstate",
+      "target": "typeddict"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "agent/state.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agent_state_py",
+      "target": "agent_state_agentstate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/models_service.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "api_models_service_py",
+      "target": "api_models_service_load_cfg",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/models_service.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "api_models_service_py",
+      "target": "api_models_service_get_available_models",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "api/models_service.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_models_service_get_available_models",
+      "target": "api_models_service_load_cfg"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/models_service.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_api_models_service_py",
+      "target": "api_models_service_load_cfg"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "api/models_service.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "api_models_service_get_available_models",
+      "target": "api_schemas_modeloption"
+    },
+    {
+      "relation": "references",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/models_service.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "api_models_service_get_available_models",
+      "target": "api_schemas_provideroptions"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/server.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "api_server_list_models",
+      "target": "api_models_service_get_available_models"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/models_service.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_api_models_service_py",
+      "target": "api_models_service_get_available_models"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/schemas.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "api_schemas_py",
+      "target": "api_schemas_modeloption",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/schemas.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "api_schemas_py",
+      "target": "api_schemas_provideroptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/schemas.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "api_schemas_py",
+      "target": "api_schemas_message",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/schemas.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "api_schemas_py",
+      "target": "api_schemas_chatrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "api/schemas.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_schemas_modeloption",
+      "target": "basemodel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/schemas.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_api_schemas_py",
+      "target": "api_schemas_modeloption"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "api/schemas.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_schemas_provideroptions",
+      "target": "basemodel"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "api/schemas.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_schemas_message",
+      "target": "basemodel"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "api/schemas.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_schemas_chatrequest",
+      "target": "basemodel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/schemas.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_api_schemas_py",
+      "target": "api_schemas_provideroptions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/schemas.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_api_schemas_py",
+      "target": "api_schemas_message"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/schemas.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_api_schemas_py",
+      "target": "api_schemas_chatrequest"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/server.py",
+      "weight": 1.0,
+      "source": "api_server_chat",
+      "target": "api_schemas_chatrequest"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/server.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "api_server_py",
+      "target": "api_server_list_models",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/server.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "api_server_py",
+      "target": "api_server_chat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "api/server.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_server_rationale_13",
+      "target": "api_server_list_models"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/server.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_api_server_py",
+      "target": "api_server_list_models"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "api/server.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_server_rationale_21",
+      "target": "api_server_chat"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/server.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "api_server_chat",
+      "target": "services_llm_factory_get_chat_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/server.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_api_server_py",
+      "target": "api_server_chat"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/commands/base.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_commands_base_py",
+      "target": "commands_base_is_command",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/commands/base.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_commands_base_py",
+      "target": "commands_base_parse_command",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app.py",
+      "source_location": "L401",
+      "weight": 1.0,
+      "source": "tui_app_lataiapp_on_input_submitted",
+      "target": "commands_base_is_command"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "commands/base.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_base_py",
+      "target": "commands_base_is_command"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app2.py",
+      "source_location": "L240",
+      "weight": 1.0,
+      "source": "tui_app2_lataiapp_on_input_submitted",
+      "target": "commands_base_is_command"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app.py",
+      "source_location": "L402",
+      "weight": 1.0,
+      "source": "tui_app_lataiapp_on_input_submitted",
+      "target": "commands_base_parse_command"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "commands/base.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_base_py",
+      "target": "commands_base_parse_command"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app2.py",
+      "source_location": "L241",
+      "weight": 1.0,
+      "source": "tui_app2_lataiapp_on_input_submitted",
+      "target": "commands_base_parse_command"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "commands/model.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "commands_model_py",
+      "target": "commands_model_execute"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "commands/model.py",
+      "weight": 1.0,
+      "source": "commands_model_execute",
+      "target": "services_session_session"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/res/ui/loaders.py",
+      "source_location": "L417",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_res_ui_loaders_py",
+      "target": "ui_loaders_thinkingindicator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L201",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator",
+      "target": "static"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L201",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator",
+      "target": "ui_loaders_thinkingindicator_init"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L202",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator",
+      "target": "ui_loaders_thinkingindicator_on_mount"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L221",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator",
+      "target": "ui_loaders_thinkingindicator_stop"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L225",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator",
+      "target": "ui_loaders_thinkingindicator_change_state"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L216",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator",
+      "target": "ui_loaders_thinkingindicator_generate_color_steps"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L482",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator",
+      "target": "ui_loaders_thinkingindicator_col_width"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L486",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator",
+      "target": "ui_loaders_thinkingindicator_make_table"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L502",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator",
+      "target": "ui_loaders_thinkingindicator_render_frame"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L514",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator",
+      "target": "ui_loaders_thinkingindicator_mark_done"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app.py",
+      "source_location": "L17",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app_lataiapp",
+      "target": "ui_loaders_thinkingindicator"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app.py",
+      "source_location": "L277",
+      "weight": 1.0,
+      "source": "tui_app_lataiapp_show_loading",
+      "target": "ui_loaders_thinkingindicator"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app.py",
+      "source_location": "L308",
+      "weight": 1.0,
+      "source": "tui_app_lataiapp_show_generating",
+      "target": "ui_loaders_thinkingindicator"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L201",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "res_ui_loaders_py",
+      "target": "ui_loaders_thinkingindicator"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L246",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator",
+      "target": "ui_loaders_thinkingindicator_update_frame"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L506",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator",
+      "target": "ui_loaders_thinkingindicator_update"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app.py",
+      "source_location": "L17",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app_customheader",
+      "target": "ui_loaders_thinkingindicator"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app.py",
+      "source_location": "L17",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app_customfooter",
+      "target": "ui_loaders_thinkingindicator"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L5",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_chat_view_chatview",
+      "target": "ui_loaders_thinkingindicator"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/chat_view.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "tui_chat_view_chatview_show_loading",
+      "target": "ui_loaders_thinkingindicator"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/header.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_header_customheader",
+      "target": "static"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/header.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_header_customheader_compose",
+      "target": "static"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_customheader",
+      "target": "static"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_customheader_compose",
+      "target": "static"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_customfooter_compose",
+      "target": "static"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_customheader",
+      "target": "static"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_customheader_compose",
+      "target": "static"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L198",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp_on_mount",
+      "target": "static"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L213",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator_on_mount",
+      "target": "ui_loaders_thinkingindicator_generate_color_steps"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L435",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator_on_mount",
+      "target": "ui_loaders_thinkingindicator_render_frame"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L218",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator_on_mount",
+      "target": "ui_loaders_thinkingindicator_update_frame"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L231",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator_change_state",
+      "target": "ui_loaders_thinkingindicator_stop"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L451",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator_change_state",
+      "target": "ui_loaders_thinkingindicator_render_frame"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L232",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator_change_state",
+      "target": "ui_loaders_thinkingindicator_update_frame"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L224",
+      "weight": 1.0,
+      "source": "ui_loaders_thinkingindicator_generate_color_steps",
+      "target": "ui_welcome_hex_to_rgb"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L491",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator_make_table",
+      "target": "ui_loaders_thinkingindicator_col_width"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L508",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator_render_frame",
+      "target": "ui_loaders_thinkingindicator_make_table"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L517",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator_mark_done",
+      "target": "ui_loaders_thinkingindicator_make_table"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/res/ui/welcome.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_res_ui_welcome_py",
+      "target": "ui_welcome_hex_to_rgb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/res/ui/welcome.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_res_ui_welcome_py",
+      "target": "ui_welcome_get_interpolated_hex",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/res/ui/welcome.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_res_ui_welcome_py",
+      "target": "ui_welcome_animate_welcome",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/welcome.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_welcome_animate_welcome",
+      "target": "ui_welcome_hex_to_rgb"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/welcome.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_welcome_rationale_60",
+      "target": "ui_welcome_hex_to_rgb"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/welcome.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "res_ui_welcome_py",
+      "target": "ui_welcome_hex_to_rgb"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/welcome.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_welcome_rationale_65",
+      "target": "ui_welcome_get_interpolated_hex"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/welcome.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "res_ui_welcome_py",
+      "target": "ui_welcome_get_interpolated_hex"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/welcome.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_welcome_rationale_79",
+      "target": "ui_welcome_animate_welcome"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app.py",
+      "source_location": "L256",
+      "weight": 1.0,
+      "source": "tui_app_lataiapp_on_mount",
+      "target": "ui_welcome_animate_welcome"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/welcome.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "res_ui_welcome_py",
+      "target": "ui_welcome_animate_welcome"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "res/ui/welcome.py",
+      "weight": 1.0,
+      "source": "ui_welcome_animate_welcome",
+      "target": "services_session_session"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "services_llm_py",
+      "target": "services_llm_get_llm",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_llm_rationale_5",
+      "target": "services_llm_get_llm"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "services/llm.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "services_llm_get_llm",
+      "target": "services_llm_factory_get_chat_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_services_llm_py",
+      "target": "services_llm_get_llm"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "services_llm_factory_py",
+      "target": "services_llm_factory_load_cfg",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "services_llm_factory_py",
+      "target": "services_llm_factory_resolve_key",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "services_llm_factory_py",
+      "target": "services_llm_factory_get_base_url",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "services_llm_factory_py",
+      "target": "services_llm_factory_get_chat_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_llm_factory_resolve_key",
+      "target": "services_llm_factory_load_cfg"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_llm_factory_get_base_url",
+      "target": "services_llm_factory_load_cfg"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_services_llm_factory_py",
+      "target": "services_llm_factory_load_cfg"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_llm_factory_get_chat_model",
+      "target": "services_llm_factory_resolve_key"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_llm_factory_rationale_17",
+      "target": "services_llm_factory_resolve_key"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_services_llm_factory_py",
+      "target": "services_llm_factory_resolve_key"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_llm_factory_get_chat_model",
+      "target": "services_llm_factory_get_base_url"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_services_llm_factory_py",
+      "target": "services_llm_factory_get_base_url"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_llm_factory_rationale_46",
+      "target": "services_llm_factory_get_chat_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/llm_factory.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_services_llm_factory_py",
+      "target": "services_llm_factory_get_chat_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/session.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "services_session_py",
+      "target": "services_session_session",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/session.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_session_session",
+      "target": "services_session_session_init"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/session.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_session_session",
+      "target": "services_session_session_set_model"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/session.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_session_session",
+      "target": "services_session_session_add_tokens"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/session.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_session_session",
+      "target": "services_session_session_add_user_message"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/session.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_session_session",
+      "target": "services_session_session_add_ai_message"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/session.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_session_session",
+      "target": "services_session_session_get_messages"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/session.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_session_session",
+      "target": "services_session_session_clear_messages"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/session.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_services_session_py",
+      "target": "services_session_session"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tui/app.py",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "services_session_session"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "services/session.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "services_session_session_init",
+      "target": "utils_config_get_default_provider"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "services/session.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "services_session_session_init",
+      "target": "utils_config_get_default_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/services/providers/anthropic.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_services_providers_anthropic_py",
+      "target": "providers_anthropic_get_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/anthropic.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_providers_anthropic_py",
+      "target": "providers_anthropic_get_model"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "services/providers/anthropic.py",
+      "weight": 1.0,
+      "source": "providers_anthropic_get_model",
+      "target": "providers_gemini_get_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/services/providers/gemini.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_services_providers_gemini_py",
+      "target": "providers_gemini_get_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/gemini.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_providers_gemini_py",
+      "target": "providers_gemini_get_model"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "services/providers/gemini.py",
+      "weight": 1.0,
+      "source": "providers_gemini_get_model",
+      "target": "providers_mock_get_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/services/providers/mock.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_services_providers_mock_py",
+      "target": "providers_mock_mockchatmodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/services/providers/mock.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_services_providers_mock_py",
+      "target": "providers_mock_llm_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/services/providers/mock.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_services_providers_mock_py",
+      "target": "providers_mock_get_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "providers_mock_mockchatmodel",
+      "target": "basechatmodel"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "providers_mock_mockchatmodel",
+      "target": "providers_mock_mockchatmodel_generate"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "providers_mock_mockchatmodel",
+      "target": "providers_mock_mockchatmodel_astream"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "providers_mock_get_model",
+      "target": "providers_mock_mockchatmodel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_providers_mock_py",
+      "target": "providers_mock_mockchatmodel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_providers_mock_py",
+      "target": "providers_mock_llm_type"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/mock.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_providers_mock_py",
+      "target": "providers_mock_get_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/ollama.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_providers_ollama_py",
+      "target": "providers_ollama_get_model"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "services/providers/ollama.py",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "providers_ollama_get_model",
+      "target": "providers_openai_get_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/services/providers/openai.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_services_providers_openai_py",
+      "target": "providers_openai_get_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/openai.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_providers_openai_py",
+      "target": "providers_openai_get_model"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "services/providers/openai.py",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "providers_openai_get_model",
+      "target": "providers_openrouter_get_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/services/providers/openrouter.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_services_providers_openrouter_py",
+      "target": "providers_openrouter_get_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/providers/openrouter.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_providers_openrouter_py",
+      "target": "providers_openrouter_get_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_py",
+      "target": "tui_app_lataiapp"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L418",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_py",
+      "target": "tui_app_stream_response"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_py",
+      "target": "tui_app_customheader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_py",
+      "target": "tui_app_customfooter"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "app"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L238",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_compose"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L253",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_on_mount"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L265",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_show_loading"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L285",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_hide_loading"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L298",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_show_generating"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L316",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_show_done"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L341",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_action_open_menu"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L346",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_on_button_pressed"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L352",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_on_command_menu_model_selected"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L369",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_on_command_menu_theme_selected"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L379",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app_lataiapp_on_input_submitted"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_rationale_22",
+      "target": "tui_app_lataiapp"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": null,
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_chat_view_chatview"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": null,
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_input_bar_inputbar"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": null,
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_command_menu_commandmenu"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app.py",
+      "source_location": "L17",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app_lataiapp",
+      "target": "tui_header_customheader"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app.py",
+      "source_location": "L18",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app_lataiapp",
+      "target": "tui_footer_customfooter"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tui/app.py",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "agent_graph_graph"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "tui/app.py",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "tui_app_lataiapp",
+      "target": "tui_app2_lataiapp"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp",
+      "target": "app"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "tui_app_lataiapp_compose",
+      "target": "tui_header_customheader"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app.py",
+      "source_location": "L240",
+      "weight": 1.0,
+      "source": "tui_app_lataiapp_compose",
+      "target": "tui_chat_view_chatview"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tui/app.py",
+      "source_location": "L245",
+      "weight": 1.0,
+      "source": "tui_app_lataiapp_compose",
+      "target": "horizontal"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app.py",
+      "source_location": "L246",
+      "weight": 1.0,
+      "source": "tui_app_lataiapp_compose",
+      "target": "tui_input_bar_inputbar"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "tui_app_lataiapp_compose",
+      "target": "tui_footer_customfooter"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app.py",
+      "source_location": "L249",
+      "weight": 1.0,
+      "source": "tui_app_lataiapp_compose",
+      "target": "tui_command_menu_commandmenu"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L239",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp_compose",
+      "target": "tui_app_customheader"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L248",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp_compose",
+      "target": "tui_app_customfooter"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L422",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_stream_response",
+      "target": "tui_app_lataiapp_show_loading"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L451",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_stream_response",
+      "target": "tui_app_lataiapp_hide_loading"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L451",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_stream_response",
+      "target": "tui_app_lataiapp_show_generating"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L459",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_stream_response",
+      "target": "tui_app_lataiapp_show_done"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L407",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_lataiapp_on_input_submitted",
+      "target": "tui_app_stream_response"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/tui/chat_view.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_tui_chat_view_py",
+      "target": "tui_chat_view_chatview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_chatview",
+      "target": "scrollablecontainer"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_chatview",
+      "target": "tui_chat_view_chatview_add_message"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_chatview",
+      "target": "tui_chat_view_chatview_update_message"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_py",
+      "target": "tui_chat_view_chatview"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": null,
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_chatview",
+      "target": "tui_message_chatmessage"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app.py",
+      "source_location": "L9",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app_customheader",
+      "target": "tui_chat_view_chatview"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app.py",
+      "source_location": "L9",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app_customfooter",
+      "target": "tui_chat_view_chatview"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app2.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app2_customheader",
+      "target": "tui_chat_view_chatview"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": null,
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp",
+      "target": "tui_chat_view_chatview"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app2.py",
+      "source_location": "L176",
+      "weight": 1.0,
+      "source": "tui_app2_lataiapp_compose",
+      "target": "tui_chat_view_chatview"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_chatview",
+      "target": "tui_chat_view_chatview_show_loading"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/chat_view.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_chat_view_chatview",
+      "target": "tui_chat_view_chatview_hide_loading"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/chat_view.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "tui_chat_view_chatview_add_message",
+      "target": "tui_message_chatmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_py",
+      "target": "tui_command_menu_commandmenu"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_py",
+      "target": "tui_command_menu_modelselected"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_py",
+      "target": "tui_command_menu_themeselected"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu",
+      "target": "container"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L136",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu",
+      "target": "tui_command_menu_commandmenu_compose"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L142",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu",
+      "target": "tui_command_menu_commandmenu_on_mount"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L147",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu",
+      "target": "tui_command_menu_commandmenu_open"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L152",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu",
+      "target": "tui_command_menu_commandmenu_close"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L159",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu",
+      "target": "tui_command_menu_commandmenu_build_menu"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L211",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu",
+      "target": "tui_command_menu_commandmenu_on_key"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L219",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu",
+      "target": "tui_command_menu_commandmenu_on_option_list_option_selected"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_rationale_45",
+      "target": "tui_command_menu_commandmenu"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app.py",
+      "source_location": "L11",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app_customheader",
+      "target": "tui_command_menu_commandmenu"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app.py",
+      "source_location": "L11",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app_customfooter",
+      "target": "tui_command_menu_commandmenu"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app2.py",
+      "source_location": "L9",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app2_customheader",
+      "target": "tui_command_menu_commandmenu"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": null,
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp",
+      "target": "tui_command_menu_commandmenu"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app2.py",
+      "source_location": "L182",
+      "weight": 1.0,
+      "source": "tui_app2_lataiapp_compose",
+      "target": "tui_command_menu_commandmenu"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tui/command_menu.py",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "tui_command_menu_commandmenu",
+      "target": "utils_config_get_configured_models"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/input_bar.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_input_bar_inputbar",
+      "target": "container"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/message.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_message_chatmessage",
+      "target": "container"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_modelselected",
+      "target": "message"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_modelselected",
+      "target": "tui_command_menu_modelselected_init"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L230",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu_on_option_list_option_selected",
+      "target": "tui_command_menu_modelselected"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_themeselected",
+      "target": "message"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_modelselected_init",
+      "target": "tui_command_menu_themeselected_init"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_themeselected",
+      "target": "tui_command_menu_themeselected_init"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L235",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu_on_option_list_option_selected",
+      "target": "tui_command_menu_themeselected"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L143",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu_on_mount",
+      "target": "tui_command_menu_commandmenu_build_menu"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L149",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu_open",
+      "target": "tui_command_menu_commandmenu_build_menu"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L148",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_rationale_148",
+      "target": "tui_command_menu_commandmenu_open"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L155",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu_close",
+      "target": "tui_command_menu_commandmenu_build_menu"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L214",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu_on_key",
+      "target": "tui_command_menu_commandmenu_close"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L231",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu_on_option_list_option_selected",
+      "target": "tui_command_menu_commandmenu_close"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L153",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_rationale_153",
+      "target": "tui_command_menu_commandmenu_close"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L216",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu_on_key",
+      "target": "tui_command_menu_commandmenu_build_menu"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/command_menu.py",
+      "source_location": "L223",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_command_menu_commandmenu_on_option_list_option_selected",
+      "target": "tui_command_menu_commandmenu_build_menu"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/command_menu.py",
+      "source_location": "L182",
+      "weight": 1.0,
+      "source": "tui_command_menu_commandmenu_build_menu",
+      "target": "utils_config_get_configured_models"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/tui/custom_markdown.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_tui_custom_markdown_py",
+      "target": "tui_custom_markdown_markdownfencewithcopy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/tui/custom_markdown.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_tui_custom_markdown_py",
+      "target": "tui_custom_markdown_custommarkdown",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/custom_markdown.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_custom_markdown_markdownfencewithcopy",
+      "target": "markdownfence"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/custom_markdown.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_custom_markdown_markdownfencewithcopy",
+      "target": "tui_custom_markdown_markdownfencewithcopy_compose"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/custom_markdown.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_custom_markdown_markdownfencewithcopy",
+      "target": "tui_custom_markdown_markdownfencewithcopy_on_button_pressed"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/custom_markdown.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_custom_markdown_rationale_6",
+      "target": "tui_custom_markdown_markdownfencewithcopy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/custom_markdown.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_custom_markdown_py",
+      "target": "tui_custom_markdown_markdownfencewithcopy"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/custom_markdown.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_custom_markdown_custommarkdown",
+      "target": "markdown"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/custom_markdown.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_custom_markdown_custommarkdown",
+      "target": "tui_custom_markdown_custommarkdown_get_block_class"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/custom_markdown.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_custom_markdown_rationale_27",
+      "target": "tui_custom_markdown_custommarkdown"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/message.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "tui_message_chatmessage_compose",
+      "target": "tui_custom_markdown_custommarkdown"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/custom_markdown.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_custom_markdown_py",
+      "target": "tui_custom_markdown_custommarkdown"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/message.py",
+      "source_location": null,
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_message_chatmessage",
+      "target": "tui_custom_markdown_custommarkdown"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/footer.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_footer_py",
+      "target": "tui_footer_customfooter"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/footer.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_footer_customfooter",
+      "target": "horizontal"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/footer.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_footer_customfooter",
+      "target": "tui_footer_customfooter_compose"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/footer.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_footer_customfooter",
+      "target": "tui_footer_customfooter_on_mount"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/footer.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_footer_customfooter",
+      "target": "tui_footer_customfooter_update_footer"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/footer.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_footer_customfooter",
+      "target": "tui_footer_customfooter_format_tokens"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/footer.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_footer_rationale_9",
+      "target": "tui_footer_customfooter"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/input_bar.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "tui_input_bar_inputbar_compose",
+      "target": "horizontal"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/message.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "tui_message_chatmessage_compose",
+      "target": "horizontal"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_customfooter",
+      "target": "horizontal"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app2.py",
+      "source_location": "L180",
+      "weight": 1.0,
+      "source": "tui_app2_lataiapp_compose",
+      "target": "horizontal"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/footer.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_footer_customfooter_compose",
+      "target": "tui_footer_customfooter_format_tokens"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/footer.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_footer_customfooter_update_footer",
+      "target": "tui_footer_customfooter_format_tokens"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/header.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_header_py",
+      "target": "tui_header_customheader"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/header.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_header_customheader",
+      "target": "tui_header_customheader_compose"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/header.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_header_rationale_6",
+      "target": "tui_header_customheader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/tui/input_bar.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_tui_input_bar_py",
+      "target": "tui_input_bar_inputbar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/input_bar.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_input_bar_inputbar",
+      "target": "tui_input_bar_inputbar_compose"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/input_bar.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_input_bar_inputbar",
+      "target": "tui_input_bar_inputbar_focus_input"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/input_bar.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_input_bar_py",
+      "target": "tui_input_bar_inputbar"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app.py",
+      "source_location": "L10",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app_customheader",
+      "target": "tui_input_bar_inputbar"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app.py",
+      "source_location": "L10",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app_customfooter",
+      "target": "tui_input_bar_inputbar"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tui/app2.py",
+      "source_location": "L8",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "tui_app2_customheader",
+      "target": "tui_input_bar_inputbar"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": null,
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp",
+      "target": "tui_input_bar_inputbar"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "tui/app2.py",
+      "source_location": "L181",
+      "weight": 1.0,
+      "source": "tui_app2_lataiapp_compose",
+      "target": "tui_input_bar_inputbar"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/tui/message.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_tui_message_py",
+      "target": "tui_message_chatmessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/message.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_message_chatmessage",
+      "target": "tui_message_chatmessage_init"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/message.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_message_chatmessage",
+      "target": "tui_message_chatmessage_compose"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/message.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_message_chatmessage",
+      "target": "tui_message_chatmessage_watch_content"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/message.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_message_py",
+      "target": "tui_message_chatmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/utils/config.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_utils_config_py",
+      "target": "utils_config_load_cfg",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/utils/config.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_utils_config_py",
+      "target": "utils_config_get_api_key",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/utils/config.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_utils_config_py",
+      "target": "utils_config_get_base_url",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/utils/config.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_utils_config_py",
+      "target": "utils_config_get_configured_models",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/utils/config.py",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_utils_config_py",
+      "target": "utils_config_get_default_provider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/utils/config.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_utils_config_py",
+      "target": "utils_config_get_default_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/utils/config.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_utils_config_py",
+      "target": "utils_config_is_provider_configured",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_get_api_key",
+      "target": "utils_config_load_cfg"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_get_base_url",
+      "target": "utils_config_load_cfg"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_get_configured_models",
+      "target": "utils_config_load_cfg"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_get_default_provider",
+      "target": "utils_config_load_cfg"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_get_default_model",
+      "target": "utils_config_load_cfg"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_py",
+      "target": "utils_config_load_cfg"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_utils_config_py",
+      "target": "utils_config_load_cfg"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_is_provider_configured",
+      "target": "utils_config_get_api_key"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_rationale_18",
+      "target": "utils_config_get_api_key"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_py",
+      "target": "utils_config_get_api_key"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_utils_config_py",
+      "target": "utils_config_get_api_key"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_rationale_22",
+      "target": "utils_config_get_api_key"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_rationale_31",
+      "target": "utils_config_get_base_url"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_py",
+      "target": "utils_config_get_base_url"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_utils_config_py",
+      "target": "utils_config_get_base_url"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_rationale_35",
+      "target": "utils_config_get_base_url"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_rationale_35",
+      "target": "utils_config_get_configured_models"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_py",
+      "target": "utils_config_get_configured_models"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_utils_config_py",
+      "target": "utils_config_get_configured_models"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_rationale_39",
+      "target": "utils_config_get_configured_models"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L73",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_py",
+      "target": "utils_config_get_default_provider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_utils_config_py",
+      "target": "utils_config_get_default_provider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_py",
+      "target": "utils_config_get_default_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_utils_config_py",
+      "target": "utils_config_get_default_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_config_py",
+      "target": "utils_config_is_provider_configured"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/config.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "f_anirban_250509_projects_latai_utils_config_py",
+      "target": "utils_config_is_provider_configured"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/utils/errors.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_utils_errors_py",
+      "target": "utils_errors_format_error_message",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/errors.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_errors_rationale_4",
+      "target": "utils_errors_format_error_message"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "utils/errors.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_errors_py",
+      "target": "utils_errors_format_error_message"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/mnt/l/projects/Latai/AGENTS.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "mnt_l_projects_latai_agents_md",
+      "target": "latai_agents_project_langgraph_chat_tui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_agents_project_langgraph_chat_tui",
+      "target": "latai_agents_identity"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_agents_project_langgraph_chat_tui",
+      "target": "latai_agents_code_style"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_agents_project_langgraph_chat_tui",
+      "target": "latai_agents_instructions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_agents_project_langgraph_chat_tui",
+      "target": "latai_agents_architecture_rules"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_agents_project_langgraph_chat_tui",
+      "target": "latai_agents_supported_providers"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_agents_project_langgraph_chat_tui",
+      "target": "latai_agents_naming"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_agents_project_langgraph_chat_tui",
+      "target": "latai_agents_commands"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_agents_project_langgraph_chat_tui",
+      "target": "latai_agents_what_to_avoid"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_agents_project_langgraph_chat_tui",
+      "target": "latai_agents_streaming"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_agents_project_langgraph_chat_tui",
+      "target": "latai_agents_graphify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_md",
+      "target": "latai_agents_project_langgraph_chat_tui"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "gemini_md",
+      "target": "latai_gemini_project_langgraph_chat_tui"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_identity"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_code_style"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_instructions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_architecture_rules"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_supported_providers"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_naming"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_commands"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_what_to_avoid"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_streaming"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "latai_gemini_project_langgraph_chat_tui",
+      "target": "latai_gemini_graphify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_chat_agent_md",
+      "target": "docs_chat_agent_langgraph_simple_agent_specification_gemini_llm_node"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_chat_agent_langgraph_simple_agent_specification_gemini_llm_node",
+      "target": "docs_chat_agent_overview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_chat_agent_langgraph_simple_agent_specification_gemini_llm_node",
+      "target": "docs_chat_agent_graph_structure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_chat_agent_langgraph_simple_agent_specification_gemini_llm_node",
+      "target": "docs_chat_agent_state_schema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_chat_agent_graph_structure",
+      "target": "docs_chat_agent_nodes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/chat-agent.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "docs_chat_agent_nodes",
+      "target": "docs_chat_agent_1_gemini_llm_node"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".antigravitycli/34791a4f-f634-4272-958b-bbe2f50b2746.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "antigravitycli_34791a4f_f634_4272_958b_bbe2f50b2746_json",
+      "target": "antigravitycli_34791a4f_f634_4272_958b_bbe2f50b2746_id"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".antigravitycli/34791a4f-f634-4272-958b-bbe2f50b2746.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "antigravitycli_34791a4f_f634_4272_958b_bbe2f50b2746_json",
+      "target": "antigravitycli_34791a4f_f634_4272_958b_bbe2f50b2746_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".antigravitycli/34791a4f-f634-4272-958b-bbe2f50b2746.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "antigravitycli_34791a4f_f634_4272_958b_bbe2f50b2746_json",
+      "target": "antigravitycli_34791a4f_f634_4272_958b_bbe2f50b2746_projectresources"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".antigravitycli/34791a4f-f634-4272-958b-bbe2f50b2746.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "antigravitycli_34791a4f_f634_4272_958b_bbe2f50b2746_projectresources",
+      "target": "antigravitycli_34791a4f_f634_4272_958b_bbe2f50b2746_projectresources_resources"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "res/ui/loaders.py",
+      "source_location": "L504",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_loaders_thinkingindicator_update_frame",
+      "target": "ui_loaders_thinkingindicator_update"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_customheader",
+      "target": "tui_app_customheader_compose"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_customfooter",
+      "target": "tui_app_customfooter_compose"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_customfooter",
+      "target": "tui_app_customfooter_on_mount"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_customfooter",
+      "target": "tui_app_customfooter_update_footer"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_customfooter",
+      "target": "tui_app_customfooter_format_tokens"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_customfooter_compose",
+      "target": "tui_app_customfooter_format_tokens"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app_customfooter_update_footer",
+      "target": "tui_app_customfooter_format_tokens"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_py",
+      "target": "tui_app2_customheader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_py",
+      "target": "tui_app2_lataiapp"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L254",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_py",
+      "target": "tui_app2_stream_response"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_customheader",
+      "target": "tui_app2_customheader_compose"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L175",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp_compose",
+      "target": "tui_app2_customheader"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L174",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp",
+      "target": "tui_app2_lataiapp_compose"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L184",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp",
+      "target": "tui_app2_lataiapp_on_mount"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L201",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp",
+      "target": "tui_app2_lataiapp_on_button_pressed"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L210",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp",
+      "target": "tui_app2_lataiapp_on_option_list_option_selected"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L231",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp",
+      "target": "tui_app2_lataiapp_on_input_submitted"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_rationale_21",
+      "target": "tui_app2_lataiapp"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tui/app2.py",
+      "source_location": "L246",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tui_app2_lataiapp_on_input_submitted",
+      "target": "tui_app2_stream_response"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "llm_invocation_flow",
+      "label": "LLM Invocation Flow",
+      "nodes": [
+        "api_server_chat",
+        "agent_graph_llm_node",
+        "services_llm_factory_get_chat_model"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "services/llm_factory.py"
+    },
+    {
+      "id": "provider_implementations",
+      "label": "Provider Implementations",
+      "nodes": [
+        "providers_anthropic_get_model",
+        "providers_gemini_get_model",
+        "providers_mock_get_model"
+      ],
+      "relation": "implement",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "services/providers/mock.py"
+    },
+    {
+      "id": "tui_core_components",
+      "label": "TUI Core Components",
+      "nodes": [
+        "tui_app_lataiapp",
+        "tui_chat_view_chatview",
+        "tui_input_bar_inputbar",
+        "tui_command_menu_commandmenu"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "tui/app.py"
+    }
+  ],
+  "built_at_commit": "65312ff0385c073fc1aba89c929074f90c1c1949"
+}
