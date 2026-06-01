@@ -1,19 +1,18 @@
 from textual.app import ComposeResult
 from textual.containers import Container, Horizontal
-from textual.widgets import Markdown, Static
+from textual.widgets import Static
 from textual.widget import Widget
-from textual.reactive import reactive
 
 from tui.custom_markdown import CustomMarkdown
 
-class ChatMessage(Container):
-    content = reactive("")
 
+class ChatMessage(Container):
     def __init__(self, role: str, content: str | Widget, id: str | None = None) -> None:
         super().__init__(id=id)
         self.role = role
-        self.content_widget = content if isinstance(content, Widget) else None
-        self.content = content if isinstance(content, str) else ""
+        self._content_widget = content if isinstance(content, Widget) else None
+        self._text = content if isinstance(content, str) else ""
+        self._is_streaming = False
 
     def compose(self) -> ComposeResult:
         if self.role == "user":
@@ -22,21 +21,51 @@ class ChatMessage(Container):
             display_role = ""
         else:
             display_role = "Latai"
-        
+
         prefix = f"{display_role}: " if display_role else ""
-        
+
         with Horizontal(classes="message-row"):
             if prefix:
                 yield Static(prefix, classes="message-role")
-            if self.content_widget:
-                yield self.content_widget
+            if self._content_widget:
+                yield self._content_widget
             else:
-                yield CustomMarkdown(self.content, classes="message-content")
+                yield CustomMarkdown(self._text, classes="message-content")
 
-    def watch_content(self, new_content: str) -> None:
-        if not self.content_widget:
+    def stream_update(self, text: str) -> None:
+        """Fast path: update plain Static during streaming — no Markdown lock."""
+        if not self._is_streaming:
+            self._is_streaming = True
             try:
-                markdown_widget = self.query_one(CustomMarkdown)
-                markdown_widget.update(new_content)
+                md = self.query_one(CustomMarkdown)
+                self._stream_static = Static(text, classes="message-content")
+                md.display = False
+                self.query_one(".message-row").mount(self._stream_static)
             except Exception:
                 pass
+            return
+        try:
+            self._stream_static.update(text)
+        except Exception:
+            pass
+
+    def finalize(self, text: str) -> None:
+        """Replace the streaming Static with a fully-rendered CustomMarkdown."""
+        self._is_streaming = False
+        try:
+            static = getattr(self, "_stream_static", None)
+            md = self.query_one(CustomMarkdown)
+            if static:
+                static.remove()
+            md.display = True
+            self.call_after_refresh(md.update, text)
+        except Exception:
+            pass
+
+    def set_content(self, text: str) -> None:
+        """Non-streaming update (system / user messages)."""
+        try:
+            md = self.query_one(CustomMarkdown)
+            self.call_after_refresh(md.update, text)
+        except Exception:
+            pass

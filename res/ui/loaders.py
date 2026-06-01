@@ -169,7 +169,6 @@ LOADERS = {
         "............▄ ",
     ],
     
-    
     "loader72": [
         "▄             ",
         ".▄▄           ",
@@ -196,6 +195,8 @@ LOADERS = {
         "..▄▄▄         ",
         ".▄▄           ",
     ],
+    
+    
     
     "loader73": [
         "█             ",
@@ -224,35 +225,7 @@ LOADERS = {
         "∙██           ",
     ],
     
-    "loader73": [
-        "▒             ",
-        "∙▒▒           ",
-        "∙∙▒▒▒         ",
-        "∙∙∙▒▒▒▒       ",
-        "∙∙∙∙▒▒▒▒▒     ",
-        "∙∙∙∙∙▒▒▒▒▒▒   ",
-        "∙∙∙∙∙∙▒▒▒▒▒▒▒ ",
-        "∙∙∙∙∙∙∙▒▒▒▒▒▒ ",
-        "∙∙∙∙∙∙∙∙▒▒▒▒▒ ",
-        "∙∙∙∙∙∙∙∙∙▒▒▒▒ ",
-        "∙∙∙∙∙∙∙∙∙∙▒▒▒ ",
-        "∙∙∙∙∙∙∙∙∙∙∙▒▒ ",
-        "∙∙∙∙∙∙∙∙∙∙∙∙▒ ",
-        "∙∙∙∙∙∙∙∙∙∙∙▒▒ ",
-        "∙∙∙∙∙∙∙∙∙∙▒▒▒ ",
-        "∙∙∙∙∙∙∙∙∙▒▒▒▒ ",
-        "∙∙∙∙∙∙∙∙▒▒▒▒▒ ",
-        "∙∙∙∙∙∙∙▒▒▒▒▒▒ ",
-        "∙∙∙∙∙∙▒▒▒▒▒▒▒ ",
-        "∙∙∙∙∙▒▒▒▒▒▒   ",
-        "∙∙∙∙▒▒▒▒▒     ",
-        "∙∙∙▒▒▒▒       ",
-        "∙∙▒▒▒         ",
-        "∙▒▒           ",
-    ],
-    
-    
-"loader74": [
+    "loader74": [
         "❯            ",
         "∙▒❯          ",
         "∙∙▒▒❯        ",
@@ -280,7 +253,7 @@ LOADERS = {
         "▒❮           ",
     ],
 
-"loader75": [
+    "loader75": [
         "⧯            ",
         "∙⧮⧯          ",
         "∙∙⧮⧮⧯        ",
@@ -307,114 +280,114 @@ LOADERS = {
         "∙⧮⧯          ",
     ],
 
-
-
     "loader76":[
-    "◩",
-    "-◩⬔",
-    "--◩⬔◪",
-    "---◩⬔◪⬕",
-    "----◩⬔◪⬕◩",
-    "-----◩⬔◪⬕◩⬔",
-    "------◩⬔◪⬕◩⬔◪",
-    "-------◩⬔◪⬕◩⬔◪⬕",
-    "--------◩⬔◪⬕◩⬔◪",
-    "---------◩⬔◪⬕◩⬔",
-    "----------◩⬔◪⬕◩",
-    "-----------◩⬔◪⬕",
-    "------------◩⬔◪",
-    "-------------◩⬔",
-    "--------------◩",
-    "-------------◩⬔",
-    "------------◩⬔◪",
-    "-----------◩⬔◪⬕",
-    "----------◩⬔◪⬕◩",
-    "---------◩⬔◪⬕◩⬔",
-    "--------◩⬔◪⬕◩⬔◪",
-    "-------◩⬔◪⬕◩⬔◪⬕",
-    "------◩⬔◪⬕◩⬔◪",
-    "-----◩⬔◪⬕◩⬔",
-    "----◩⬔◪⬕◩",
-    "---◩⬔◪⬕",
-    "--◩⬔◪",
-    "-◩⬔",
-    "◩"
+        "◩",
+        "-◩⬔",
+        "--◩⬔◪",
+        "---◩⬔◪⬕",
+        "----◩⬔◪⬕◩",
+        "-----◩⬔◪⬕◩⬔",
+        "------◩⬔◪⬕◩⬔◪",
+        "-------◩⬔◪⬕◩⬔◪⬕",
+        "--------◩⬔◪⬕◩⬔◪",
+        "---------◩⬔◪⬕◩⬔",
+        "----------◩⬔◪⬕◩",
+        "-----------◩⬔◪⬕",
+        "------------◩⬔◪",
+        "-------------◩⬔",
+        "--------------◩",
+        "-------------◩⬔",
+        "------------◩⬔◪",
+        "-----------◩⬔◪⬕",
+        "----------◩⬔◪⬕◩",
+        "---------◩⬔◪⬕◩⬔",
+        "--------◩⬔◪⬕◩⬔◪",
+        "-------◩⬔◪⬕◩⬔◪⬕",
+        "------◩⬔◪⬕◩⬔◪",
+        "-----◩⬔◪⬕◩⬔",
+        "----◩⬔◪⬕◩",
+        "---◩⬔◪⬕",
+        "--◩⬔◪",
+        "-◩⬔",
+        "◩"
     ],
     
     "loader77":[
-    "◩",
-    "-◩⬔",
-    "--◩⬔◪",
-    "---◩⬔◪⬕",
-    "----◩⬔◪⬕◩",
-    "-----◩⬔◪⬕◩⬔",
-    "------◩⬔◪⬕◩⬔◪",
-    "-------◩⬔◪⬕◩⬔◪⬕",
-    "------◩⬔◪⬕◩⬔◪",
-    "-----◩⬔◪⬕◩⬔",
-    "----◩⬔◪⬕◩",
-    "---◩⬔◪⬕",
-    "--◩⬔◪",
-    "-◩⬔",
-    "◩"
+        "◩",
+        "-◩⬔",
+        "--◩⬔◪",
+        "---◩⬔◪⬕",
+        "----◩⬔◪⬕◩",
+        "-----◩⬔◪⬕◩⬔",
+        "------◩⬔◪⬕◩⬔◪",
+        "-------◩⬔◪⬕◩⬔◪⬕",
+        "------◩⬔◪⬕◩⬔◪",
+        "-----◩⬔◪⬕◩⬔",
+        "----◩⬔◪⬕◩",
+        "---◩⬔◪⬕",
+        "--◩⬔◪",
+        "-◩⬔",
+        "◩"
     ],
     "loader78":[
-"◧",
-"-◧⬒",
-"--◧⬒◨",
-"---◧⬒◨⬓",
-"----◧⬒◨⬓◧",
-"-----◧⬒◨⬓◧⬒",
-"------◧⬒◨⬓◧⬒◨",
-"-------◧⬒◨⬓◧⬒◨⬓",
-"--------◧⬒◨⬓◧⬒◨",
-"---------◧⬒◨⬓◧⬒",
-"----------◧⬒◨⬓◧",
-"-----------◧⬒◨⬓",
-"------------◧⬒◨",
-"-------------◧⬒",
-"--------------◧",
-"-------------◧⬒",
-"------------◧⬒◨",
-"-----------◧⬒◨⬓",
-"----------◧⬒◨⬓◧",
-"---------◧⬒◨⬓◧⬒",
-"--------◧⬒◨⬓◧⬒◨",
-"-------◧⬒◨⬓◧⬒◨⬓",
-"------◧⬒◨⬓◧⬒◨",
-"-----◧⬒◨⬓◧⬒",
-"----◧⬒◨⬓◧",
-"---◧⬒◨⬓",
-"--◧⬒◨",
-"-◧⬒",
-"◧"
-],
+        "◧",
+        "-◧⬒",
+        "--◧⬒◨",
+        "---◧⬒◨⬓",
+        "----◧⬒◨⬓◧",
+        "-----◧⬒◨⬓◧⬒",
+        "------◧⬒◨⬓◧⬒◨",
+        "-------◧⬒◨⬓◧⬒◨⬓",
+        "--------◧⬒◨⬓◧⬒◨",
+        "---------◧⬒◨⬓◧⬒",
+        "----------◧⬒◨⬓◧",
+        "-----------◧⬒◨⬓",
+        "------------◧⬒◨",
+        "-------------◧⬒",
+        "--------------◧",
+        "-------------◧⬒",
+        "------------◧⬒◨",
+        "-----------◧⬒◨⬓",
+        "----------◧⬒◨⬓◧",
+        "---------◧⬒◨⬓◧⬒",
+        "--------◧⬒◨⬓◧⬒◨",
+        "-------◧⬒◨⬓◧⬒◨⬓",
+        "------◧⬒◨⬓◧⬒◨",
+        "-----◧⬒◨⬓◧⬒",
+        "----◧⬒◨⬓◧",
+        "---◧⬒◨⬓",
+        "--◧⬒◨",
+        "-◧⬒",
+        "◧"
+    ],
     
     "loader79":[
-"◧",
-"-◧⬒",
-"--◧⬒◨",
-"---◧⬒◨⬓",
-"----◧⬒◨⬓◧",
-"-----◧⬒◨⬓◧⬒",
-"------◧⬒◨⬓◧⬒◨",
-"-------◧⬒◨⬓◧⬒◨⬓",
-"------◧⬒◨⬓◧⬒◨",
-"-----◧⬒◨⬓◧⬒",
-"----◧⬒◨⬓◧",
-"---◧⬒◨⬓",
-"--◧⬒◨",
-"-◧⬒",
-"◧"
-]
-    
-    
-    
+        "◧                  |",
+        "-◧⬒               |",
+        "--◧⬒◨             |"
+        "---◧⬒◨⬓          |",
+        "----◧⬒◨⬓◧        |",
+        "-----◧⬒◨⬓◧⬒",
+        "------◧⬒◨⬓◧⬒◨",
+        "-------◧⬒◨⬓◧⬒◨⬓",
+        "------◧⬒◨⬓◧⬒◨",
+        "-----◧⬒◨⬓◧⬒",
+        "----◧⬒◨⬓◧",
+        "---◧⬒◨⬓",
+        "--◧⬒◨",
+        "-◧⬒",
+        "◧"
+    ],
+  
 }
+
 
 ACTIVE_LOADER = "loader74"
 
+
 class ThinkingIndicator(Static):
+    """Loading indicator with animated loader frames and elapsed time."""
+
     def __init__(self, *args, loader_name: str = ACTIVE_LOADER, label: str = "Thinking...", **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self._loader_name = loader_name
@@ -427,9 +400,9 @@ class ThinkingIndicator(Static):
         self.frame_index: int = 0
         self.color_cycle_index: int = 0
 
-        theme = getattr(self.app, "DEV_LOCAL_THEME", {"primary": "#FFB6C1", "secondary": "#ADD8E6"})
-        primary = theme.get("primary", "#FFB6C1")
-        secondary = theme.get("secondary", "#ADD8E6")
+        from utils.ui_config import DEV_LOCAL_THEME
+        primary = DEV_LOCAL_THEME.get("primary", "#FFB6C1")
+        secondary = DEV_LOCAL_THEME.get("secondary", "#ADD8E6")
 
         self.animation_colors = self._generate_color_steps(primary, secondary, 10)
         self._render_frame()
@@ -479,40 +452,28 @@ class ThinkingIndicator(Static):
 
         return palette
 
-    def _col_width(self) -> int:
-        frames = getattr(self, "frames", LOADERS.get(self._loader_name, ["x"]))
-        return max(len(f) for f in frames) + 1
-
-    def _make_table(self, loader_markup: str, right_text: str, right_style: str = "#aaaaaa") -> object:
-        from rich.table import Table
-        from rich.text import Text
-
-        table = Table.grid(expand=True)
-        table.add_column(width=self._col_width(), justify="left")  # loader — fixed right-edge
-        table.add_column(ratio=1)                                    # blank spacer
-        table.add_column(justify="right")                            # label + time — right wall
-
-        table.add_row(
-            Text.from_markup(loader_markup),
-            Text(""),
-            Text(right_text, style=right_style),
-        )
-        return table
-
     def _render_frame(self) -> None:
+        """Render a single animation frame."""
         import time
-        self.frame_index = (self.frame_index + 1) % len(self.frames)
-        self.color_cycle_index = (self.color_cycle_index + 1) % len(self.animation_colors)
-        color = self.animation_colors[self.color_cycle_index]
-        elapsed = time.time() - self._start_time
-        table = self._make_table(
-            f"[{color}]{self.frames[self.frame_index]}[/]",
-            f"{self._label}  {elapsed:.1f}s",
-        )
-        super().update(table)
+        try:
+            self.frame_index = (self.frame_index + 1) % len(self.frames)
+            self.color_cycle_index = (self.color_cycle_index + 1) % len(self.animation_colors)
+            color = self.animation_colors[self.color_cycle_index]
+            elapsed = time.time() - self._start_time
+            frame_char = self.frames[self.frame_index]
+            markup = f"[{color}]{frame_char}[/] {self._label}  {elapsed:.1f}s"
+            self.update(markup)
+        except Exception:
+            pass
 
     def mark_done(self) -> None:
+        """Mark the indicator as completed."""
+        self.stop()
         import time
         elapsed = time.time() - self._start_time
-        table = self._make_table("[green bold]\u2611[/]", f"Done  {elapsed:.1f}s", "green")
-        super().update(table)
+        minutes = int(elapsed // 60)
+        seconds = int(elapsed % 60)
+        time_str = f"{minutes:02d}:{seconds:02d}"
+        done_text = self._label.replace("Working", "Done")
+        markup = f"[green bold]✓[/] {done_text} {time_str}"
+        self.update(markup)

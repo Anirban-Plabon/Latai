@@ -8,6 +8,7 @@ from services.files.project_file_service import ProjectFileService
 from tui.file_panel.file_tree_panel import FileTreePanel
 from tui.file_panel.file_viewer_panel import FileViewerPanel
 from tui.file_panel.file_editor_panel import FileEditorPanel
+from tui.status_event import StatusUpdate
 
 
 class FilePanel(Horizontal):
@@ -84,14 +85,14 @@ class FilePanel(Horizontal):
             self.file_service.write_file(self.current_file_path, content)
             editor.mark_saved()
             self.app.post_message(
-                self.app.StatusUpdate("done", f"Saved {self.current_file_path}")
+                StatusUpdate("done", f"Saved {self.current_file_path}")
             )
             # Add system message to chat log
             chat_view = self.app.query_one("#chat-view")
             chat_view.add_message("system", f"Saved file: {self.current_file_path}")
         except Exception as e:
             self.app.post_message(
-                self.app.StatusUpdate("error", f"Save failed: {str(e)}")
+                StatusUpdate("error", f"Save failed: {str(e)}")
             )
 
     def action_close_file_panel(self) -> None:

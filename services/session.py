@@ -4,7 +4,7 @@ from utils.config import get_default_provider, get_default_model
 
 
 class Session:
-    def __init__(self):
+    def __init__(self) -> None:
         self.provider: str = get_default_provider()
         self.model_name: str = get_default_model()
         self.messages: List[BaseMessage] = []
@@ -13,6 +13,10 @@ class Session:
         self.is_file_panel_open: bool = False
         self.current_file_path: str | None = None
         self.is_editing: bool = False
+        import os
+        self.cwd: str = os.getcwd()
+        # Single approval gate: set by generator_node, cleared after user responds
+        self.pending_state: dict | None = None
 
     def set_model(self, provider: str, model_name: str) -> None:
         self.provider = provider

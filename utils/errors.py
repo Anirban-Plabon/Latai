@@ -16,6 +16,10 @@ def format_error_message(error: Exception | str) -> str:
         msg = "Authentication Failed: Please check your API key in config.yaml."
     elif "404" in error_str or "not found" in error_str.lower():
         msg = "Resource Not Found: The selected model or endpoint is unavailable."
+    elif "429" in error_str or "rate limit" in error_str.lower():
+        msg = "Rate Limit Exceeded: Too many requests. Please wait a moment."
+    elif "503" in error_str or "service unavailable" in error_str.lower():
+        msg = "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
     elif "connection" in error_str.lower() or "503" in error_str:
         msg = "Connection Error: Backend service (Ollama/Provider) is unreachable."
     elif "rate limit" in error_str.lower() or "429" in error_str:

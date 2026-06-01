@@ -1,13 +1,13 @@
 import uuid
 from pathlib import Path
 from textual.app import App, ComposeResult
-from textual.widgets import Input, Rule, Button, DirectoryTree
+from textual.widgets import Rule, Button, DirectoryTree, OptionList, TextArea
 from textual.containers import Horizontal, Vertical
-from textual import work, on
+from textual import work, on, events
 from langchain_core.messages import HumanMessage
 
 from tui.chat_view import ChatView
-from tui.input_bar import InputBar
+from tui.input_bar import InputBar, ChatInput
 from tui.command_menu import CommandMenu, MENU_MODELS, MENU_THEMES, MENU_COMMANDS
 from tui.status_panel import StatusPanel
 from tui.status_event import StatusUpdate
@@ -15,7 +15,7 @@ from tui.splitter import VerticalSplitter
 from commands.base import is_command, parse_command
 from commands import model as cmd_model
 from services.session import session
-from agent.graph import graph
+from agent.graph import phase1_graph
 from res.ui.welcome import animate_welcome
 from res.ui.loaders import ThinkingIndicator
 from tui.header import CustomHeader
@@ -24,6 +24,7 @@ from tui.footer import CustomFooter
 from tui.file_panel import FilePanel
 from services.files.project_file_service import ProjectFileService
 from commands import files as cmd_files
+from utils.ui_config import DEV_LOCAL_THEME, dev_color_theme
 
 
 class LataiApp(App):
@@ -32,16 +33,11 @@ class LataiApp(App):
     def __init__(self, **kwargs) -> None:
         """Initialize LataiApp with file service."""
         super().__init__(**kwargs)
-        self.file_service = ProjectFileService(Path("."))
+        workspace_path = Path("test") if Path("test").is_dir() else Path(".")
+        session.cwd = str(workspace_path.resolve())
+        self.file_service = ProjectFileService(workspace_path)
 
     CSS_PATH = "app.css"
-
-    DEV_LOCAL_THEME = {
-        "primary": "#FFB6C1",    # Light Pink
-        "secondary": "#ADD8E6",   # Light Blue
-        "loader_thinking": "loader76",
-        "loader_generating": "loader77",
-    }
 
     BINDINGS = [
         ("q",      "quit",         "Quit"),
@@ -51,11 +47,12 @@ class LataiApp(App):
     ]
 
     def compose(self) -> ComposeResult:
+        workspace_path = Path("test") if Path("test").is_dir() else Path(".")
         yield CustomHeader()
         with Horizontal(id="app-columns"):
             with Vertical(id="main-panel"):
                 yield ChatView(id="chat-view")
-                yield FilePanel(Path("."), self.file_service, id="file-panel")
+                yield FilePanel(workspace_path, self.file_service, id="file-panel")
                 with Vertical(classes="bottom-zone"):
                     yield Rule(classes="zone-separator")
                     yield Vertical(id="loading-container")
@@ -94,6 +91,8 @@ class LataiApp(App):
             status_panel.styles.width = new_status_width
 
     def on_mount(self) -> None:
+        self.register_theme(dev_color_theme)
+        self.theme = "dev_color_theme"
         self.post_message(StatusUpdate("plan", "Initializing Latai..."))
         self.query_one(InputBar).focus_input()
         self.update_input_bar_ui()
@@ -102,13 +101,12 @@ class LataiApp(App):
         animate_welcome(
             self, 
             chat_view, 
-            color_start=self.DEV_LOCAL_THEME["primary"], 
-            color_end=self.DEV_LOCAL_THEME["secondary"]
+            color_start=DEV_LOCAL_THEME["primary"], 
+            color_end=DEV_LOCAL_THEME["secondary"]
         )
         self.post_message(StatusUpdate("done", "Ready"))
 
     def show_loading(self) -> None:
-        self.post_message(StatusUpdate("agent", "AI is thinking..."))
         container = self.query_one("#loading-container", Vertical)
         indicators = container.query(ThinkingIndicator)
         
@@ -116,12 +114,12 @@ class LataiApp(App):
             indicator = indicators.first()
             if hasattr(indicator, "cleanup_timer"):
                 indicator.cleanup_timer.stop()
-            indicator.change_state(self.DEV_LOCAL_THEME["loader_thinking"], "AI is thinking...", reset_timer=True)
+            indicator.change_state(DEV_LOCAL_THEME["loader_thinking"], "AI is thinking...", reset_timer=True)
         else:
             for child in container.query("*"):
                 child.remove()
             container.mount(ThinkingIndicator(
-                loader_name=self.DEV_LOCAL_THEME["loader_thinking"],
+                loader_name=DEV_LOCAL_THEME["loader_thinking"],
                 label="AI is thinking...",
                 classes="loading-text"
             ))
@@ -142,7 +140,6 @@ class LataiApp(App):
             pass
 
     def show_generating(self) -> None:
-        self.post_message(StatusUpdate("agent", "Generating..."))
         container = self.query_one("#loading-container", Vertical)
         indicators = container.query(ThinkingIndicator)
         
@@ -150,10 +147,10 @@ class LataiApp(App):
             indicator = indicators.first()
             if hasattr(indicator, "cleanup_timer"):
                 indicator.cleanup_timer.stop()
-            indicator.change_state(self.DEV_LOCAL_THEME["loader_generating"], "Generating...")
+            indicator.change_state(DEV_LOCAL_THEME["loader_generating"], "Generating...")
         else:
             container.mount(ThinkingIndicator(
-                loader_name=self.DEV_LOCAL_THEME["loader_generating"],
+                loader_name=DEV_LOCAL_THEME["loader_generating"],
                 label="Generating...",
                 classes="loading-text"
             ))
@@ -212,13 +209,244 @@ class LataiApp(App):
         )
         self.post_message(StatusUpdate("done", f"Theme: {event.theme_name}"))
 
-    async def on_input_submitted(self, event: Input.Submitted) -> None:
-        user_input = event.value.strip()
+    def on_command_menu_command_selected(self, event: CommandMenu.CommandSelected) -> None:
+        cmd_str = event.command
+        input_bar = self.query_one(InputBar)
+        input_widget = input_bar.query_one(Input)
+
+        needs_args = False
+        prefix = cmd_str
+        for arg_cmd in ("/open", "/edit", "/ask", "/tree", "/model"):
+            if cmd_str.startswith(arg_cmd):
+                needs_args = True
+                prefix = arg_cmd + " "
+                break
+
+        if needs_args:
+            input_widget.value = prefix
+            input_bar.focus_input()
+        else:
+            input_widget.value = cmd_str
+            self.post_message(Input.Submitted(input_widget, value=cmd_str))
+
+    @on(events.Key)
+    def handle_keys(self, event: events.Key) -> None:
+        try:
+            input_widget = self.query_one(ChatInput)
+            if input_widget.has_focus and input_widget.text.startswith("/"):
+                if event.key in ("up", "down"):
+                    event.stop()
+                    status_panel = self.query_one("#status-panel", StatusPanel)
+                    new_cmd = status_panel.navigate_commands(event.key)
+                    if new_cmd:
+                        input_widget.text = new_cmd + " "
+                        input_widget.move_cursor((0, len(input_widget.text)))
+        except Exception:
+            pass
+
+    @on(TextArea.Changed, "#chat-input")
+    def on_chat_input_changed(self, event: TextArea.Changed) -> None:
+        try:
+            val = event.text_area.text
+            input_widget = event.text_area
+            status_panel = self.query_one("#status-panel", StatusPanel)
+            if val.startswith("/"):
+                input_widget.add_class("command-active")
+                status_panel.show_inline_commands()
+            else:
+                input_widget.remove_class("command-active")
+                status_panel.hide_inline_commands()
+        except Exception:
+            pass
+
+    @on(OptionList.OptionSelected, "#approval-options")
+    def on_approval_option_selected(self, event: OptionList.OptionSelected) -> None:
+        if session.pending_state is None:
+            return
+            
+        input_bar = self.query_one(InputBar)
+        input_bar.hide_approval()
+        
+        selected = str(event.option.prompt)
+        chat_view = self.query_one("#chat-view", ChatView)
+        
+        if session.pending_state.get("type") == "plan_approval":
+            if "Approved" in selected:
+                chat_view.add_message("user", "Approved")
+                state = session.pending_state
+                session.pending_state = None
+                self.run_generator_worker(session.get_messages())
+                return
+            elif "Revise" in selected:
+                chat_view.add_message("user", "Revise")
+                state = session.pending_state
+                session.pending_state = None
+                
+                original_prompt = state.get("user_input", "")
+                revision_instruction = (
+                    f"Please revise the plan for the request: '{original_prompt}'. "
+                    "Check if there are any major unfocused areas and revise the plan to address them."
+                )
+                session.add_user_message(revision_instruction)
+                self.stream_response(revision_instruction, bypass_history=False, route="new_task")
+                return
+            elif "Cancel" in selected:
+                session.pending_state = None
+                chat_view.add_message("user", "Cancel")
+                chat_view.add_message("system", "Plan rejected. Operation cancelled.")
+                self.post_message(StatusUpdate("done", "Cancelled"))
+                return
+            elif "Feedback" in selected:
+                session.pending_state["type"] = "plan_feedback"
+                chat_view.add_message("system", "Please enter your feedback in the input box below. If you submit without adding feedback, it will be automatically approved.")
+                input_widget = self.query_one(ChatInput)
+                input_widget.text = "Write your feedback here: "
+                input_widget.move_cursor((0, len(input_widget.text)))
+                return
+
+        elif session.pending_state.get("type") == "file_write_permission":
+            if "Write File" in selected:
+                chat_view.add_message("user", "Write File")
+                session.pending_state["type"] = "file_write_filename"
+                files = session.pending_state.get("file_writes", [])
+                default_path = files[0].get("path", "script.py") if files else "script.py"
+                chat_view.add_message("system", "Please confirm or enter the filename to write to:")
+                input_widget = self.query_one(ChatInput)
+                input_widget.text = default_path
+                input_widget.move_cursor((0, len(input_widget.text)))
+                input_bar.hide_approval()
+                return
+            elif "Cancel" in selected:
+                chat_view.add_message("user", "Cancel")
+                session.pending_state = None
+                chat_view.add_message("system", "File write skipped.")
+                self.post_message(StatusUpdate("done", "Skipped"))
+                return
+
+        elif session.pending_state.get("type") == "file_write_exists":
+            filename = session.pending_state.get("filename")
+            content = session.pending_state.get("content")
+            if "Overwrite" in selected:
+                chat_view.add_message("user", "Overwrite")
+                try:
+                    self.file_service.write_file(filename, content)
+                    chat_view.add_message("system", f"✓ File `{filename}` overwritten successfully!")
+                    try:
+                        self.query_one(DirectoryTree).reload()
+                    except Exception:
+                        pass
+                except Exception as e:
+                    chat_view.add_message("system", f"Error overwriting file: {e}")
+                session.pending_state = None
+                return
+            elif "New File" in selected:
+                chat_view.add_message("user", "New File")
+                import re
+                path = Path(filename)
+                stem = path.stem
+                suffix = path.suffix
+                match = re.search(r"_(?P<num>\d+)$", stem)
+                if match:
+                    num = int(match.group("num")) + 1
+                    new_stem = re.sub(r"_\d+$", f"_{num}", stem)
+                else:
+                    new_stem = f"{stem}_1"
+                new_filename = str(path.parent / f"{new_stem}{suffix}")
+                try:
+                    full_path = self.file_service.resolve_safe_path(new_filename)
+                    is_exists = full_path.exists()
+                except Exception as e:
+                    chat_view.add_message("system", f"Invalid incremented path: {e}")
+                    session.pending_state = None
+                    return
+                if not is_exists:
+                    try:
+                        self.file_service.write_file(new_filename, content)
+                        chat_view.add_message("system", f"✓ File `{new_filename}` created and written successfully!")
+                        try:
+                            self.query_one(DirectoryTree).reload()
+                        except Exception:
+                            pass
+                    except Exception as e:
+                        chat_view.add_message("system", f"Error writing file: {e}")
+                    session.pending_state = None
+                else:
+                    chat_view.add_message("system", f"File `{new_filename}` also exists. How do you want to proceed?")
+                    session.pending_state.update({
+                        "filename": new_filename,
+                    })
+                    self.query_one(InputBar).show_approval(["1. Overwrite", "2. New File", "3. Cancel"])
+                return
+            elif "Cancel" in selected:
+                chat_view.add_message("user", "Cancel")
+                session.pending_state = None
+                chat_view.add_message("system", "File write cancelled.")
+                return
+
+    @on(ChatInput.Submitted)
+    async def on_input_submitted(self, event: ChatInput.Submitted) -> None:
+        raw_value = event.value
+        user_input = raw_value.strip()
+        chat_view = self.query_one("#chat-view", ChatView)
+
+        # Check pending state first
+        if session.pending_state is not None:
+            self.query_one(ChatInput).text = ""
+            if session.pending_state.get("type") == "plan_feedback":
+                feedback_str = user_input.replace("Write your feedback here:", "").strip()
+                if not feedback_str or feedback_str == "Write your feedback here":
+                    chat_view.add_message("user", "Approved (No feedback provided)")
+                    state = session.pending_state
+                    session.pending_state = None
+                    self.run_generator_worker(session.get_messages())
+                else:
+                    chat_view.add_message("user", f"Feedback: {feedback_str}")
+                    session.add_user_message(f"Please revise the plan based on this feedback: {feedback_str}")
+                    state = session.pending_state
+                    session.pending_state = None
+                    self.swap_to_chat()
+                    self.stream_response(feedback_str, bypass_history=False, route="new_task")
+                return
+            elif session.pending_state.get("type") == "file_write_filename":
+                filename = user_input.strip()
+                if not filename:
+                    chat_view.add_message("system", "Filename cannot be empty. Please enter a valid filename.")
+                    return
+                try:
+                    full_path = self.file_service.resolve_safe_path(filename)
+                    is_exists = full_path.exists()
+                except Exception as e:
+                    chat_view.add_message("system", f"Invalid filename/path: {e}")
+                    return
+                content = session.pending_state.get("generated_code", "")
+                if not is_exists:
+                    try:
+                        self.file_service.write_file(filename, content)
+                        chat_view.add_message("system", f"✓ File `{filename}` created and written successfully!")
+                        try:
+                            self.query_one(DirectoryTree).reload()
+                        except Exception:
+                            pass
+                    except Exception as e:
+                        chat_view.add_message("system", f"Error writing file: {e}")
+                    session.pending_state = None
+                else:
+                    session.pending_state.update({
+                        "type": "file_write_exists",
+                        "filename": filename,
+                        "content": content,
+                    })
+                    chat_view.add_message("system", f"File `{filename}` already exists. How do you want to proceed?")
+                    self.query_one(InputBar).show_approval(["1. Overwrite", "2. New File", "3. Cancel"])
+                return
+            else:
+                chat_view.add_message("system", "Please use the option list to approve or cancel.")
+                return
+
         if not user_input:
             return
 
-        event.input.value = ""
-        chat_view = self.query_one("#chat-view", ChatView)
+        self.query_one(ChatInput).text = ""
         menu      = self.query_one(CommandMenu)
 
         if user_input in ("/models", "/model"):
@@ -243,6 +471,7 @@ class LataiApp(App):
                 chat_view.add_message("system", result)
                 self.post_message(StatusUpdate("done", "Model switched"))
             elif cmd == "ask":
+                self.swap_to_chat()
                 self.stream_response(args, bypass_history=True)
             elif cmd == "term":
                 self.run_term_command_worker(args, is_toggle=not bool(args))
@@ -254,19 +483,32 @@ class LataiApp(App):
                 self.run_term_command_worker(user_input, is_toggle=False)
             else:
                 session.add_user_message(user_input)
+                self.swap_to_chat()
                 self.stream_response(user_input, bypass_history=False)
 
+    # ── Streaming nodes that should display in chat ──────────────────────────
+    _STREAMING_NODES = frozenset({"planner_node", "chat_node"})
+
     @work(exclusive=True)
-    async def stream_response(self, user_input: str, bypass_history: bool) -> None:
+    async def stream_response(self, user_input: str, bypass_history: bool, route: str | None = None) -> None:
+        """Phase 1: classify → (chat | plan → generate)."""
         chat_view = self.query_one("#chat-view", ChatView)
-        msg_id    = f"msg-{uuid.uuid4()}"
+        msg_id = f"msg-{uuid.uuid4()}"
 
-        self.post_message(StatusUpdate("agent", "Streaming response..."))
         self.show_loading()
+        try:
+            self.query_one(StatusPanel).show_agent_loader("root_node")
+        except Exception:
+            pass
 
-        accumulated_content   = ""
-        first_chunk_received  = False
-        message_added         = False
+        import asyncio
+        await asyncio.sleep(0.05)
+
+        accumulated = ""
+        first_token = False
+        message_added = False
+        generator_files = []
+        generator_code = ""
 
         try:
             messages = (
@@ -274,50 +516,147 @@ class LataiApp(App):
                 if bypass_history
                 else session.get_messages()
             )
-            state = {"messages": messages}
 
-            async for msg, metadata in graph.astream(state, stream_mode="messages"):
-                content = ""
-                if hasattr(msg, "content"):
-                    if isinstance(msg.content, str):
-                        content = msg.content
-                    elif isinstance(msg.content, list):
-                        for part in msg.content:
-                            if isinstance(part, dict) and part.get("type") == "text":
-                                content += part.get("text", "")
-                            elif isinstance(part, str):
-                                content += part
+            current_node = None
+            should_pause = False
+            initial_state = {"messages": messages}
+            if route:
+                initial_state["route"] = route
 
-                if content:
-                    if not first_chunk_received:
-                        first_chunk_received = True
-                        self.show_generating()
-                        chat_view.add_message("ai", "", msg_id)
-                        message_added = True
+            async for chunk in phase1_graph.astream(
+                initial_state,
+                stream_mode=["messages", "updates", "debug"],
+            ):
+                if len(chunk) != 2:
+                    continue
+                event_type, payload = chunk
 
-                    accumulated_content += content
-                    chat_view.update_message(msg_id, accumulated_content)
+                if event_type == "debug" and isinstance(payload, dict):
+                    if payload.get("type") in ("task:runs", "task:run", "task:new"):
+                        task_data = payload.get("payload", {})
+                        if isinstance(task_data, dict) and "name" in task_data:
+                            node = task_data["name"]
+                            if node and node != current_node and node not in ("__start__", "__end__", "start", "end"):
+                                current_node = node
+                                try:
+                                    self.query_one(StatusPanel).show_agent_loader(node)
+                                except Exception:
+                                    pass
+                    continue
+
+                if event_type == "updates" and isinstance(payload, dict):
+                    for node_name, node_update in payload.items():
+                        if node_update is None:
+                            continue
+                        if node_name == "generator_node":
+                            files = node_update.get("file_writes", [])
+                            generator_files = files
+                            filenames = ", ".join(f['path'] for f in files) if files else "script.py"
+                            code_preview = node_update.get("generated_code", "")
+                            generator_code = code_preview
+                            diff_text = node_update.get("diff_text", "")
+                            file_exists = node_update.get("file_exists", False)
+                            lang = "python" if filenames.endswith(".py") else ""
+
+                            if file_exists and diff_text:
+                                preview_block = f"**Diff Generated for `{filenames}`:**\n```diff\n{diff_text}\n```"
+                            else:
+                                preview_block = f"**Code Generated for `{filenames}`:**\n```{lang}\n{code_preview}\n```" if code_preview else ""
+
+                            chat_view.add_message("system", preview_block)
+                            self.query_one(StatusPanel).mark_todos_completed()
+                        elif node_name == "write_file_node":
+                            if generator_files:
+                                session.pending_state = {
+                                    "type": "file_write_permission",
+                                    "file_writes": generator_files,
+                                    "generated_code": generator_code,
+                                }
+                                chat_view.add_message("system", "**Do you approve writing the generated file(s) to your workspace?**")
+                                should_pause = True
+                                break
+                        if node_name == "root_node":
+                            route = node_update.get("route", "")
+                            if route:
+                                try:
+                                    if route in ("new_task", "edit_request"):
+                                        next_node = "planner_node"
+                                    elif route == "skip_plan":
+                                        next_node = "chat_node"
+                                    else:
+                                        next_node = "generator_node"
+                                    self.query_one(StatusPanel).show_agent_loader(next_node)
+                                except Exception:
+                                    pass
+                        if node_name == "planner_node":
+                            session.pending_state = {
+                                "type": "plan_approval",
+                                "messages": list(messages),
+                                "user_input": user_input,
+                            }
+                            for todo in node_update.get("plan_todos", []):
+                                self.post_message(StatusUpdate("todo", todo))
+                            chat_view.add_message("system", "**Do you approve the execution plan?**")
+                            should_pause = True
+                            break
+                    if should_pause:
+                        break
+
+                if event_type == "messages":
+                    msg, metadata = payload
+                    if metadata.get("langgraph_node", "") not in self._STREAMING_NODES:
+                        continue
+                    if "nostream" in metadata.get("tags", []):
+                        continue
+                    content = self._extract_content(msg)
+                    if content:
+                        if not first_token:
+                            first_token = True
+                            self.show_generating()
+                            chat_view.add_message("ai", "", msg_id)
+                            message_added = True
+                        accumulated += content
+                        chat_view.update_message(msg_id, accumulated)
 
             if message_added:
+                chat_view.finalize_message(msg_id, accumulated)
                 self.show_done()
             else:
                 self.hide_loading()
-                if accumulated_content:
-                    chat_view.add_message("ai", accumulated_content, msg_id)
-                else:
-                    chat_view.add_message("system", "No response from model.")
-                    self.post_message(StatusUpdate("error", "No response from model"))
 
-            if not bypass_history:
-                session.add_ai_message(accumulated_content)
+            if not bypass_history and accumulated:
+                session.add_ai_message(accumulated)
 
         except Exception as e:
             self.hide_loading()
+            import traceback
+            err_str = traceback.format_exc()
             self.post_message(StatusUpdate("error", f"Stream error: {e}"))
-            if not message_added:
-                chat_view.add_message("system", f"Error: {str(e)}", msg_id)
+            if message_added:
+                chat_view.update_message(msg_id, f"**Error:**\n```\n{err_str}\n```")
             else:
-                chat_view.update_message(msg_id, f"Error: {str(e)}")
+                chat_view.add_message("system", f"**Error:**\n```\n{err_str}\n```")
+        finally:
+            try:
+                self.query_one(StatusPanel).mark_agent_done()
+                if session.pending_state and session.pending_state.get("type") == "plan_approval":
+                    self.query_one(InputBar).show_approval(["1. Approved", "2. Revise", "3. Cancel", "4. Feedback"])
+                elif session.pending_state and session.pending_state.get("type") == "file_write_permission":
+                    self.query_one(InputBar).show_approval(["1. Write File", "2. Cancel"])
+            except Exception:
+                pass
+
+    @staticmethod
+    def _extract_content(msg) -> str:
+        content = getattr(msg, "content", "")
+        if isinstance(content, str):
+            return content
+        if isinstance(content, list):
+            return "".join(
+                p.get("text", "") if isinstance(p, dict) and p.get("type") == "text" else ""
+                for p in content
+            )
+        return ""
 
     @work(exclusive=True)
     async def run_term_command_worker(self, args: str, is_toggle: bool) -> None:
@@ -339,19 +678,109 @@ class LataiApp(App):
 
         self.hide_loading()
 
-    def update_input_bar_ui(self) -> None:
-        try:
-            prefix = self.query_one(".rd-prefix", Static)
-            chat_input = self.query_one("#chat-input", Input)
-            is_term = getattr(session, "is_terminal_mode", False)
+    @work(exclusive=True)
+    async def run_generator_worker(self, messages: list) -> None:
+        chat_view = self.query_one("#chat-view", ChatView)
+        msg_id = f"msg-{uuid.uuid4()}"
 
-            prefix.update("(term) ❯ " if is_term else "❯ ")
-            if is_term:
-                chat_input.placeholder = "Enter terminal command (e.g. dir, git status)..."
-            else:
-                chat_input.placeholder = "Type a message or command (e.g., /model, /ask)..."
+        self.show_loading()
+        try:
+            self.query_one(StatusPanel).show_agent_loader("generator_node")
         except Exception:
             pass
+
+        accumulated = ""
+        first_token = False
+        message_added = False
+        generator_files = []
+        generator_code = ""
+        should_pause = False
+
+        try:
+            async for chunk in phase1_graph.astream(
+                {"messages": messages, "route": "skip_plan"},
+                stream_mode=["messages", "updates", "debug"],
+            ):
+                if len(chunk) != 2:
+                    continue
+                event_type, payload = chunk
+
+                if event_type == "updates" and isinstance(payload, dict):
+                    for node_name, node_update in payload.items():
+                        if node_name == "generator_node":
+                            files = node_update.get("file_writes", [])
+                            generator_files = files
+                            filenames = ", ".join(f['path'] for f in files) if files else "script.py"
+                            code_preview = node_update.get("generated_code", "")
+                            generator_code = code_preview
+                            diff_text = node_update.get("diff_text", "")
+                            file_exists = node_update.get("file_exists", False)
+                            lang = "python" if filenames.endswith(".py") else ""
+
+                            if file_exists and diff_text:
+                                preview_block = f"**Diff Generated for `{filenames}`:**\n```diff\n{diff_text}\n```"
+                            else:
+                                preview_block = f"**Code Generated for `{filenames}`:**\n```{lang}\n{code_preview}\n```" if code_preview else ""
+
+                            chat_view.add_message("system", preview_block)
+                            self.query_one(StatusPanel).mark_todos_completed()
+                        elif node_name == "write_file_node":
+                            if generator_files:
+                                session.pending_state = {
+                                    "type": "file_write_permission",
+                                    "file_writes": generator_files,
+                                    "generated_code": generator_code,
+                                }
+                                chat_view.add_message("system", "**Do you approve writing the generated file(s) to your workspace?**")
+                                should_pause = True
+                                break
+                    if should_pause:
+                        break
+
+                if event_type == "messages":
+                    msg, metadata = payload
+                    if metadata.get("langgraph_node", "") not in self._STREAMING_NODES:
+                        continue
+                    if "nostream" in metadata.get("tags", []):
+                        continue
+                    content = self._extract_content(msg)
+                    if content:
+                        if not first_token:
+                            first_token = True
+                            self.show_generating()
+                            chat_view.add_message("ai", "", msg_id)
+                            message_added = True
+                        accumulated += content
+                        chat_view.update_message(msg_id, accumulated)
+
+            if message_added:
+                chat_view.finalize_message(msg_id, accumulated)
+                self.show_done()
+            else:
+                self.hide_loading()
+
+            if accumulated:
+                session.add_ai_message(accumulated)
+
+        except Exception as e:
+            self.hide_loading()
+            import traceback
+            err_str = traceback.format_exc()
+            self.post_message(StatusUpdate("error", f"Stream error: {e}"))
+            if message_added:
+                chat_view.update_message(msg_id, f"**Error:**\n```\n{err_str}\n```")
+            else:
+                chat_view.add_message("system", f"**Error:**\n```\n{err_str}\n```")
+        finally:
+            try:
+                self.query_one(StatusPanel).mark_agent_done()
+                if session.pending_state and session.pending_state.get("type") == "file_write_permission":
+                    self.query_one(InputBar).show_approval(["1. Write File", "2. Cancel"])
+            except Exception:
+                pass
+
+    def update_input_bar_ui(self) -> None:
+        pass
 
     def swap_to_file_panel(self) -> None:
         """Switch view from ChatView to FilePanel."""
@@ -413,6 +842,21 @@ class LataiApp(App):
                 chat_view.add_message("system", "Error: Usage: /open <path>")
                 self.post_message(StatusUpdate("error", "No path provided"))
                 return
+            if file_panel.has_unsaved_changes:
+                try:
+                    target_path = str(self.file_service.resolve_safe_path(path).resolve())
+                    current_path = str(self.file_service.resolve_safe_path(file_panel.current_file_path).resolve())
+                    is_same_file = target_path == current_path
+                except Exception:
+                    is_same_file = False
+
+                if not is_same_file:
+                    chat_view.add_message(
+                        "system",
+                        "Warning: Unsaved changes in active editor. Save with /save or discard changes before opening another file."
+                    )
+                    self.post_message(StatusUpdate("warning", "Unsaved changes in editor"))
+                    return
             try:
                 content, language = self.file_service.read_file(path)
                 self.swap_to_file_panel()
@@ -429,6 +873,21 @@ class LataiApp(App):
                 chat_view.add_message("system", "Error: Usage: /edit <path>")
                 self.post_message(StatusUpdate("error", "No path provided"))
                 return
+            if file_panel.has_unsaved_changes:
+                try:
+                    target_path = str(self.file_service.resolve_safe_path(path).resolve())
+                    current_path = str(self.file_service.resolve_safe_path(file_panel.current_file_path).resolve())
+                    is_same_file = target_path == current_path
+                except Exception:
+                    is_same_file = False
+
+                if not is_same_file:
+                    chat_view.add_message(
+                        "system",
+                        "Warning: Unsaved changes in active editor. Save with /save or discard changes before opening another file."
+                    )
+                    self.post_message(StatusUpdate("warning", "Unsaved changes in editor"))
+                    return
             try:
                 content, language = self.file_service.read_file(path)
                 self.swap_to_file_panel()
@@ -454,13 +913,29 @@ class LataiApp(App):
     def on_directory_tree_file_selected(self, event: DirectoryTree.FileSelected) -> None:
         """Handle double-clicking or pressing Enter on a file in the tree."""
         try:
+            file_panel = self.query_one("#file-panel", FilePanel)
+            if file_panel.has_unsaved_changes:
+                try:
+                    target_path = event.path.resolve()
+                    current_path = self.file_service.resolve_safe_path(file_panel.current_file_path).resolve()
+                    is_same_file = target_path == current_path
+                except Exception:
+                    is_same_file = False
+
+                if not is_same_file:
+                    chat_view = self.query_one("#chat-view", ChatView)
+                    chat_view.add_message(
+                        "system",
+                        "Warning: Unsaved changes in active editor. Save with /save or discard changes before opening another file."
+                    )
+                    self.post_message(StatusUpdate("warning", "Unsaved changes in editor"))
+                    return
+
             rel_path = event.path.relative_to(self.file_service.root)
             self.handle_file_command_by_name("open", str(rel_path))
         except Exception as e:
             chat_view = self.query_one("#chat-view", ChatView)
             chat_view.add_message("system", f"Error opening tree item: {str(e)}")
             self.post_message(StatusUpdate("error", str(e)))
-
-
 if __name__ == "__main__":
     LataiApp().run()

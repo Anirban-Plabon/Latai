@@ -9,7 +9,8 @@ class CustomFooter(Horizontal):
     """The application's custom footer bar showing workspace info, selected model, and token usage."""
 
     def compose(self) -> ComposeResult:
-        yield Static(f"Workspace: {os.getcwd()}", id="footer-workspace")
+        #yield Static(f"Workspace: {os.getcwd()}", id="footer-workspace")
+        yield Static(f"Workspace: {os.path.join(os.getcwd(), 'test')}", id="footer-workspace")
         yield Static(f"/model {session.provider}/{session.model_name}", id="footer-model")
         yield Static(f"Tokens: {self.format_tokens(session.total_tokens)}", id="footer-tokens")
 

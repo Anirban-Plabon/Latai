@@ -12,6 +12,7 @@ from textual.message import Message
 from utils.config import get_configured_models
 
 TEXTUAL_THEMES = [
+    "dev_color_theme",
     "textual-dark",
     "textual-light",
     "nord",
@@ -26,16 +27,17 @@ TEXTUAL_THEMES = [
 ]
 
 AVAILABLE_COMMANDS = [
-    ("/ask", "Route directly to agent, bypass history"),
-    ("/model", "Swap provider and model at runtime"),
-    ("/models", "Show models selection menu"),
-    ("/themes", "Show themes selection menu"),
-    ("/commands", "Show available commands list"),
-    ("/tree [glob]", "Show project directory tree"),
-    ("/open <path>", "Open a file in read-only viewer"),
-    ("/edit <path>", "Open a file in editable TextArea"),
-    ("/save", "Save current editor buffer"),
-    ("/close", "Close the file panel and return to chat"),
+    ("/ask", "Route to agent directly"),
+    ("/model", "Change provider/model"),
+    ("/models", "Models selection menu"),
+    ("/themes", "Themes selection menu"),
+    ("/commands", "Commands list menu"),
+    ("/term", "Toggle terminal mode"),
+    ("/tree", "Show directory tree"),
+    ("/open", "Open file in viewer"),
+    ("/edit", "Open file in editor"),
+    ("/save", "Save editor buffer"),
+    ("/close", "Close the file panel"),
 ]
 
 MENU_MAIN     = "main"
@@ -71,6 +73,11 @@ class CommandMenu(Container):
         def __init__(self, theme_name: str) -> None:
             super().__init__()
             self.theme_name = theme_name
+
+    class CommandSelected(Message):
+        def __init__(self, command: str) -> None:
+            super().__init__()
+            self.command = command
 
     # ── State ─────────────────────────────────────────────────────────────────
 
@@ -207,7 +214,7 @@ class CommandMenu(Container):
             hint.update("Esc  back")
             ol.add_class("info-list")
             for cmd, desc in AVAILABLE_COMMANDS:
-                ol.add_option(Option(f"{cmd:<30}  {desc}", id=f"cmdref__{cmd.split()[0]}"))
+                ol.add_option(Option(f"{cmd:<12} │ {desc}", id=f"cmdref__{cmd}"))
 
         ol.focus()
 
@@ -240,6 +247,8 @@ class CommandMenu(Container):
             self.post_message(self.ThemeSelected(oid[len("theme__"):]))
             self.close()
 
-        # ── Commands are read-only info; no action ────────────────────────────
+        # ── Commands execution ────────────────────────────────────────────────
         elif oid.startswith("cmdref__"):
-            pass
+            cmd = oid[len("cmdref__"):]
+            self.post_message(self.CommandSelected(cmd))
+            self.close()

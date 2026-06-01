@@ -5,6 +5,7 @@ from textual import on
 from textual.widgets import TextArea, Label
 from textual.containers import Vertical
 from services.files.file_type_styler import get_icon
+from services.files.language_guard import safe_language
 
 
 class FileEditorPanel(Vertical):
@@ -18,8 +19,8 @@ class FileEditorPanel(Vertical):
 
     def compose(self):
         """Compose the editor panel widgets."""
-        yield Label("📄 No file open", classes="file-header")
-        yield TextArea.code_editor("", show_line_numbers=True, id="editor-text")
+        yield Label("🗎 No file open", classes="file-header")
+        yield TextArea.code_editor("", show_line_numbers=True, id="editor-text", theme="vscode_dark")
 
     def load_file(self, path: str, content: str, language: str) -> None:
         """Load file content into editable TextArea."""
@@ -28,7 +29,7 @@ class FileEditorPanel(Vertical):
 
         text_area: TextArea = self.query_one("#editor-text", TextArea)
         text_area.load_text(content)
-        text_area.language = language if language != "plain" else None
+        text_area.language = safe_language(language)
 
         self.update_header()
 
@@ -53,13 +54,13 @@ class FileEditorPanel(Vertical):
         """Update header label with dirty indicator."""
         if not self.file_path:
             header: Label = self.query_one(".file-header", Label)
-            header.update("📄 No file open")
+            header.update("🗎 No file open")
             return
 
         _, ext = os.path.splitext(self.file_path)
         icon: str = get_icon(ext)
-        dirty_str: str = " ●" if self.is_dirty else ""
-        header_text: str = f"📝 {icon} {self.file_path}{dirty_str}"
+        dirty_str: str = "●" if self.is_dirty else ""
+        header_text: str = f"✎ {icon} {self.file_path}{dirty_str}"
 
         header_widget: Label = self.query_one(".file-header", Label)
         header_widget.update(header_text)

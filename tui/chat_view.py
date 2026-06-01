@@ -11,15 +11,25 @@ class ChatView(ScrollableContainer):
             msg.add_class("ai")
         elif role == "system":
             msg.add_class("system")
-            
+
         self.mount(msg)
         self.call_after_refresh(self.scroll_end, animate=False)
         return msg
 
     def update_message(self, msg_id: str, new_content: str) -> None:
+        """Stream token into the message — uses lock-free Static path."""
         try:
             msg = self.query_one(f"#{msg_id}", ChatMessage)
-            msg.content = new_content
+            msg.stream_update(new_content)
             self.call_after_refresh(self.scroll_end, animate=False)
         except Exception:
-            pass
+            pass
+
+    def finalize_message(self, msg_id: str, final_content: str) -> None:
+        """Call when streaming is done — swaps Static → CustomMarkdown."""
+        try:
+            msg = self.query_one(f"#{msg_id}", ChatMessage)
+            msg.finalize(final_content)
+            self.call_after_refresh(self.scroll_end, animate=False)
+        except Exception:
+            pass

@@ -6,6 +6,7 @@ from rich.text import Text
 from textual.widgets import DirectoryTree, Label
 from textual.containers import Vertical
 from services.files.file_type_styler import get_icon, get_color
+import utils.ui_config as cfg
 
 
 class ProjectDirectoryTree(DirectoryTree):
@@ -50,13 +51,13 @@ class ProjectDirectoryTree(DirectoryTree):
         name: str = path.name
 
         if is_dir:
-            icon: str = "📁"
-            color: str = "#e3b341"
+            icon: str = "🗀"
+            color: str = cfg.DEV_LOCAL_THEME["primary"]
         else:
             import os
             _, ext = os.path.splitext(name)
             icon = get_icon(ext)
-            color = get_color(ext)
+            color = cfg.DEV_LOCAL_THEME["secondary"]
 
         label_text: Text = Text()
         label_text.append(icon + " ", style=color)
@@ -75,7 +76,7 @@ class FileTreePanel(Vertical):
 
     def compose(self):
         """Compose the tree panel widgets."""
-        header_text: str = "📁 Workspace"
+        header_text: str = "🗀 Workspace"
         if self.glob_filter:
             header_text += f" ({self.glob_filter})"
         yield Label(header_text, classes="file-header")
@@ -86,7 +87,7 @@ class FileTreePanel(Vertical):
         self.glob_filter = glob
         tree: ProjectDirectoryTree = self.query_one("#project-tree", ProjectDirectoryTree)
         tree.glob_filter = glob
-        header_text: str = "📁 Workspace"
+        header_text: str = "🗀 Workspace"
         if glob:
             header_text += f" ({glob})"
         header: Label = self.query_one(".file-header", Label)

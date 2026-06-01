@@ -43,40 +43,21 @@ def get_base_url(provider: str) -> Optional[str]:
     return cfg.get("providers", {}).get(provider, {}).get("base_url")
 
 def get_chat_model(provider: str, model_id: str) -> BaseChatModel:
-    """Instantiate LangChain chat model with explicit parameters."""
-    
-    if provider == "ollama":
+    """Instantiate LangChain chat model dynamically from services/providers/."""
+    import importlib
+    try:
+        module = importlib.import_module(f"services.providers.{provider}")
+        get_model = getattr(module, "get_model")
+    except (ImportError, AttributeError):
+        raise ValueError(f"Unsupported provider: {provider}")
+
+    if provider == "mock":
+        return get_model(model_id, "mock")
+    elif provider == "ollama":
         base_url = get_base_url(provider)
         if not base_url:
             raise ValueError("base_url for ollama not found in config.yaml")
-        
-        # Using langchain_openai's ChatOpenAI for Ollama if it supports OpenAI compat, 
-        # or langchain_community ChatOllama. Let's use ChatOllama.
-        from langchain_community.chat_models import ChatOllama
-        return ChatOllama(model=model_id, base_url=base_url)
-        
-    # For others, we need the key
-    api_key = resolve_key(provider, model_id)
-    
-    if provider == "openai":
-        from langchain_openai import ChatOpenAI
-        return ChatOpenAI(model=model_id, api_key=api_key)
-        
-    elif provider == "anthropic":
-        from langchain_anthropic import ChatAnthropic
-        return ChatAnthropic(model=model_id, api_key=api_key)
-        
-    elif provider == "gemini":
-        from langchain_google_genai import ChatGoogleGenerativeAI
-        return ChatGoogleGenerativeAI(model=model_id, api_key=api_key)
-        
-    elif provider == "openrouter":
-        from langchain_openai import ChatOpenAI
-        return ChatOpenAI(
-            model=model_id, 
-            api_key=api_key, 
-            base_url="https://openrouter.ai/api/v1"
-        )
-        
+        return get_model(model_id, base_url)
     else:
-        raise ValueError(f"Unsupported provider: {provider}")
+        api_key = resolve_key(provider, model_id)
+        return get_model(model_id, api_key)

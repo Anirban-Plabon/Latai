@@ -1,4 +1,5 @@
 import asyncio
+import os
 from services.session import session
 
 
@@ -18,6 +19,24 @@ async def execute(args: str) -> str:
             )
         return "Terminal mode deactivated."
 
+    args = args.strip()
+
+    if not hasattr(session, "cwd"):
+        session.cwd = os.getcwd()
+
+    # Intercept `cd` commands
+    if args.startswith("cd ") or args == "cd":
+        target = args[3:].strip()
+        if not target:
+            target = os.path.expanduser("~")
+        
+        new_cwd = os.path.abspath(os.path.join(session.cwd, target))
+        if os.path.isdir(new_cwd):
+            session.cwd = new_cwd
+            return f"Changed directory to {session.cwd}"
+        else:
+            return f"cd: {target}: No such file or directory"
+
     try:
         import sys
         if sys.platform == "win32":
@@ -26,12 +45,14 @@ async def execute(args: str) -> str:
                 "-NoProfile",
                 "-Command",
                 args,
+                cwd=session.cwd,
                 stdout=asyncio.subprocess.PIPE,
                 stderr=asyncio.subprocess.PIPE,
             )
         else:
             process = await asyncio.create_subprocess_shell(
                 args,
+                cwd=session.cwd,
                 stdout=asyncio.subprocess.PIPE,
                 stderr=asyncio.subprocess.PIPE,
             )
