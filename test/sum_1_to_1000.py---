@@ -1,0 +1,11 @@
+def sum_1_to_1000():
+    """Calculate the sum of integers from 1 to 1000 using the formula n*(n+1)/2."""
+    n = 1000
+    return n * (n + 1) // 2
+
+if __name__ == "__main__":
+    result = sum_1_to_1000()
+    print(f"The sum of integers from 1 to 1000 is: {result}")
+```
+
+I've created a Python script that calculates the sum of integers from 1 to 1000 using the mathematical formula for the sum of the first n natural numbers: n*(n+1)/2. This is more efficient than iterating through all numbers, especially for large ranges. The script includes a main block to run and display the result when executed directly.

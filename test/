@@ -1,0 +1,27 @@
+import random
+
+def main():
+    # Configuration: Define the range for the random numbers and the count
+    NUM_COUNT = 10       # Number of random numbers to generate
+    MIN_RANDOM = 1       # Minimum value for random numbers
+    MAX_RANDOM = 100     # Maximum value for random numbers
+    ADD_VALUE = 200      # The value to add to the sum
+
+    # Step 1: Generate NUM_COUNT random integers within the specified range
+    random_numbers = [random.randint(MIN_RANDOM, MAX_RANDOM) for _ in range(NUM_COUNT)]
+    
+    # Step 2: Calculate the sum of the generated numbers
+    sum_of_numbers = sum(random_numbers)
+    
+    # Step 3: Add 200 to the calculated sum
+    final_result = sum_of_numbers + ADD_VALUE
+
+    # Step 4: Display the results
+    print(f"Generated {NUM_COUNT} random numbers between {MIN_RANDOM} and {MAX_RANDOM}:")
+    print(f"Numbers: {random_numbers}")
+    print(f"Sum of numbers: {sum_of_numbers}")
+    print(f"Final result (Sum + {ADD_VALUE}): {final_result}")
+
+# Run the main function when the script is executed directly
+if __name__ == "__main__":
+    main()

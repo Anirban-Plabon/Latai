@@ -1,0 +1,15 @@
+```python
+def calculate_sum(numbers_list: list[int]) -> int:
+    """Calculates the sum of all elements in the provided list."""
+    # The built-in sum function handles iteration and summation.
+    total = sum(numbers_list)
+    return total
+
+if __name__ == "__main__":
+    # Define the 10 numbers as required by the plan.
+    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    print("The 10 numbers are:", numbers)
+    
+    result = calculate_sum(numbers)
+    print("The sum of the 10 numbers is:", result)
+```
